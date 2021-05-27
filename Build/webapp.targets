@@ -1,0 +1,28 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="AfterBuild">
+  	<PropertyGroup>
+		  <ContentTempPath>$([MSBuild]::Escape($([System.IO.Path]::GetFullPath(`$([System.IO.Path]::Combine(`$(WorkingDirectory)$(TempPath)`, `$(TargetName)`))`))))</ContentTempPath>
+		</PropertyGroup>
+    <Copy Condition=" '@(Content)' != '' "
+      SourceFiles="@(Content)"
+      DestinationFolder="$(ContentTempPath)\$(WebApp)\%(RelativeDir)"
+      SkipUnchangedFiles="true"/>
+
+		 <CallTarget Targets="CopyToWebApp" Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' "/>
+  </Target>
+  <Target Name="CopyToWebApp">
+	  <ItemGroup>
+      <BinaryFiles Include="$(TargetDir)$(TargetName).*"/>
+    </ItemGroup>
+    <Copy Condition="Exists($(TargetPath))"
+        SourceFiles="@(BinaryFiles)"
+        DestinationFolder="$(WebAppPath)\bin"
+        SkipUnchangedFiles="true"/>
+		<PropertyGroup>
+      <ContentPath>$([MSBuild]::Escape($([System.IO.Path]::GetFullPath(`$([System.IO.Path]::Combine(`$(WebAppPath)`, `$(WebApp)`))`))))</ContentPath>
+    </PropertyGroup>
+    <Copy SourceFiles="@(Content)"
+      DestinationFolder="$(ContentPath)\%(RelativeDir)"
+      SkipUnchangedFiles="true"/>
+  </Target>
+</Project>

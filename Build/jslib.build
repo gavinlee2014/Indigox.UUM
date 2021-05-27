@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://nantcontrib.sf.net/release/0.85/nantcontrib.xsd"
+         name="jslib"
+         default="compile-js">
+
+  <property name="Configuration" value="Debug" overwrite="false" />
+  <property name="workingdirectory" value="${directory::get-parent-directory('.')}" verbose="true" />
+  <property name="project" value="${workingdirectory}/Outputs/obj/Indigox.Web.JsLib" overwrite="false" />
+  <property name="output" value="${workingdirectory}/Outputs/bin" overwrite="false" />
+  <property name="debug-file" value="${output}/jslib-debug.js" />
+  <property name="min-file" value="${output}/jslib-min.js" />
+
+  <fileset id="js-files" basedir="${project}">
+    <include name="**/*.js" />
+  </fileset>
+
+  <target name="clear" description="清空编译结果">
+    <delete verbose="${debug}">
+      <fileset basedir=".">
+        <include name="jslib-*.js" />
+      </fileset>
+    </delete>
+  </target>
+
+  <target name="compile-js" description="" depends="compile-debug-js">
+    <exec program="java">
+      <arg line="-jar ../Tools/yuicompressor-2.4.6.jar" />
+      <arg line="${debug-file}" />
+      <arg line="-o ${min-file}" />
+    </exec>
+  </target>
+
+  <target name="compile-debug-js" description="">
+    <delete file="${debug-file}"></delete>
+    <foreach item="File" property="js-file">
+      <in>
+        <items refid="js-files" />
+      </in>
+      <do>
+        <property name="result" value="${custom::concatfiles( js-file, debug-file, true )}" />
+      </do>
+    </foreach>
+  </target>
+
+  <script language="C#" prefix="custom">
+    <code>
+      <![CDATA[
+          [Function("concatfiles")]
+          public static bool ConcatFiles(string source, string destination, bool newLine)
+          {
+              System.Text.Encoding encoding = System.Text.Encoding.UTF8;
+              using ( StreamReader reader = new StreamReader( source, encoding ) )
+              using ( StreamWriter writer = new StreamWriter( destination, true, encoding  ) )
+              {
+                  writer.Write( reader.ReadToEnd() );
+                  if (newLine)
+                      writer.WriteLine();
+              }
+              return true;
+          }
+        ]]>
+    </code>
+  </script>
+</project>

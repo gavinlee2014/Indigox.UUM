@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://nantcontrib.sf.net/release/0.91/nantcontrib.xsd" name="common" >
+  <property name="build.verbos" value="Minimal"/>
+  <property name="build.configuration" value="Debug" unless="${property::exists('configuration')}"/>
+  <property name="build.workingdirectory" value="${directory::get-parent-directory('.')}" verbose="true"/>
+  <property name="build.sdktools" value="${sdktools}" if="${property::exists('sdktools')}" />
+  <property name="build.sdktools" value="" unless="${property::exists('sdktools')}" />
+  <property name="build.source" value="${build.workingdirectory}/Sources"/>
+  <property name="build.output" value="${build.workingdirectory}/Outputs"/>
+  <property name="build.output.bin" value="bin"/>
+  <property name="build.output.tmp" value="obj"/>
+  <property name="build.output.web" value="web"/>
+  <property name="build.output.dist" value="dist"/>
+  <property name="build.output.pkg" value="pkg"/>
+  <!--<property name="build.target" value="${build.workingdirectory}/target"/>-->
+  <property name="build.version.major" value="1"/>
+  <property name="build.version.minor" value="0"/>
+  <property name="build.version.build" value="0"/>
+  <property name="build.version.date" value="${datetime::now() - timespan::from-hours(8)}"/>
+
+  <target name="peek-prop">
+    <xmlpeek property="env" xpath="/x:Project/x:PropertyGroup[@Label='${build.configuration}']/x:Env" file="configurations.proj" failonerror="false">
+      <namespaces>
+        <namespace prefix="x" uri="http://schemas.microsoft.com/developer/msbuild/2003" />
+      </namespaces>
+    </xmlpeek>
+    <echo message="${env}"/>
+    
+    <xmlpeek property="build.output.bin" xpath="/x:Project/x:PropertyGroup[@Label='${build.configuration}']/x:BinPath" file="configurations.proj" failonerror="false">
+      <namespaces>
+        <namespace prefix="x" uri="http://schemas.microsoft.com/developer/msbuild/2003" />
+      </namespaces>
+    </xmlpeek>
+
+    <xmlpeek property="build.output.tmp" xpath="/x:Project/x:PropertyGroup[@Label='${build.configuration}']/x:TempPath" file="configurations.proj" failonerror="false">
+      <namespaces>
+        <namespace prefix="x" uri="http://schemas.microsoft.com/developer/msbuild/2003" />
+      </namespaces>
+    </xmlpeek>
+
+    <xmlpeek property="build.output.web" xpath="/x:Project/x:PropertyGroup[@Label='${build.configuration}']/x:WebPath" file="configurations.proj" failonerror="false">
+      <namespaces>
+        <namespace prefix="x" uri="http://schemas.microsoft.com/developer/msbuild/2003" />
+      </namespaces>
+    </xmlpeek>
+
+    <xmlpeek property="build.output.dist" xpath="/x:Project/x:PropertyGroup[@Label='${build.configuration}']/x:DistPath" file="configurations.proj" failonerror="false">
+      <namespaces>
+        <namespace prefix="x" uri="http://schemas.microsoft.com/developer/msbuild/2003" />
+      </namespaces>
+    </xmlpeek>
+
+    <xmlpeek property="build.output.pkg" xpath="/x:Project/x:PropertyGroup[@Label='${build.configuration}']/x:PkgPath" file="configurations.proj" failonerror="false">
+      <namespaces>
+        <namespace prefix="x" uri="http://schemas.microsoft.com/developer/msbuild/2003" />
+      </namespaces>
+    </xmlpeek>
+  </target>
+</project>

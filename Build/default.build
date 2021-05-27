@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://nantcontrib.sf.net/release/0.91/nantcontrib.xsd" name="default" default="compile-all">
+  <property name="debug" value="false" />
+
+  <include buildfile="build.property" />
+  <!-- 使用msbuild task编译解决方案文件，不再使用msbuild task编译solutions.xml -->
+  <!-- <include buildfile="solutions.xml" /> -->
+
+  <property name="phase" value="development" unless="${property::exists('phase')}" />
+  <property name="revision" value="" unless="${property::exists('revision')}" />
+
+  <fileset id="ivy-files" basedir="${build.source}">
+    <include name="ivy.xml" />
+    <include name="*.ivy.xml" />
+  </fileset>
+
+  <fileset id="sln-files" basedir="${build.source}">
+    <include name="*.all.sln" />
+  </fileset>
+
+  <target name="resolve-all">
+    <foreach item="File" property="ivy-file">
+      <in>
+        <items refid="ivy-files" />
+      </in>
+      <do>
+        <nant buildfile="ivy.build" target="resolve">
+          <properties>
+            <property name="ivy.settings" value="ivysettings/${phase}/ivysettings.xml" />
+            <property name="ivy.file" value="${ivy-file}" />
+            <property name="ivy.confs" value="test" />
+          </properties>
+        </nant>
+      </do>
+    </foreach>
+  </target>
+
+  <target name="retrieve-all">
+    <foreach item="File" property="ivy-file">
+      <in>
+        <items refid="ivy-files" />
+      </in>
+      <do>
+        <nant buildfile="ivy.build" target="retrieve">
+          <properties>
+            <property name="ivy.settings" value="ivysettings/${phase}/ivysettings.xml" />
+            <property name="ivy.file" value="${ivy-file}" />
+            <property name="ivy.confs" value="test" />
+          </properties>
+        </nant>
+      </do>
+    </foreach>
+  </target>
+
+  <target name="compile-all" depends="retrieve-all">
+    <!-- <nant buildfile="compile.build" target="compile-solution">
+      <properties>
+        <property name="solution" value="common-solution" />
+      </properties>
+    </nant> -->
+    <foreach item="File" property="sln-file">
+      <in>
+        <items refid="sln-files" />
+      </in>
+      <do>
+        <msbuild project="${sln-file}" verbosity="${build.verbos}">
+          <!-- 设置编译时，同时构建引用的项目 -->
+          <arg value="/p:BuildProjectReferences=true" />
+          <!-- 设置 SDK tools 目录, 支持在没有安装Windows SDK/Visual Studio的机器上编译 -->
+          <arg value="/p:SDK40ToolsPath=${build.sdktools}" />
+          <!-- 设置编译配置文件 (Debug|Release) -->
+          <arg value="/p:Configuration=${build.configuration}" />
+          <!-- 设置 obj 目录 -->
+          <!--<arg value="/p:TempPath=${build.output}/obj/" />-->
+          <!-- 设置 bin 目录 -->
+          <!--<arg value="/p:BinPath=${build.output}/bin/" />-->
+          <!-- 设置 web 目录 -->
+          <!--<arg value="/p:WebPath=${build.output}/web/" />-->
+          <!-- 设置 reference 目录 -->
+          <!--<arg value="/p:ReferencePath=${build.output}/bin/" />-->
+          <arg value="/p:WorkingDiretory=${build.workingdirectory}" />
+          <!-- 设置编译目标 (Build|Rebuild|Clear) -->
+          <arg value="/t:Build" />
+        </msbuild>
+      </do>
+    </foreach>
+  </target>
+
+  <target name="test-all">
+    <nunit2>
+      <formatter type="Xml" usefile="true" extension=".xml" outputdir="${build.output}/test" />
+      <test>
+        <assemblies basedir="${build.output}\bin">
+          <include name="*.Tests.dll" />
+        </assemblies>
+        <references basedir="${build.workingdirectory}\References">
+          <include name="*.dll" />
+        </references>
+        <categories>
+          <exclude name="UserTest" />
+        </categories>
+      </test>
+    </nunit2>
+  </target>
+
+  <target name="zip-content">
+    <foreach item="Folder" in="${build.output}/obj" property="path">
+      <do>
+        <property name="index" value="${string::last-index-of(path, '\')}" />
+        <property name="length" value="${string::get-length(path) - string::last-index-of(path, '\')}" />
+        <property name="artifact" value="${string::substring(path, index, length)}" />
+
+        <zip zipfile="${build.output}/bin/${artifact}.zip">
+          <fileset basedir="${path}">
+            <include name="**/*" />
+          </fileset>
+        </zip>
+      </do>
+    </foreach>
+  </target>
+
+  <target name="get-revision" if="${revision == ''}">
+    <property name="revision" value="0" />
+    <exec program="svn"
+      commandline='info "${build.workingdirectory}" --xml'
+      output="svninfo.xml" />
+    <xmlpeek
+      file="svninfo.xml"
+      xpath="/info/entry/commit/@revision"
+      property="revision" />
+    <property name="revision" value="${convert::to-int(revision) + 1}" />
+    <delete file="svninfo.xml" />
+  </target>
+
+  <target name="publish-all" depends="zip-content, get-revision">
+    <foreach item="File" property="ivy-file">
+      <in>
+        <items refid="ivy-files" />
+      </in>
+      <do>
+        <property name="version" value="${build.version.major}.${build.version.minor}.${build.version.build}.${revision}" />
+        <nant buildfile="ivy.build" target="publish">
+          <properties>
+            <property name="ivy.settings" value="ivysettings/${phase}/ivysettings.xml" />
+            <property name="ivy.file" value="${ivy-file}" />
+            <property name="ivy.publish.revision" value="${version}" />
+            <property name="ivy.publish.status" value="integration" />
+          </properties>
+        </nant>
+        <delete file="ivy-${version}.xml" />
+      </do>
+    </foreach>
+  </target>
+
+  <target name="clear-all">
+    <delete>
+      <fileset basedir="${build.output}">
+        <include name="*.*" />
+        <include name="${build.output.bin}/**/*" />
+        <include name="${build.output.tmp}/**/*" />
+        <include name="${build.output.web}/**/*" />
+        <include name="test/**/*" />
+      </fileset>
+    </delete>
+  </target>
+</project>

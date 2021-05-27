@@ -1,0 +1,34 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Debug" Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <WorkingDirectory>..\..\</WorkingDirectory>
+    <WebPath>WebApp</WebPath>
+    <BinPath>outputs\bin</BinPath>
+    <TempPath>outputs\obj</TempPath>
+    <Env>dev</Env>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Label="Release" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <WorkingDirectory>..\..\</WorkingDirectory>
+    <WebPath>outputs\web</WebPath>
+    <BinPath>outputs\bin</BinPath>
+    <TempPath>outputs\obj</TempPath>
+    <Env>uat</Env>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <WorkingDirectory Condition="!HasTrailingSlash('$(WorkingDirectory)')">$(WorkingDirectory)\</WorkingDirectory>
+    <WebAppPath>$(WorkingDirectory)$(WebPath)</WebAppPath>
+    <OutputPath>$(WorkingDirectory)$(BinPath)</OutputPath>
+    <IntermediateOutputPath>$(WorkingDirectory)$(TempPath)</IntermediateOutputPath>
+    <Disable_CopyWebApplication>true</Disable_CopyWebApplication>
+  </PropertyGroup>
+</Project>

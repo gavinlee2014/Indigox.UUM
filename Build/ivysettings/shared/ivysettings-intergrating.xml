@@ -1,0 +1,34 @@
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one
+   or more contributor license agreements.  See the NOTICE file
+   distributed with this work for additional information
+   regarding copyright ownership.  The ASF licenses this file
+   to you under the Apache License, Version 2.0 (the
+   "License"); you may not use this file except in compliance
+   with the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing,
+   software distributed under the License is distributed on an
+   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   KIND, either express or implied.  See the License for the
+   specific language governing permissions and limitations
+   under the License.    
+-->
+<ivysettings>
+  <credentials host="artifacts.indigox.net" 
+    realm="Sonatype Nexus Repository Manager" 
+    username="deployment" passwd="P@ssw0rd"/> 
+  <property name="intergrating-url" 
+    value="http://artifacts.indigox.net:8080/content/repositories/intergrating-system-releases"/> 
+  <resolvers> 
+    <dual name="intergrating-dual">
+      <url name="intergrating-url" m2compatible="true">
+        <ivy pattern="${intergrating-url}/[organisation]/[module]/[revision]/ivy-[revision].xml" />
+        <artifact pattern="${intergrating-url}/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]" />
+      </url>
+      <ibiblio name="intergrating" m2compatible="true" root="${intergrating-url}"/>
+    </dual>
+  </resolvers> 
+</ivysettings>

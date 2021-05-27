@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://nantcontrib.sf.net/release/0.92/nantcontrib.xsd" name="ivy">
+  <property name="ivy.settings" value="" if="${not property::exists( 'ivy.settings' )}" />
+  <property name="ivy.file" value="" if="${not property::exists( 'ivy.file' )}" />
+  <property name="ivy.confs" value="test" if="${not property::exists( 'ivy.confs' )}" />
+  <property name="ivy.retrieve.pattern" value="../References/[artifact].[ext]" if="${not property::exists( 'ivy.retrieve.pattern' )}" />
+  <property name="ivy.publish.resolver" value="indigox"  if="${not property::exists( 'ivy.publish.resolver' )}" />
+  <property name="ivy.publish.pattern" value="../Outputs/bin/[artifact].[ext]" if="${not property::exists( 'ivy.publish.pattern' )}" />
+  <property name="ivy.publish.revision" value="" if="${not property::exists( 'ivy.publish.revision' )}" />
+  <property name="ivy.publish.status" value="" if="${not property::exists( 'ivy.publish.status' )}" />
+  <property name="ivy.publish.overwrite" value="true" if="${not property::exists( 'ivy.publish.overwrite' )}" />
+
+  <target name="resolve">
+    <exec program="ivy.cmd">
+      <arg line="-settings ${ivy.settings}" unless="${ivy.settings == ''}"/>
+      <arg line="-ivy ${ivy.file}" />
+      <arg line="-confs ${ivy.confs}" unless="${ivy.confs == ''}"/>
+   </exec>
+  </target>
+
+  <target name="retrieve">
+    <exec program="ivy.cmd">
+      <arg line="-settings ${ivy.settings}" unless="${ivy.settings == ''}"/>
+      <arg line="-ivy ${ivy.file}" />
+      <arg line="-confs ${ivy.confs}" unless="${ivy.confs == ''}"/>
+      <arg line="-retrieve ${ivy.retrieve.pattern}" />
+    </exec>
+  </target>
+
+  <target name="publish">
+    <exec program="ivy.cmd">
+      <arg line="-settings ${ivy.settings}" unless="${ivy.settings == ''}"/>
+      <arg line="-ivy ${ivy.file}" />
+      <arg line="-conf ${ivy.confs}" />
+      <arg line="-publish ${ivy.publish.resolver}" />
+      <arg line="-publishpattern ${ivy.publish.pattern}" />
+      <arg line="-revision ${ivy.publish.revision}" />
+      <arg line="-status ${ivy.publish.status}" />
+      <arg line="-overwrite" if="${ivy.publish.overwrite}"/>
+    </exec>
+  </target>
+</project>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://nantcontrib.sf.net/release/0.91/nantcontrib.xsd" name="default" default="retrieve-all">
+  <property name="debug" value="false" overwrite="false" />
+
+  <include buildfile="build.property" />
+
+  <property name="phase" value="development" unless="${property::exists('phase')}" />
+  <property name="webapp" value="${build.workingdirectory}\WebApp" unless="${property::exists('webapp')}" />
+  <property name="temp" value="${build.output}\tmp" unless="${property::exists('temp')}" />
+
+  <fileset id="ivy-files" basedir="${build.source}">
+    <include name="ivy.xml" />
+  </fileset>
+
+  <fileset id="zip-files" basedir="${temp}">
+    <include name="indigox/**/*.zip" />
+  </fileset>
+
+  <fileset id="3rd-party-zip-files" basedir="${temp}">
+    <include name="**/*.zip" />
+    <exclude name="indigox/**/*.zip" />
+  </fileset>
+
+  <target name="resolve-all">
+    <foreach item="File" property="ivy-file">
+      <in>
+        <items refid="ivy-files" />
+      </in>
+      <do>
+        <nant buildfile="ivy.build" target="resolve">
+          <properties>
+            <property name="ivy.settings" value="ivysettings/${phase}/ivysettings.xml" />
+            <property name="ivy.file" value="${ivy-file}" />
+            <property name="ivy.confs" value="webapp" />
+          </properties>
+        </nant>
+      </do>
+    </foreach>
+  </target>
+
+  <target name="retrieve-all">
+    <foreach item="File" property="ivy-file">
+      <in>
+        <items refid="ivy-files" />
+      </in>
+      <do>
+        <nant buildfile="ivy.build" target="retrieve">
+          <properties>
+            <property name="ivy.settings" value="ivysettings/${phase}/ivysettings.xml" />
+            <property name="ivy.file" value="${ivy-file}" />
+            <property name="ivy.confs" value="webapp" />
+            <property name="ivy.retrieve.pattern" value="${temp}/[orgPath]/[module]/[artifact].[ext]" />
+          </properties>
+        </nant>
+      </do>
+    </foreach>
+  </target>
+
+  <target name="deploy-bin">
+    <copy todir="${webapp}\bin" flatten="true">
+      <fileset basedir="${temp}">
+        <include name="**/*.dll" />
+        <include name="**/*.xml" />
+        <include name="**/*.pdb" />
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="deploy-content">
+    <foreach item="File" property="zip-file">
+      <in>
+        <items refid="zip-files" />
+      </in>
+      <do>
+        <unzip zipfile="${zip-file}" todir="${webapp}"/>
+      </do>
+    </foreach>
+  </target>
+
+  <target name="deploy-jslib">
+    <copy todir="${webapp}/res/js/Indigox/Web/JsLib">
+      <fileset basedir="${temp}/indigox/web/">
+        <include name="*.js" />
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="deploy-3rd-party">
+    <foreach item="File" property="zip-file">
+      <in>
+        <items refid="3rd-party-zip-files" />
+      </in>
+      <do>
+        <property name="path" value="${directory::get-parent-directory(zip-file)}" />
+        <property name="index" value="${string::last-index-of(path, '\') + 1 }" />
+        <property name="length" value="${string::get-length(path) - string::last-index-of(path, '\') - 1}" />
+        <property name="module" value="${string::substring(path, index, length)}" />
+        <echo message="${module}"/>
+        <unzip zipfile="${zip-file}" todir="${webapp}/Editor/${module}"/>
+      </do>
+    </foreach>
+  </target>
+
+  <target name="clear-all">
+    <delete>
+      <fileset basedir="${temp}">
+        <include name="**/*" />
+      </fileset>
+    </delete>
+  </target>
+</project>
