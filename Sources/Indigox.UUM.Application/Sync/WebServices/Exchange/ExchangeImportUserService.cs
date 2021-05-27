@@ -54,12 +54,30 @@ namespace Indigox.UUM.Application.Sync.WebServices.Exchange
         {
             if (!string.IsNullOrEmpty(userID))
             {
-                new ExchangeManagerService().DisableMailBox(userID);
+                string account = userID;
+                if (userID.IndexOf("@") > -1)
+                {
+                    account = userID.Substring(0, userID.IndexOf("@"));
+                }
+                ExchangeManagerService service = new ExchangeManagerService();
+                service.LimitMailBox(account);
+                service.HideMailBox(account);
             }
         }
 
         public void Enable( string userID ,string organizationalUnitID, string accountName, string name, string fullName, string displayName, string email, string title, string mobile, string telephone, string fax, double orderNum, string description, string otherContact, string portrait, string mailDatabase)
         {
+            if (!string.IsNullOrEmpty(userID))
+            {
+                string account = userID;
+                if (userID.IndexOf("@") > -1)
+                {
+                    account = userID.Substring(0, userID.IndexOf("@"));
+                }
+                ExchangeManagerService service = new ExchangeManagerService();
+                service.UnlimitMailBox(account);
+                service.ShowMailBox(account);
+            }
             //new ExchangeManagerService().ConnectMailBox(userID,mailDatabase);
         }
 
