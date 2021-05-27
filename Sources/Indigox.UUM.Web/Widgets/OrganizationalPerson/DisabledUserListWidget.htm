@@ -1,0 +1,56 @@
+﻿<div id="searchPanel" class="control-content biz-form-filter" style="border: 1px dotted #ebebeb;height:40px;">
+    <div class="biz-form-search" style="float:left;margin-left:10px;">
+        <input type="text" id="searchKey" class="control-textbox" />
+        <input type="button" id="searchButton" class="control-button" value="搜索" />
+    </div>
+</div>
+<div class="biz-common-list">
+    <dl>
+        <dt>
+            <label style="width: 15%;">
+                姓名</label>
+            <label style="width: 15%;">
+                账号</label>
+            <label style="width: 15%;">
+                手机</label>
+            <label style="width: 15%;">
+                电话</label>
+            <label style="width: 15%;">
+                原所属部门</label>
+            <label style="width: 24%;">
+                操作</label>
+        </dt>
+        <dd>
+            <ul id="OrganizationalPersonList" class="control-datalist">
+                <li id="OrganizationalPersonItem" class="control-template">                   
+                    <div style="width: 15%;">
+                        <label id="Name" class="control-label">
+                        </label>
+                    </div>
+                    <div style="width: 15%;">
+                        <label id="AccountName" class="control-label">
+                        </label>
+                    </div>
+                    <div style="width: 15%;">
+                        <label id="Mobile" class="control-label">
+                        </label>
+                    </div>
+                    <div style="width: 15%;">
+                        <label id="Telephone" class="control-label">
+                        </label>
+                    </div>
+                    <div style="width: 15%;">
+                        <label id="OrganizationName" class="control-label">
+                        </label>
+                    </div>
+                    <div style="width: 24%;">
+                        <input id="btnEnableOrganizationalPerson" type="button" class="control-button" value="启用" />
+                        <input id="btnDeleteOrganizationalPerson" type="button" class="control-button" value="删除" />
+                    </div>
+                </li>
+            </ul>
+        </dd>
+    </dl>
+    <div id="Paging" class="control-paging">
+    </div>
+</div>

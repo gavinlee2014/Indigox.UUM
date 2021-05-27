@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Indigox.Common.Membership" assembly="Indigox.Common.Membership" default-lazy="false" default-access="field.camelcase">
+
+  <subclass name="User" discriminator-value="200" extends="Principal">
+    <join table="Users" optional="true">
+      <key>
+        <column name="ID" sql-type="char(12)" length="12" />
+      </key>
+      <property name="AccountName">
+        <column name="AccountName" length="50" sql-type="nvarchar(50)" />
+      </property>
+      <property name="IdCard">
+        <column name="IdCard" length="50" sql-type="nvarchar(50)" />
+      </property>
+      <property name="Mobile">
+        <column name="Mobile" length="50" sql-type="nvarchar(50)" />
+      </property>
+      <property name="Telephone">
+        <column name="Telephone" length="50" sql-type="nvarchar(50)" />
+      </property>
+      <property name="Title">
+        <column name="Title" length="50" sql-type="nvarchar(50)" />
+      </property>
+      <property name="Level" type="int">
+        <column name="Level" sql-type="int" />
+      </property>
+      <property name="Fax" type="string">
+        <column name="Fax" sql-type="nvarchar(50)" length="50" />
+      </property>
+      <property name="OtherContact" type="string">
+        <column name="OtherContact" sql-type="nvarchar(max)" length="2147483647" />
+      </property>
+      <property name="Profile" type="string">
+        <column name="Profile" sql-type="nvarchar(250)" length="250" />
+      </property>
+    </join>
+  </subclass>
+
+</hibernate-mapping>

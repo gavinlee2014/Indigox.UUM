@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Indigox.Common.Membership" assembly="Indigox.Common.Membership" default-lazy="false" default-access="field.camelcase">
+
+  <subclass name="OrganizationalPerson" discriminator-value="201" extends="User">
+    <many-to-one name="Organization" cascade="none" class="OrganizationalUnit">
+      <column name="Organization" length="12" sql-type="char(12)" />
+    </many-to-one>
+  </subclass>
+
+</hibernate-mapping>

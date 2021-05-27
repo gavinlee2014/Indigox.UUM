@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{47A80E9F-7D73-4D2F-8A20-73747BA625FC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Indigox.UUM.Sync</RootNamespace>
+    <AssemblyName>Indigox.UUM.Sync</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="indigox.common.database">
+      <HintPath>..\..\References\indigox.common.database.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.domainmodels">
+      <HintPath>..\..\References\indigox.common.domainmodels.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.domainmodels.repository.nhibernateimpl">
+      <HintPath>..\..\References\indigox.common.domainmodels.repository.nhibernateimpl.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.eventbus">
+      <HintPath>..\..\References\indigox.common.eventbus.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\indigox.common.logging.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.membership">
+      <HintPath>..\..\References\indigox.common.membership.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.message">
+      <HintPath>..\..\References\indigox.common.message.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.nhibernate.extension">
+      <HintPath>..\..\References\indigox.common.nhibernate.extension.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.statecontainer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\indigox.common.statecontainer.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\indigox.common.utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.settings, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\indigox.settings.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contexts\HashSyncContext.cs" />
+    <Compile Include="Executors\SaveIDWebServiceExecutor.cs" />
+    <Compile Include="Executors\WebServiceExecutor.cs" />
+    <Compile Include="Gateways\EventGateway.cs" />
+    <Compile Include="Interfaces\IEventGateway.cs" />
+    <Compile Include="Interfaces\ISyncContext.cs" />
+    <Compile Include="Interfaces\ISyncExecutor.cs" />
+    <Compile Include="Interfaces\ISyncQueue.cs" />
+    <Compile Include="Interfaces\ISyncTask.cs" />
+    <Compile Include="Mail\MailService.cs" />
+    <Compile Include="Mail\SyncMaiSender.cs" />
+    <Compile Include="Model\ExternalDescriptor.cs" />
+    <Compile Include="Model\SyncType.cs" />
+    <Compile Include="Model\SysConfigurationSorter.cs" />
+    <Compile Include="Model\SysKeyMapping.cs" />
+    <Compile Include="Model\SysKeyMappingService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Model\SysConfiguration.cs" />
+    <Compile Include="Model\SysConfigurationService.cs" />
+    <Compile Include="SyncManager.cs" />
+    <Compile Include="SyncQueues\AsyncSequenceQueue.cs" />
+    <Compile Include="Interfaces\ISyncTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\AbstractPrincipalEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\RoleDeletedEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\OrganizationalUnitAddedToGroupEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\GroupCreatedEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\GroupDeletedEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\GroupPropertyChangedEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\OrganizationalRoleAddedToGroupEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\OrganizationalRoleAddedToOrganizationalUnitEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\OrganizationalRoleAddedToRoleEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\OrganizationalRoleCreatedEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\OrganizationalRoleDeletedEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\OrganizationalRolePropertyChangedEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\OrganizationalRoleRemovedFromGroupEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\OrganizationalRoleRemovedFromOrganizationalUnitEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\OrganizationalRoleRemovedFromRoleEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\OrganizationalUnitAddedToOrganizationalUnitEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\OrganizationalUnitCreatedEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\OrganizationalUnitDeletedEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\OrganizationalUnitPropertyChangedEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\OrganizationalUnitRemovedFromGroupEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\OrganizationalUnitRemovedFromOrganizationalUnitEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\RoleCreatedEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\RolePropertyChangedEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\UserAddedToGroupEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\UserAddedToOrganizationalUnitEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\UserAddedToOrganizationalRoleEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\UserCreatedEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\UserDeletedEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\UserDisabledEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\UserEnabledEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\UserPropertyChangedEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\UserRemovedFromGroupEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\UserRemovedFromOrganizationalRoleEventTaskBuilder.cs" />
+    <Compile Include="Tasks\Builders\UserRemovedFromOrganizationalUnitEventTaskBuilder.cs" />
+    <Compile Include="Tasks\SyncTask.cs" />
+    <Compile Include="Interfaces\SyncTaskState.cs" />
+    <Compile Include="Tasks\TaskBuilderFactory.cs" />
+    <Compile Include="WebServiceClients\Consts.cs" />
+    <Compile Include="WebServiceClients\ImportGroupServiceClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServiceClients\ImportOrganizationalRoleServiceClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServiceClients\ImportOrganizationalUnitServiceClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServiceClients\ImportRoleServiceClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServiceClients\ImportUserServiceClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Web\NHibernateFactoryInvoker.cs" />
+    <Compile Include="Web\Initializer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Maps\SyncTask.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Maps\SysConfiguration.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Indigox.UUM.Sync.Interface\Indigox.UUM.Sync.Interface.csproj">
+      <Project>{F5927889-D296-4D9A-BAA9-DB1B5CCA1B05}</Project>
+      <Name>Indigox.UUM.Sync.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Maps\SysKeyMapping.hbm.xml" />
+  </ItemGroup>
+  <Import Project="..\..\Build\configurations.proj" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\Build\webapp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Indigox.UUM.Application"
+                   namespace="Indigox.UUM.Application.DTO"
+                   default-lazy="false">
+
+  <class name="HRPrincipalDTO" table="v_HRPrincipal" >
+    <id name="ID" type="string">
+      <column name="id" sql-type="varchar(100)" length="100" />
+    </id>
+    <property name="Name" type="string">
+      <column name="name" sql-type="nvarchar(255)" length="255" />
+    </property>
+    <property name="DisplayName" type="string">
+      <column name="DisplayName" sql-type="nvarchar(1000)" length="1000" />
+    </property>
+    <property name="Email" type="string">
+      <column name="email" sql-type="varchar(500)" length="500" />
+    </property>
+    <property name="ParentID" type="string">
+      <column name="ParentID" sql-type="nvarchar(255)" length="255" />
+    </property>
+    <property name="State" type="int">
+      <column name="state" sql-type="int" />
+    </property>
+    <property name="PrincipalType" type="int">
+      <column name="type" sql-type="int" />
+    </property>
+    <property name="ModifyTime" type="datetime">
+      <column name="ModifyTime" sql-type="datetime" />
+    </property>
+  </class>
+</hibernate-mapping>

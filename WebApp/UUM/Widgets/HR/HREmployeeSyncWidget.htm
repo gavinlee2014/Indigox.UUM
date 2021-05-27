@@ -1,0 +1,176 @@
+﻿<div id="HREmployeeSyncDialog" class="control-dialog invisible">
+    <h1>
+        <span>人员同步</span>
+        <input type="button" />
+    </h1>
+    <div class="body">
+        <div id="HREmployeeEditPanel" class="control-content">
+            <ul class="form_list">
+                <li>
+                    <dl>
+                        <dt>
+                            <label>
+                                名称</label>
+                        </dt>
+                        <dd>
+                            <label id="Name" class="control-label">
+                            </label>
+                            <div style="margin-left:50px;color:Red;display: inline-block;" class="control-literal" id="HasPolyphone"></div>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <label>
+                                显示名</label>
+                        </dt>
+                        <dd>
+                            <input type="text" id="DisplayName" class="control-textbox" />
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <label>
+                                状态</label>
+                        </dt>
+                        <dd>
+                            <label id="State" class="control-label">
+                            </label>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <label>
+                                职位</label>
+                        </dt>
+                        <dd>
+                            <label id="Title" class="control-label">
+                            </label>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <label>
+                                部门</label>
+                        </dt>
+                        <dd>
+                            <label id="ParentName" class="control-label">
+                            </label>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <label>
+                                电话</label>
+                        </dt>
+                        <dd>
+                            <label id="Tel" class="control-label">
+                            </label>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <label>
+                                手机</label>
+                        </dt>
+                        <dd>
+                            <label id="Mobile" class="control-label">
+                            </label>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <label>
+                                传真</label>
+                        </dt>
+                        <dd>
+                            <label id="Fax" class="control-label">
+                            </label>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <label>
+                                帐号</label>
+                        </dt>
+                        <dd>
+                            <input type="text" id="AccountName" class="control-textbox" />
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <label>
+                                邮箱数据库</label>
+                        </dt>
+                        <dd>
+                            <select id="MailDatabase" class="control-dropdownlist">
+                            </select>
+                        </dd>
+                    </dl>
+                <li>
+                    <dl>
+                        <dt>
+                            <label>
+                                邮件</label>
+                        </dt>
+                        <dd>
+                            <input type="text" id="Email" class="control-textbox" />
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <label>
+                                描述</label>
+                        </dt>
+                        <dd>
+                            <Label type="text" id="Description" class="control-label" />
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div id="bindExistPanel" class="control-content invisible">
+            <ul class="form_list">
+                <li>
+                    <dl>
+                        <dt>
+                            <label>
+                                绑定现有帐号</label>
+                        </dt>
+                        <dd>
+                            <select id="bindExistAccount" class="control-dropdownlist">
+                            </select>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div id="HREmployeeEditPanelToolBar" class="control-content toolbar">
+            <ul class="form_list">
+                <li>
+                    <input type="button" id="btnSubmit" class="control-button common_btn" value="确定" />
+                    <input type="button" id="btnCancel" class="control-button common_btn" value="取消" />
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

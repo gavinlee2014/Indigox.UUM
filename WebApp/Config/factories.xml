@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <!--<factory assemblyName="Indigox.Common.Membership" path="Config\membership.nhb.cfg.xml" connectionString="BPM" autoBind="true" />-->
+  <factory assemblyName="Indigox.Common.Membership" path="Config\uum.nhb.cfg.xml" connectionString="UUM" autoBind="true" />
+  <factory assemblyName="Indigox.CMS.Security" path="Config\security.nhb.cfg.xml" connectionString="UUM" autoBind="true" />
+  <factory assemblyName="Indigox.UUM.Naming" path="Config\uum.naming.nhb.cfg.xml" connectionString="UUM" autoBind="true" />
+  <factory assemblyName="Indigox.UUM.Application" path="Config\uumquery.nhb.cfg.xml" connectionString="UUM" autoBind="false" />
+  <factory assemblyName="Indigox.UUM.Sync" path="Config\uum.sync.nhb.cfg.xml" connectionString="UUM" autoBind="true" />
+  <factory assemblyName="Indigox.UUM.HR" path="Config\uum.hr.nhb.cfg.xml" connectionString="UUM" autoBind="true" />
+  <factory assemblyName="Indigox.Settings" path="Config\settings.nhb.cfg.xml" connectionString="UUM" autoBind="true" />
+  <factory assemblyName="Indigox.Settings.Application" path="Config\settingquery.nhb.cfg.xml" connectionString="UUM" autoBind="false" />
+  <factory assemblyName="Indigox.UUM.NHibernateImpl" path="Config\uum.nhb.cfg.xml" connectionString="UUM" autoBind="true" />
+</config>

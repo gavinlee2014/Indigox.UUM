@@ -1,0 +1,29 @@
+﻿<div class="biz-form-search">
+  <input type="text" id="searchKey" class="control-textbox" />
+  <input type="button" id="searchButton" class="control-button" value="搜索" />
+</div>
+<div class="biz-addressbook-list">
+  <dl>
+    <dt>
+    </dt>
+    <dd>
+      <ul id="AddressBookList" class="control-datalist">
+        <li id="AddressBookListItem" class="control-template">
+          <div class="upper">
+            <div class="left ">
+              <label id="UserName" class="control-label">
+              </label>
+            </div>
+          </div>
+          <div class="lower">
+            <div class="left">
+              <label id="UserOrgAndTitle" class="control-label">
+              </label>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </dd>
+  </dl>
+  <div id="Paging" class="control-paging"></div>
+</div>

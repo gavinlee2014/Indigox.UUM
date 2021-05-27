@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<dbIdGenertators>
+  <dbIdGenertator name="UUM" database="UUM" table="serial" />
+  <dbIdGenertator name="ProcessCategory" database="BPM" table="serial" />
+  <dbIdGenertator name="NavigationNode" database="Settings" table="serial" />
+</dbIdGenertators>

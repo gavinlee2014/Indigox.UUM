@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<zones>
+
+  <page url="/Addressbook/List.htm" deviceType="mobile">
+    <zone name="HeadZone">
+      <widget name="NavActionWidget" />
+      <widget name="NavTitleWidget" />
+      <widget name="NavMenuWidget_mobi" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="AddressBookListWidget" />
+    </zone>
+    <zone name="FloatZone">
+    </zone>
+    <zone name="ActionbarZone">
+      <widget name="MobileSettingbarWidget" />
+    </zone>
+  </page>
+
+  <page url="/Addressbook/View.htm" deviceType="mobile">
+    <zone name="HeadZone">
+      <widget name="NavActionWidget" />
+      <widget name="NavTitleWidget" />
+      <widget name="NavMenuWidget_mobi" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="AddressBookViewWidget" />
+    </zone>
+    <zone name="FloatZone">
+    </zone>
+    <zone name="ActionbarZone">
+      <widget name="MobileSettingbarWidget" />
+    </zone>
+  </page>
+
+</zones>

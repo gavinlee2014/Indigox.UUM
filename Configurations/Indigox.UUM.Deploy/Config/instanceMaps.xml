@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <instanceMap interface="Indigox.Common.Membership.Interfaces.IPrincipal,Indigox.Common.Membership" instance="Indigox.Common.Membership.Principal,Indigox.Common.Membership" />
+  <instanceMap interface="Indigox.Common.Membership.Interfaces.IUser,Indigox.Common.Membership" instance="Indigox.Common.Membership.OrganizationalPerson,Indigox.Common.Membership" />
+  <instanceMap interface="Indigox.Common.Membership.Interfaces.IOrganizationalPerson,Indigox.Common.Membership" instance="Indigox.Common.Membership.OrganizationalPerson,Indigox.Common.Membership" />
+  <instanceMap interface="Indigox.Common.Membership.Interfaces.IOrganizationalUnit,Indigox.Common.Membership" instance="Indigox.Common.Membership.OrganizationalUnit,Indigox.Common.Membership" />
+  <instanceMap interface="Indigox.Common.Membership.Interfaces.IRole,Indigox.Common.Membership" instance="Indigox.Common.Membership.Role,Indigox.Common.Membership" />
+  <instanceMap interface="Indigox.Common.Membership.Interfaces.IOrganizationalRole,Indigox.Common.Membership" instance="Indigox.Common.Membership.OrganizationalRole,Indigox.Common.Membership" />
+  <instanceMap interface="Indigox.Common.Membership.Interfaces.IReportingHierarchy,Indigox.Common.Membership" instance="Indigox.Common.Membership.ReportingHierarchy,Indigox.Common.Membership" />
+
+  <instanceMap interface="Indigox.CMS.Security.Interfaces.IAcl,Indigox.CMS.Security" instance="Indigox.CMS.Security.Acl,Indigox.CMS.Security" />
+  <instanceMap interface="Indigox.CMS.Security.Interfaces.IMutableAcl,Indigox.CMS.Security" instance="Indigox.CMS.Security.Acl,Indigox.CMS.Security" />
+  <instanceMap interface="Indigox.CMS.Security.Interfaces.IAce,Indigox.CMS.Security" instance="Indigox.CMS.Security.Ace,Indigox.CMS.Security" />
+  <instanceMap interface="Indigox.CMS.Security.Interfaces.IAuthority,Indigox.CMS.Security" instance="Indigox.CMS.Security.Authority,Indigox.CMS.Security" />
+
+  <instanceMap interface="Indigox.Settings.Interface.Navi.INavigation,Indigox.Settings" instance="Indigox.Settings.ObjectModel.Navi.Navigation,Indigox.Settings" />
+  <instanceMap interface="Indigox.Settings.Interface.Navi.INavigationNode,Indigox.Settings" instance="Indigox.Settings.ObjectModel.Navi.NavigationNode,Indigox.Settings" />
+</config>

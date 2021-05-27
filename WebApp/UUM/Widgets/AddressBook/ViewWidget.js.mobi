@@ -1,0 +1,121 @@
+﻿define("/UUM/Widgets/AddressBook/ViewWidget",
+    [
+        "Indigox.Web.JsLib.Utils.StringUtil",
+        "Indigox.Web.JsLib.Models.RecordManager",
+        "Indigox.Web.JsLib.Proxy.InstructionProxy",
+        "Indigox.Web.JsLib.Controllers.FormController",
+        "Indigox.Web.JsLib.Mobile.AppServiceFactory",
+        "Indigox/UUM/Application/AddressBook"
+    ],
+    function (
+        StringUtil,
+        RecordManager,
+        InstructionProxy,
+        FormController,
+		AppServiceFactory
+    ) {
+
+        var exports = function (widget) {
+            var formControl = $(widget).Content("AddressBookViewForm").first();
+
+            configureBindings(formControl);
+
+            var controller = new FormController({
+                model: RecordManager.getInstance().createRecordSet('AddressBook', {
+                    proxy: new InstructionProxy({
+                        query: "AddressBookQuery"
+                    })
+                }),
+                params: {
+                    "PrincipalID": Page().getUrlParam("ID")
+                }
+            });
+
+            formControl.setController(controller);
+
+            $(formControl).Button("CreateContact").first().on('clicked', function () {
+                var content = formControl;
+                var record = content.getController().getModel().getRecord(0);
+                var email = record.get("Email");
+                var name = record.get("UserName");
+                var phone = record.get("Telephone");
+                var mobile = record.get("Mobile");
+
+                AppServiceFactory.getInstance().call("CreateContact", {
+                    email: email,
+                    name: name,
+                    phone: phone,
+                    mobile: mobile
+                });
+            });
+        };
+
+        function configureBindings(formControl) {
+            $(formControl).HyperLink("CallMobile").first().configure({
+                text: "CALL",
+                binding: {
+                    mapping: {
+                        visible: function (record) {
+                            return !StringUtil.isNullOrEmpty(record.get("Mobile"));
+                        },
+                        href: function (record) {
+                            if (StringUtil.isNullOrEmpty(record.get("Mobile"))) {
+                                return "#";
+                            }
+                            return "tel:" + record.get("Mobile");
+                        }
+                    }
+                }
+            });
+            $(formControl).HyperLink("SendSMS").first().configure({
+                text: "SMS",
+                binding: {
+                    mapping: {
+                        visible: function (record) {
+                            return !StringUtil.isNullOrEmpty(record.get("Mobile"));
+                        },
+                        href: function (record) {
+                            if (StringUtil.isNullOrEmpty(record.get("Mobile"))) {
+                                return "#";
+                            }
+                            return "sms:" + record.get("Mobile");
+                        }
+                    }
+                }
+            });
+            $(formControl).HyperLink("CallTel").first().configure({
+                text: "CALL",
+                binding: {
+                    mapping: {
+                        visible: function (record) {
+                            return !StringUtil.isNullOrEmpty(record.get("Telephone"));
+                        },
+                        href: function (record) {
+                            if (StringUtil.isNullOrEmpty(record.get("Telephone"))) {
+                                return "#";
+                            }
+                            return "tel:" + record.get("Telephone");
+                        }
+                    }
+                }
+            });
+            $(formControl).HyperLink("SendEmail").first().configure({
+                text: "SEND",
+                binding: {
+                    mapping: {
+                        visible: function (record) {
+                            return !StringUtil.isNullOrEmpty(record.get("Email"));
+                        },
+                        href: function (record) {
+                            if (StringUtil.isNullOrEmpty(record.get("Email"))) {
+                                return "#";
+                            }
+                            return "mailto:" + record.get("Email");
+                        }
+                    }
+                }
+            });
+        }
+
+        return exports;
+    });

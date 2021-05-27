@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <defaultAction>RedirectToForbiddenPage</defaultAction>
+
+  <forbiddenPage>/forbidden.htm</forbiddenPage>
+
+  <rules>
+    <rule ext="js;css;png;jpg;jpge;gif;bpm;ico;appcache;apk;ipa">
+      <authorization>
+        <access>**</access>
+      </authorization>
+    </rule>
+    <rule path="/login">
+      <authorization>
+        <access>**</access>
+      </authorization>
+    </rule>
+    <rule path="/testing">
+      <authorization>
+        <access>**</access>
+      </authorization>
+    </rule>
+
+    <rule path="/Admin/" verb="CALL">
+      <authorization>
+        <access>admin</access>
+      </authorization>
+      <action>ResponseStateCode403</action>
+    </rule>
+
+    <rule verb="CALL">
+      <authorization>
+        <access>*</access>
+      </authorization>
+      <action>ResponseStateCode401</action>
+    </rule>
+    <rule ext="htm;aspx">
+      <authorization>
+        <access>*</access>
+      </authorization>
+      <action>RedirectToLoginPage</action>
+    </rule>
+  </rules>
+</configuration>

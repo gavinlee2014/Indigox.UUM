@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <factory assemblyName="Indigox.Common.Membership" path="Config\uum.nhb.cfg.xml" connectionString="UUM" autoBind="true" />
+  <factory assemblyName="Indigox.UUM.Application" path="Config\uumquery.nhb.cfg.xml" connectionString="UUM" autoBind="false" />
+  <factory assemblyName="Indigox.UUM.Naming" path="Config\uum.naming.nhb.cfg.xml" connectionString="UUM" autoBind="true" />
+</config>

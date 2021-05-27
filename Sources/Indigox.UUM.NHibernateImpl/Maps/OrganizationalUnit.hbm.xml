@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Indigox.Common.Membership" assembly="Indigox.Common.Membership" default-lazy="false" default-access="field.camelcase">
+
+  <subclass name="OrganizationalUnit" discriminator-value="100" extends="Container">
+    <many-to-one name="Organization" cascade="none" class="OrganizationalUnit">
+      <column name="Organization" length="12" sql-type="char(12)" />
+    </many-to-one>
+    <join table="OrganizationalUnit" optional="true">
+      <key>
+        <column name="ID" sql-type="char(12)" length="12" />
+      </key>
+      <many-to-one name="Manager" cascade="none" class="Principal">
+        <column name="Manager" length="12" sql-type="char(12)" />
+      </many-to-one>
+    </join>
+  </subclass>
+
+</hibernate-mapping>

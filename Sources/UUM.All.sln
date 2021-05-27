@@ -1,0 +1,91 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indigox.UUM.Application", "Indigox.UUM.Application\Indigox.UUM.Application.csproj", "{6C9F466D-D159-4BD8-875D-775D08FD4DCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indigox.UUM.NHibernateImpl", "Indigox.UUM.NHibernateImpl\Indigox.UUM.NHibernateImpl.csproj", "{77D27774-24A7-4DE0-8571-6A22D04A7D14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indigox.UUM", "Indigox.UUM\Indigox.UUM.csproj", "{9E50DD30-C727-4760-BA00-4E5788080D5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indigox.UUM.Web", "Indigox.UUM.Web\Indigox.UUM.Web.csproj", "{4BF65B0F-ECAC-4361-9230-20A58EA6D787}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indigox.UUM.Config", "..\Configurations\Indigox.UUM.Config\Indigox.UUM.Config.csproj", "{4CB9202C-858F-4DD9-B9D0-FD4BA7C9D9C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{FA578C6F-06C9-4FE1-A37B-1DF7BC7119AC}"
+	ProjectSection(SolutionItems) = preProject
+		deploy.ivy.xml = deploy.ivy.xml
+		ivy.xml = ivy.xml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indigox.UUM.Sync.Interface", "Indigox.UUM.Sync.Interface\Indigox.UUM.Sync.Interface.csproj", "{F5927889-D296-4D9A-BAA9-DB1B5CCA1B05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indigox.UUM.Naming", "Indigox.UUM.Naming\Indigox.UUM.Naming.csproj", "{25D54C8F-C96C-4C23-A53A-C2D684AC5A1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indigox.UUM.Sync", "Indigox.UUM.Sync\Indigox.UUM.Sync.csproj", "{47A80E9F-7D73-4D2F-8A20-73747BA625FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indigox.UUM.Sync.OpusOne.PowerHRP", "Indigox.UUM.Sync.OpusOne.PowerHRP\Indigox.UUM.Sync.OpusOne.PowerHRP.csproj", "{A7517983-60B0-4F36-968F-ACFCBA147181}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indigox.UUM.HR", "Indigox.UUM.HR\Indigox.UUM.HR.csproj", "{1371F264-5B02-4B92-858D-69668E4D6C5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indigox.UUM.Deploy", "..\Configurations\Indigox.UUM.Deploy\Indigox.UUM.Deploy.csproj", "{665BEFC1-6355-4F38-9B07-CD4FD330A97D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C9F466D-D159-4BD8-875D-775D08FD4DCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C9F466D-D159-4BD8-875D-775D08FD4DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C9F466D-D159-4BD8-875D-775D08FD4DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C9F466D-D159-4BD8-875D-775D08FD4DCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77D27774-24A7-4DE0-8571-6A22D04A7D14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77D27774-24A7-4DE0-8571-6A22D04A7D14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77D27774-24A7-4DE0-8571-6A22D04A7D14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77D27774-24A7-4DE0-8571-6A22D04A7D14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E50DD30-C727-4760-BA00-4E5788080D5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E50DD30-C727-4760-BA00-4E5788080D5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E50DD30-C727-4760-BA00-4E5788080D5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E50DD30-C727-4760-BA00-4E5788080D5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BF65B0F-ECAC-4361-9230-20A58EA6D787}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BF65B0F-ECAC-4361-9230-20A58EA6D787}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BF65B0F-ECAC-4361-9230-20A58EA6D787}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BF65B0F-ECAC-4361-9230-20A58EA6D787}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CB9202C-858F-4DD9-B9D0-FD4BA7C9D9C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CB9202C-858F-4DD9-B9D0-FD4BA7C9D9C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CB9202C-858F-4DD9-B9D0-FD4BA7C9D9C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CB9202C-858F-4DD9-B9D0-FD4BA7C9D9C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5927889-D296-4D9A-BAA9-DB1B5CCA1B05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5927889-D296-4D9A-BAA9-DB1B5CCA1B05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5927889-D296-4D9A-BAA9-DB1B5CCA1B05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5927889-D296-4D9A-BAA9-DB1B5CCA1B05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25D54C8F-C96C-4C23-A53A-C2D684AC5A1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25D54C8F-C96C-4C23-A53A-C2D684AC5A1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25D54C8F-C96C-4C23-A53A-C2D684AC5A1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25D54C8F-C96C-4C23-A53A-C2D684AC5A1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47A80E9F-7D73-4D2F-8A20-73747BA625FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47A80E9F-7D73-4D2F-8A20-73747BA625FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47A80E9F-7D73-4D2F-8A20-73747BA625FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47A80E9F-7D73-4D2F-8A20-73747BA625FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7517983-60B0-4F36-968F-ACFCBA147181}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7517983-60B0-4F36-968F-ACFCBA147181}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7517983-60B0-4F36-968F-ACFCBA147181}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7517983-60B0-4F36-968F-ACFCBA147181}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1371F264-5B02-4B92-858D-69668E4D6C5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1371F264-5B02-4B92-858D-69668E4D6C5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1371F264-5B02-4B92-858D-69668E4D6C5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1371F264-5B02-4B92-858D-69668E4D6C5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{665BEFC1-6355-4F38-9B07-CD4FD330A97D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{665BEFC1-6355-4F38-9B07-CD4FD330A97D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{665BEFC1-6355-4F38-9B07-CD4FD330A97D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{665BEFC1-6355-4F38-9B07-CD4FD330A97D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9212AE35-20D1-464D-8C98-69E101F4BD52}
+	EndGlobalSection
+EndGlobal

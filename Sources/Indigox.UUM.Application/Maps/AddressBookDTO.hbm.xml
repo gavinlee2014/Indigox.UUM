@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Indigox.UUM.Application"
+                   namespace="Indigox.UUM.Application.DTO"
+                   default-lazy="false">
+
+  <class name="AddressBookDTO" table="Principal" >
+    <id name="UserID" type="string">
+      <column name="ID" sql-type="char(12)" length="12" />
+    </id>
+    <property name="UserName" type="string">
+      <column name="Name" sql-type="nvarchar(255)" length="255" />
+    </property>
+    <property name="FullName" type="string">
+      <column name="FullName" sql-type="nvarchar(1000)" length="1000" />
+    </property>
+    <property name="DisplayName" type="string">
+      <column name="DisplayName" sql-type="nvarchar(1000)" length="1000" />
+    </property>
+    <property name="Email" type="string">
+      <column name="Email" sql-type="varchar(500)" length="500" />
+    </property>
+    <property name="AccountName">
+      <column name="AccountName" length="50" sql-type="nvarchar(50)" />
+    </property>
+    <property name="Mobile">
+      <column name="Mobile" length="50" sql-type="nvarchar(50)" />
+    </property>
+    <property name="Telephone">
+      <column name="Telephone" length="50" sql-type="nvarchar(50)" />
+    </property>
+    <property name="Fax">
+      <column name="Fax" length="50" sql-type="nvarchar(50)" />
+    </property>
+    <property name="OtherContact">
+      <column name="OtherContact" length="50" sql-type="nvarchar(50)" />
+    </property>
+    <property name="Title">
+      <column name="Title" length="50" sql-type="nvarchar(50)" />
+    </property>
+    <property name="Organization" type="string">
+      <column name="Organization" sql-type="char(12)" length="12" />
+    </property>
+    <property name="OrganizationName">
+      <column name="OrganizationFullName" length="50" sql-type="nvarchar(50)" />
+    </property>
+    <property name="IsEnabled" type="bool">
+      <column name="IsEnabled" sql-type="bit" />
+    </property>
+    <property name="IsDeleted" type="bool">
+      <column name="IsDeleted" sql-type="bit" />
+    </property>
+    <property name="CreateTime" type="datetime">
+      <column name="CreateTime" sql-type="datetime" />
+    </property>
+    <property name="ModifyTime" type="datetime">
+      <column name="ModifyTime" sql-type="datetime" />
+    </property>
+    <property name="Profile">
+      <column name="Profile" sql-type="nvarchar(250)" length="250"/>
+    </property>
+  </class>
+</hibernate-mapping>

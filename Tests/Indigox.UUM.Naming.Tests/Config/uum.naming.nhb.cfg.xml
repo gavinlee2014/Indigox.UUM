@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-configuration  xmlns="urn:nhibernate-configuration-2.2" >
+  <session-factory name="NHibernateTest">
+    <property name="connection.driver_class">NHibernate.Driver.SqlClientDriver</property>
+    <property name="adonet.batch_size">10</property>
+    <property name="show_sql">true</property>
+    <property name="dialect">NHibernate.Dialect.MsSql2005Dialect</property>
+    <property name="command_timeout">60</property>
+    <!--
+      validate        加载hibernate时，验证创建数据库表结构
+      create          每次加载hibernate，重新创建数据库表结构，这就是导致数据库表数据丢失的原因。
+      create-drop     加载hibernate时创建，退出是删除表结构
+      update          加载hibernate自动更新数据库结构
+      none
+    -->
+    <property name="hbm2ddl.auto">validate</property>
+    <property name="query.substitutions">true 1, false 0, yes 'Y', no 'N'</property>
+    <property name="current_session_context_class">call</property>
+    
+    <mapping assembly="Indigox.UUM.Naming"/>
+
+  </session-factory>
+</hibernate-configuration>

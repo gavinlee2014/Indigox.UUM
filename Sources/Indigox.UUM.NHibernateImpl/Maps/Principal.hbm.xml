@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Indigox.Common.Membership" assembly="Indigox.Common.Membership" default-lazy="false" default-access="field.camelcase">
+
+  <class name="Principal" table="Principal" discriminator-value="1" abstract="true" where="IsDeleted=0">
+    <!-- enable cache -->
+    <cache usage="read-write" />
+    
+    <id name="ID" access="field.lowercase">
+      <column name="ID" sql-type="char(12)" length="12" />
+    </id>
+    <discriminator type="int">
+      <column name="Type" sql-type="int" />
+    </discriminator>
+    <property name="Name" type="string">
+      <column name="Name" sql-type="nvarchar(255)" length="255"/>
+    </property>
+    <property name="DisplayName" type="string">
+      <column name="DisplayName" sql-type="nvarchar(1000)" length="1000"/>
+    </property>
+    <property name="FullName" type="string">
+      <column name="FullName" sql-type="nvarchar(1000)" length="1000"/>
+    </property>
+    <property name="Email" type="string">
+      <column name="Email" sql-type="varchar(500)" length="500" />
+    </property>
+    <property name="MailDatabase" type="string">
+      <column name="MailDatabase" sql-type="varchar(500)" length="500" />
+    </property>
+    <property name="Description" type="string">
+      <column name="Description" sql-type="nvarchar(max)" length="2147483647" />
+    </property>
+    <property name="OrderNum" type="double">
+      <column name="OrderNum" sql-type="float" />
+    </property>
+    <property name="Enabled" type="bool">
+      <column name="IsEnabled" sql-type="bit" />
+    </property>
+    <property name="Deleted" type="bool">
+      <column name="IsDeleted" sql-type="bit" />
+    </property>
+    <property name="CreateTime" type="datetime">
+      <column name="CreateTime" sql-type="datetime" />
+    </property>
+    <property name="ModifyTime" type="datetime">
+      <column name="ModifyTime" sql-type="datetime" />
+    </property>
+	<map name="ExtendProperties" table="ExtendProperties">
+		<key column="ID"></key>
+		<index column="PropertyName" type="string" />
+		<element column="PropertyValue" type="string" />
+	</map>
+    <bag name="MemberOf" table="Membership" cascade="none" lazy="false">
+      <!-- enable collection cache -->
+      <cache usage="read-write" />
+      <key>
+        <column name="Child" sql-type="char(12)" length="12" />
+      </key>
+      <many-to-many class="Principal">
+        <column name="Parent" sql-type="char(12)" length="12" />
+      </many-to-many>
+    </bag>
+
+  </class>
+
+</hibernate-mapping>

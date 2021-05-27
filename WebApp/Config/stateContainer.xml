@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <stateContainer>
+    <listeners>
+      <listener type="Indigox.Common.NHibernateFactories.NHibernateStateContextListener, Indigox.Common.NHibernateFactories" />
+      <listener type="Indigox.Settings.Web.SettingsStateContextListener, Indigox.Settings" />
+      <listener type="Indigox.UUM.Sync.Web.Initializer, Indigox.UUM.Sync" />
+    </listeners>
+  </stateContainer>
+</config>

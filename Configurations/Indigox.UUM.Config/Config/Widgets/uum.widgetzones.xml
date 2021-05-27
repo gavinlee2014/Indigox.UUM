@@ -1,0 +1,706 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<zones>
+  <!-- 选择用户对话框 widget -->
+  <!--<zone name="UserSelectWidgetZone">
+    <widget name="UserSelectWidget" />
+  </zone>-->
+
+  <page url="/UUM/index.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <!--<widget name="PrincipalListToolBarWidget" />
+      <widget name="PrincipalListWidget" />-->
+    </zone>
+    <zone name="FloatZone">
+      <widget name="ChangeOrganizationWidget" />
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/Principal/List.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="PrincipalListToolBarWidget" />
+      <widget name="PrincipalListWidget" />
+    </zone>
+    <zone name="FloatZone">
+      <widget name="ChangeOrganizationWidget" />
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/SyncTask/List.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <!--<widget name="SysConfigurationListToolBarWidget" />-->
+      <widget name="SyncTaskListWidget" />
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+  
+  <page url="/SysConfiguration/List.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="SysConfigurationListToolBarWidget" />
+      <widget name="SysConfigurationListWidget" />
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/SysConfiguration/State.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="SysConfigurationStateListWidget" />
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>  
+
+  <page url="/SysConfiguration/Create.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="SysConfigurationCreateWidget" />
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+  
+  <page url="/SysConfiguration/Edit.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="SysConfigurationEditWidget" />
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+  
+  <page url="/NameStrategyDescriptor/List.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="NameStrategyDescriptorListToolBarWidget" />
+      <widget name="NameStrategyDescriptorListWidget" />
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/NameStrategyDescriptor/Edit.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <!--<widget name="NameStrategyDescriptorListToolBarWidget" />-->
+      <widget name="NameStrategyDescriptorEditWidget" />
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/NameStrategyDescriptor/Create.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="NameStrategyDescriptorCreateWidget" />
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/OrganizationalPerson/DeletedUserList.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <!--<widget name="DeletedUserListToolbarWidget" />-->
+      <widget name="DeletedUserListWidget" />
+    </zone>
+    <zone name="FloatZone">
+      <widget name="ChangeOrganizationWidget" />
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/OrganizationalPerson/DisabledUserList.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <!--<widget name="DisabledUserListToolbarWidget" />-->
+      <widget name="DisabledUserListWidget" />
+    </zone>
+    <zone name="FloatZone">
+      <widget name="EnableToDialogWidget" />
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/OrganizationalUnit/Edit.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="OrganizationalUnitEditWidget" />
+      <widget name="OrganizationalUnitEditToolBarWidget" />
+    </zone>
+    <zone name="FloatZone">
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/Corporation/Edit.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="CorporationEditWidget" />
+      <widget name="CorporationEditToolBarWidget" />
+    </zone>
+    <zone name="FloatZone">
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/Company/Edit.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="CompanyEditWidget" />
+      <widget name="CompanyEditToolBarWidget" />
+    </zone>
+    <zone name="FloatZone">
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/Department/Edit.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="DepartmentEditWidget" />
+      <widget name="DepartmentEditToolBarWidget" />
+    </zone>
+    <zone name="FloatZone">
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/Section/Edit.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="SectionEditWidget" />
+      <widget name="SectionEditToolBarWidget" />
+    </zone>
+    <zone name="FloatZone">
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/OrganizationalPerson/Edit.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="OrganizationalPersonEditWidget" />
+      <widget name="OrganizationalPersonEditToolBarWidget" />
+    </zone>
+    <zone name="FloatZone">
+      <widget name="SetPasswordWidget" />
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/OrganizationalPerson/HREdit.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="OrganizationalPersonHREditWidget" />
+      <widget name="OrganizationalPersonHREditToolBarWidget" />
+    </zone>
+    <zone name="FloatZone">
+      <widget name="SetPasswordWidget" />
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/Profile/Edit.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="ProfileEditWidget" />
+      <widget name="ProfileEditToolbarWidget" />
+    </zone>
+    <zone name="FloatZone">
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/Profile/ChangePassword.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="ChangePasswordWidget" />
+      <widget name="ChangePasswordToolbarWidget" />
+    </zone>
+    <zone name="FloatZone">
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+  
+  <page url="/OrganizationalRole/Edit.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="OrganizationalRoleEditWidget" />
+      <widget name="OrganizationalRoleEditToolBarWidget" />
+    </zone>
+    <zone name="FloatZone">
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/Group/List.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="GroupListToolBarWidget" />
+      <widget name="GroupListWidget" />
+    </zone>
+    <zone name="FloatZone">
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/Group/Edit.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="GroupEditWidget" />
+      <widget name="GroupEditToolBarWidget" />
+    </zone>
+    <zone name="FloatZone">
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/Role/List.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="RoleListToolBarWidget" />
+      <widget name="RoleListWidget" />
+    </zone>
+    <zone name="FloatZone">
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/Role/Edit.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="RoleEditWidget" />
+      <widget name="RoleEditToolBarWidget" />
+    </zone>
+    <zone name="FloatZone">
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/Principal/UserSearch.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="UserSearchListWidget" />
+    </zone>
+    <zone name="FloatZone">
+      <widget name="AddressBookViewWidget" />
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+  
+  <page url="/Addressbook/List.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="AddressBookListWidget" />
+    </zone>
+    <zone name="FloatZone">
+      <widget name="AddressBookViewWidget" />
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/HR/HROrganizationalList.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="HROrganizationalListWidget" />
+    </zone>
+    <zone name="FloatZone">
+      <widget name="HROrganizationalSyncWidget" />
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/HR/HRPrincipalList.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="HRPrincipalListWidget" />
+    </zone>
+    <zone name="FloatZone">
+      <widget name="HREmployeeSyncWidget" />
+      <widget name="HROrganizationalSyncWidget" />
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+  
+  <page url="/HR/HREmployeeList.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="HREmployeeListWidget" />
+    </zone>
+    <zone name="FloatZone">
+      <widget name="HREmployeeSyncWidget" />
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <page url="/Log/OperationLog.htm" deviceType="pc">
+    <zone name="HeadZone">
+      <widget name="NavMenuWidget" />
+    </zone>
+    <zone name="BarZone">
+    </zone>
+    <zone name="NavZone">
+    </zone>
+    <zone name="SideZone">
+      <widget name="UUMUserMainMenuWidget" />
+    </zone>
+    <zone name="WorkZone">
+      <widget name="LogQueryWidget" />
+      <widget name="OperationLogWidget" />
+    </zone>
+    <zone name="FloatZone">
+    </zone>
+    <zone name="FooterZone">
+      <widget name="FooterWidget" />
+    </zone>
+  </page>
+
+  <!-- this page is a dialog page, no master page -->
+  <page url="/Selection/UserSelect.htm" deviceType="pc">
+    <zone name="ContentZone">
+      <widget name="UserSelectionWidget" />
+    </zone>
+    <zone name="ButtonsZone">
+      <widget name="UserSelectionToolbarWidget" />
+    </zone>
+    <zone name="FloatZone">
+    </zone>
+  </page>
+</zones>

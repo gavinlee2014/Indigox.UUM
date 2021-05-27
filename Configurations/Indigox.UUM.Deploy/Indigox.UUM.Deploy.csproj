@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{665BEFC1-6355-4F38-9B07-CD4FD330A97D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Indigox.UUM.Deploy</RootNamespace>
+    <AssemblyName>Indigox.UUM.Deploy</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\DBIdGenertators.xml" />
+    <Content Include="Config\events.xml" />
+    <Content Include="Config\factories.xml" />
+    <Content Include="Config\instanceMaps.xml" />
+    <Content Include="Config\instructions.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\settings.xml" />
+    <Content Include="Config\stateContainer.xml" />
+    <Content Include="Config\url.authorization.xml" />
+    <Content Include="Config\widgets.xml" />
+    <Content Include="Config\widgetzones.xml" />
+    <Content Include="default.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="forbidden.htm" />
+    <Content Include="indigo.database.config" />
+    <Content Include="indigo.warmup.config" />
+    <Content Include="log4net.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="indigo.membership.config" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <Import Project="..\..\Build\configurations.proj" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\Build\webapp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

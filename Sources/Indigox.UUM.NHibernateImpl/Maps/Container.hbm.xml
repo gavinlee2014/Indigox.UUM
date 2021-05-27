@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Indigox.Common.Membership" assembly="Indigox.Common.Membership" default-lazy="false" default-access="field.camelcase">
+
+  <subclass name="Container" extends="Principal" discriminator-value="2" abstract="true">
+    <bag name="Members" table="Membership" cascade="none" inverse="true" lazy="true">
+      <key>
+        <column name="Parent" sql-type="char(12)" length="12" />
+      </key>
+      <many-to-many class="Principal">
+        <column name="Child" sql-type="char(12)" length="12" />
+      </many-to-many>
+    </bag>
+  </subclass>
+
+</hibernate-mapping>

@@ -1,0 +1,63 @@
+﻿<div id="userSelectDialog" class="control-dialog userselector-dialog invisible">
+    <h1>
+        <span>选择用户</span>
+        <input type="button" />
+    </h1>
+    <div class="body">
+        <div id="userSelectDialogContent" class="control-content">
+            <div class="userselect-body">
+                <div id="searchPanel" class="control-content biz-form-search">
+                    <input id="txtKeyword" type="text" value="" class="control-textbox" />
+                    <input id="btnSearch" type="button" value="搜索" class="control-button" />
+                </div>
+                <h2>
+                    选择用户(点击选择用户)</h2>
+                <div class="user-list">
+                    <div class="content_list">
+                        <div>
+                            <ul id="optionUsers" class="control-datalist">
+                                <li id="optionUsersItem" class="control-template">
+                                    <div class="username">
+                                        <label id="UserName" class="control-label">
+                                        </label>
+                                    </div>
+                                    <div class="userorg">
+                                        <label id="OrganizationName" class="control-label">
+                                        </label>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div id="optionUsersPaging" class="control-paging">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2>
+                    已选择的用户(点击用户可以将其移除)</h2>
+                <div class="user-selectedlist">
+                    <div class="content_list">
+                        <div>
+                            <ul id="selectedUsers" class="control-datalist">
+                                <li id="selectedUsersItem" class="control-template">
+                                    <div class="username">
+                                        <label id="UserName" class="control-label">
+                                        </label>
+                                    </div>
+                                    <!--<div class="userorg">
+                                    <label id="UserOrg" class="control-label">
+                                    </label>
+                                </div>-->
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="toolbar" class="control-content form_toolbar">
+                <input id="btnOK" type="button" value="确定" class="control-button" />
+                <input id="btnCancel" type="button" value="取消" class="control-button" />
+                <input id="btnClear" type="button" value="清除" class="control-button" />
+            </div>
+        </div>
+    </div>
+</div>

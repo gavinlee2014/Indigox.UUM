@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BA15711A-D043-4EC0-A37F-BCE03E5BE42F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Indigox.UUM.Naming.Tests</RootNamespace>
+    <AssemblyName>Indigox.UUM.Naming.Tests</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="indigox.common.configuration">
+      <HintPath>..\..\References\indigox.common.configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.domainmodels">
+      <HintPath>..\..\References\indigox.common.domainmodels.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.domainmodels.repository.nhibernateimpl">
+      <HintPath>..\..\References\indigox.common.domainmodels.repository.nhibernateimpl.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.eventbus">
+      <HintPath>..\..\References\indigox.common.eventbus.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.logging">
+      <HintPath>..\..\References\indigox.common.logging.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.nhibernatefactories">
+      <HintPath>..\..\References\indigox.common.nhibernatefactories.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.statecontainer">
+      <HintPath>..\..\References\indigox.common.statecontainer.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.testutilities">
+      <HintPath>..\..\References\indigox.common.testutilities.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\References\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ServiceTest\DbNameManagerTest.cs" />
+    <Compile Include="TestModel\MemNameManager.cs" />
+    <Compile Include="ServiceTest\NameStrategyManagerNhbTest.cs" />
+    <Compile Include="ServiceTest\NameServiceTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestFixtureProxies\DomainEventTestFixtureProxy.cs" />
+    <Compile Include="TestFixtureProxies\NHibernateRepositoryTestFixtureProxy.cs" />
+    <Compile Include="TestFixtureProxies\StateContextTestFixtureProxy.cs" />
+    <Compile Include="UtilTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Config\uum.naming.nhb.cfg.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Sources\Indigox.UUM.Naming\Indigox.UUM.Naming.csproj">
+      <Project>{25D54C8F-C96C-4C23-A53A-C2D684AC5A1E}</Project>
+      <Name>Indigox.UUM.Naming</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="..\..\Build\configurations.proj" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\Build\webapp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

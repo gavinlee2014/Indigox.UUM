@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config defaultBackupTablePrefix="OpusOne">
+  <table name="organization">
+    <key>
+      <field name="code" />
+    </key>
+    <field name="typeid" />
+    <field name="c_name" />
+    <eventListener type="Indigox.UUM.Sync.OpusOne.PowerHRP.Synchronizers.OrganizationSynchronizer, Indigox.UUM.Sync.OpusOne.PowerHRP" />
+  </table>
+  
+  <table name="organizationstructure">
+    <key>
+      <field name="structurecode" />
+    </key>
+    <field name="structureorder" />
+    <field name="typeid" />
+    <field name="orgcode1" />
+    <field name="orgcode2" />
+    <field name="orgcode3" />
+    <field name="orgcode4" />
+    <field name="orgcode5" />
+    <eventListener type="Indigox.UUM.Sync.OpusOne.PowerHRP.Synchronizers.OrganizationStructureSynchronizer, Indigox.UUM.Sync.OpusOne.PowerHRP" />
+  </table>
+ 
+  <table name="position">
+    <key>
+      <field name="positioncode" />
+      <field name="hrid" />
+    </key>
+    <field name="c_name" />
+    <eventListener type="Indigox.UUM.Sync.OpusOne.PowerHRP.Synchronizers.PositionSynchronizer, Indigox.UUM.Sync.OpusOne.PowerHRP" />
+  </table>
+ 
+  <table name="employee1" backupTable="OpusOneEmployee">
+    <key>
+      <field name="serialnumber" />
+    </key>
+    <field name="servicestatus" />
+    <field name="c_name" />
+    <field name="mobile" />
+    <field name="businessphone" />
+    <field name="employeeflag" />
+    <field name="quitdate" />
+    <field name="portrait" />
+    <field name="orgcode1" />
+    <field name="orgcode2" />
+    <field name="orgcode3" />
+    <field name="orgcode4" />
+    <field name="orgcode5" />
+    <eventListener type="Indigox.UUM.Sync.OpusOne.PowerHRP.Synchronizers.EmployeeSynchronizer, Indigox.UUM.Sync.OpusOne.PowerHRP" />
+  </table>
+ 
+  <table name="empposition" backupTable="OpusOneEmployeePosition">
+    <key>
+      <field name="autoid" />
+    </key>
+    <field name="serialnumber" />
+    <field name="positioncode" />
+    <field name="currentposition" />
+    <field name="defaultposition" />
+    <eventListener type="Indigox.UUM.Sync.OpusOne.PowerHRP.Synchronizers.EmployeePositionSynchronizer, Indigox.UUM.Sync.OpusOne.PowerHRP" />
+  </table>
+</config>

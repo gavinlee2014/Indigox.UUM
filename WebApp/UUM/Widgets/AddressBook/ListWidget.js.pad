@@ -1,0 +1,169 @@
+﻿define("/UUM/Widgets/AddressBook/ListWidget",
+    [
+        "Indigox.Web.JsLib.Utils.StringUtil",
+        "Indigox.Web.JsLib.Utils.UrlUtil",
+        "Indigox.Web.JsLib.Models.RecordManager",
+        "Indigox.Web.JsLib.Proxy.InstructionProxy",
+        "Indigox.Web.JsLib.Controllers.ListController",
+        "Indigox.Web.JsLib.Utils.Browser",
+        "Indigox.Web.JsLib.Controls.Selection.ItemMode",
+		"Indigox.Web.JsLib.UI.UIManager",
+        "Indigox/UUM/Application/AddressBook"
+    ],
+    function (
+        StringUtil,
+        UrlUtil,
+        RecordManager,
+        InstructionProxy,
+        ListController,
+        Browser,
+        ItemMode,
+		UIManager
+    ) {
+
+        var exports = function (widget) {
+            var limit =widget.getParam("limit")|| 10;
+
+            var listControl = $(widget).DataList("AddressBookList").first();
+
+			listControl.getItemTemplate().configureChildren({
+                "CallMobile": {
+                    binding: {
+                        mapping: {
+                            text: "CALL",
+							visible: function(record){
+								 return !StringUtil.isNullOrEmpty(record.get("MobilePhone"));
+							},
+							href: function(record){
+								return (StringUtil.isNullOrEmpty(record.get("MobilePhone"))) ? "#" : ("tel:" + record.get("MobilePhone"));
+							}
+                        }
+                    }
+                },
+				"SendSMS": {
+                    binding: {
+                        mapping: {
+                            text: "SMS",
+							visible: function(record){
+								 return !StringUtil.isNullOrEmpty(record.get("MobilePhone"));
+							},
+							href: function(record){
+								return (StringUtil.isNullOrEmpty(record.get("MobilePhone"))) ? "#" : ("sms:" + record.get("MobilePhone"));
+							}
+                        }
+                    }
+                },
+				"CallTel": {
+                    binding: {
+                        mapping: {
+                            text: "CALL",
+							visible: function(record){
+								 return !StringUtil.isNullOrEmpty(record.get("Phone"));
+							},
+							href: function(record){
+								return (StringUtil.isNullOrEmpty(record.get("Phone"))) ? "#" : ("tel:" + record.get("Phone"));
+							}
+                        }
+                    }
+                },
+				"SendEmail": {
+                    binding: {
+                        mapping: {
+                            text: "SEND",
+							visible: function(record){
+								 return !StringUtil.isNullOrEmpty(record.get("Email"));
+							},
+							href: function(record){
+								return (StringUtil.isNullOrEmpty(record.get("Email"))) ? "#" : ("mailto:" + record.get("Email"));
+							}
+                        }
+                    }
+                }
+            });
+
+
+            var proxy = new InstructionProxy({  
+                query: "AddressBookListQuery"
+            });
+
+            var arrayController = new ListController({
+                model: RecordManager.getInstance().createRecordSet('AddressBook', {
+                    addRecords: true,
+                    proxy: proxy
+                }),
+                params: {
+                    "FetchSize": limit
+                }
+            });
+
+			listControl.getItemTemplate().configureChildren({
+				"ContactProfile": {
+                    binding: {
+                        mapping: {
+                            icon: function(record){
+								return "/res/img/addr-portrait.png";
+							}
+                        }
+                    }
+                }
+            });
+
+			var paging=$(widget).Paging("Paging").first();
+			if(paging){
+				paging.configure({
+					pageSize: limit,
+					arrayController: arrayController
+				});
+			}
+		
+           listControl.on("itemAdded", function (source, index, item) {
+                item.getChild("ContactProfile").on("clicked", function (source) {
+                    var element = UIManager.getInstance().getUI(item).getElement();
+                    var literalVisible = jQuery('.Literal', element).toggleClass('active');
+                    var iconsVisible = jQuery('.Icons', element).toggleClass('active');
+                });
+            });
+
+            listControl.setController(arrayController);
+
+            listControl.setSelMode(new ItemMode({
+                allowDeselect: false,
+                returnValueType: "ARRAY",
+                mode: "SINGLE"
+            }));
+
+            listControl.on("itemSelectedChanged", (function () {
+                var lastSeleted = null;
+				var rootUrl=$(widget).getParam("rootUrl")||'#';
+
+                return function (source, e) {
+                    var list = source;
+                    var record = source.getValue()[0];
+
+                    var userID = record.get("UserID");
+
+                    if (lastSeleted !== userID) {
+                        lastSeleted = userID;
+
+                        var url = UrlUtil.join(rootUrl+"/AddressBook/View.htm", {
+                            ID: userID
+                        });
+                        UrlUtil.goTo(url);
+                    }
+                };
+            } ()));
+			var searchPart=$(widget).Button("searchButton").first() 
+			if(!!searchPart){
+				searchPart.on("clicked", function (source, e) {
+					//debug.log("searchButton clicked...");
+
+					var queryString = $(widget).TextBox("searchKey").first().getValue();
+					var paging = $(widget).Paging("Paging").first();
+					paging.getArrayController().setParam("QueryString", queryString);
+					paging.reset();
+				});
+			}
+        };
+
+        return exports;
+    });

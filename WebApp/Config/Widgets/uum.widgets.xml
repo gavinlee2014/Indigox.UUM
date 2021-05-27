@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widgets>
+  <widget name="OperationLogWidget" url="/UUM/Widgets/OperationLog/OperationLogWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/OperationLog/OperationLogWidget" />
+    </resources>
+  </widget>
+  <widget name="LogQueryWidget" url="/UUM/Widgets/OperationLog/LogOperationQueryWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/OperationLog/LogOperationQueryWidget" />
+    </resources>
+  </widget>
+  <!-- 选择用户对话框 widget -->
+  <widget name="UserSelectWidget" url="/UUM/Widgets/UserSelect.htm">
+    <resources>
+      <resource url="/UUM/Widgets/UserSelect" />
+    </resources>
+  </widget>
+
+  <widget name="UUMUserMainMenuWidget" url="/UUM/Widgets/Common/UserWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Common/UserWidget" />
+    </resources>
+  </widget>
+
+  <widget name="ChangeOrganizationWidget" url="/UUM/Widgets/Principal/ChangeOrganizationWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Principal/ChangeOrganizationWidget" />
+    </resources>
+  </widget>
+
+  <widget name="AddressBookListWidget" url="/UUM/Widgets/AddressBook/ListWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/AddressBook/ListWidget" />
+    </resources>
+  </widget>
+
+  <widget name="IndexAddressBookListWidget" url="/UUM/Widgets/AddressBook/IndexListWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/AddressBook/ListWidget" />
+    </resources>
+  </widget>
+
+  <widget name="UserSearchListWidget" url="/UUM/Widgets/Principal/UserSearchListWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Principal/UserSearchListWidget" />
+    </resources>
+  </widget>
+  
+  <widget name="AddressBookViewWidget" url="/UUM/Widgets/AddressBook/ViewWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/AddressBook/ViewWidget" />
+    </resources>
+  </widget>
+
+  <widget name="AddressBookTitleWidget" url="/UUM/Widgets/AddressBook/TitleWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/AddressBook/TitleWidget" />
+    </resources>
+  </widget>
+
+  <widget name="PrincipalListWidget" url="/UUM/Widgets/Principal/ListWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Principal/ListWidget" />
+    </resources>
+  </widget>
+
+  <widget name="PrincipalListToolBarWidget" url="/UUM/Widgets/Toobar/ToolbarWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Principal/ListToolBarWidget" />
+    </resources>
+  </widget>
+
+  <widget name="DeletedUserListWidget" url="/UUM/Widgets/OrganizationalPerson/DeletedUserListWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/OrganizationalPerson/DeletedUserListWidget" />
+    </resources>
+  </widget>
+
+  <!--<widget name="DeletedUserListToolBarWidget" url="/UUM/Widgets/OrganizationalPerson/DeletedUserListToolBarWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/OrganizationalPerson/DeletedUserListToolBarWidget" />
+    </resources>
+  </widget>-->
+
+  <widget name="DisabledUserListWidget" url="/UUM/Widgets/OrganizationalPerson/DisabledUserListWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/OrganizationalPerson/DisabledUserListWidget" />
+    </resources>
+  </widget>
+
+  <widget name="SyncTaskListWidget" url="/UUM/Widgets/SyncTask/ListWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/SyncTask/ListWidget" />
+    </resources>
+  </widget>
+
+  <widget name="SysConfigurationListWidget" url="/UUM/Widgets/SysConfiguration/ListWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/SysConfiguration/ListWidget" />
+    </resources>
+  </widget>
+
+  <widget name="SysConfigurationStateListWidget" url="/UUM/Widgets/SysConfiguration/StateListWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/SysConfiguration/StateListWidget" />
+    </resources>
+  </widget>
+
+  <widget name="SysConfigurationCreateWidget" url="/UUM/Widgets/SysConfiguration/CreateWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/SysConfiguration/CreateWidget" />
+    </resources>
+  </widget>
+  
+  <widget name="SysConfigurationEditWidget" url="/UUM/Widgets/SysConfiguration/EditWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/SysConfiguration/EditWidget" />
+    </resources>
+  </widget>
+
+  <widget name="SysConfigurationListToolBarWidget" url="/UUM/Widgets/Toobar/ToolbarWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/SysConfiguration/ListToolBarWidget"/>
+    </resources>
+  </widget>
+  
+  <widget name="NameStrategyDescriptorListWidget" url="/UUM/Widgets/NameStrategyDescriptor/ListWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/NameStrategyDescriptor/ListWidget" />
+    </resources>
+  </widget>
+  
+  <widget name="NameStrategyDescriptorCreateWidget" url="/UUM/Widgets/NameStrategyDescriptor/CreateWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/NameStrategyDescriptor/CreateWidget" />
+    </resources>
+  </widget>
+  
+  <widget name="NameStrategyDescriptorListToolBarWidget" url="/UUM/Widgets/Toobar/ToolbarWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/NameStrategyDescriptor/ListToolBarWidget"/>
+    </resources>
+  </widget>
+  
+  <widget name="NameStrategyDescriptorEditWidget" url="/UUM/Widgets/NameStrategyDescriptor/EditWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/NameStrategyDescriptor/EditWidget" />
+    </resources>
+  </widget>
+  
+  <widget name="EnableToDialogWidget" url="/UUM/Widgets/OrganizationalPerson/EnableToDialogWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/OrganizationalPerson/EnableToDialogWidget" />
+    </resources>
+  </widget>
+
+  <!--<widget name="DisabledUserListToolBarWidget" url="/UUM/Widgets/OrganizationalPerson/DisabledUserListToolBarWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/OrganizationalPerson/DisabledUserListToolBarWidget" />
+    </resources>
+  </widget>-->
+
+  <widget name="OrganizationalUnitListWidget" url="/UUM/Widgets/OrganizationalUnit/ListWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/OrganizationalUnit/ListWidget" />
+    </resources>
+  </widget>
+
+  <!--**********-->
+  <widget name="OrganizationalUnitEditWidget" url="/UUM/Widgets/OrganizationalUnit/EditWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/OrganizationalUnit/EditWidget" />
+    </resources>
+  </widget>
+
+  <widget name="OrganizationalUnitEditToolBarWidget" url="/UUM/Widgets/Toobar/ToolbarWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/OrganizationalUnit/EditToolBarWidget" />
+    </resources>
+  </widget>
+
+  <!--**********-->
+  <widget name="CorporationEditWidget" url="/UUM/Widgets/Corporation/EditWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Corporation/EditWidget" />
+    </resources>
+  </widget>
+
+  <widget name="CorporationEditToolBarWidget" url="/UUM/Widgets/Toobar/ToolbarWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Corporation/EditToolBarWidget" />
+    </resources>
+  </widget>
+
+  <!--**********-->
+  <widget name="CompanyEditWidget" url="/UUM/Widgets/Company/EditWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Company/EditWidget" />
+    </resources>
+  </widget>
+
+  <widget name="CompanyEditToolBarWidget" url="/UUM/Widgets/Toobar/ToolbarWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Company/EditToolBarWidget" />
+    </resources>
+  </widget>
+
+  <!--**********-->
+  <widget name="DepartmentEditWidget" url="/UUM/Widgets/Department/EditWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Department/EditWidget" />
+    </resources>
+  </widget>
+
+  <widget name="DepartmentEditToolBarWidget" url="/UUM/Widgets/Toobar/ToolbarWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Department/EditToolBarWidget" />
+    </resources>
+  </widget>
+
+  <!--**********-->
+  <widget name="SectionEditWidget" url="/UUM/Widgets/Section/EditWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Section/EditWidget" />
+    </resources>
+  </widget>
+
+  <widget name="SectionEditToolBarWidget" url="/UUM/Widgets/Toobar/ToolbarWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Section/EditToolBarWidget" />
+    </resources>
+  </widget>
+
+  <widget name="SetPasswordWidget" url="/UUM/Widgets/OrganizationalPerson/SetPasswordWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/OrganizationalPerson/SetPasswordWidget" />
+    </resources>
+  </widget>
+
+  <widget name="OrganizationalPersonEditWidget" url="/UUM/Widgets/OrganizationalPerson/EditWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/OrganizationalPerson/EditWidget" />
+    </resources>
+  </widget>
+
+  <widget name="OrganizationalPersonHREditWidget" url="/UUM/Widgets/OrganizationalPerson/HREditWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/OrganizationalPerson/HREditWidget" />
+    </resources>
+  </widget>
+
+  <widget name="OrganizationalPersonEditToolBarWidget" url="/UUM/Widgets/Toobar/ToolbarWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/OrganizationalPerson/EditToolBarWidget" />
+    </resources>
+  </widget>
+  
+  <widget name="OrganizationalPersonHREditToolBarWidget" url="/UUM/Widgets/Toobar/ToolbarWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/OrganizationalPerson/HREditToolBarWidget" />
+    </resources>
+  </widget>
+
+  <widget name="ProfileEditWidget" url="/UUM/Widgets/Profile/EditWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Profile/EditWidget" />
+    </resources>
+  </widget>
+
+  <widget name="ProfileEditToolbarWidget" url="/UUM/Widgets/Toobar/ToolbarWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Profile/EditToolBarWidget" />
+    </resources>
+  </widget>
+  
+  <widget name="ChangePasswordWidget" url="/UUM/Widgets/Profile/ChangePasswordWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Profile/ChangePasswordWidget" />
+    </resources>
+  </widget>
+
+  <widget name="ChangePasswordToolbarWidget" url="/UUM/Widgets/Toobar/ToolbarWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Profile/ChangePasswordToolbarWidget" />
+    </resources>
+  </widget>
+
+  <widget name="OrganizationalRoleEditWidget" url="/UUM/Widgets/OrganizationalRole/EditWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/OrganizationalRole/EditWidget" />
+    </resources>
+  </widget>
+
+  <widget name="OrganizationalRoleEditToolBarWidget" url="/UUM/Widgets/Toobar/ToolbarWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/OrganizationalRole/EditToolBarWidget" />
+    </resources>
+  </widget>
+
+  <widget name="RoleListWidget" url="/UUM/Widgets/Role/ListWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Role/ListWidget" />
+    </resources>
+  </widget>
+
+  <widget name="RoleEditWidget" url="/UUM/Widgets/Role/EditWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Role/EditWidget" />
+    </resources>
+  </widget>
+
+  <widget name="RoleListToolBarWidget" url="/UUM/Widgets/Toobar/ToolbarWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Role/ListToolBarWidget" />
+    </resources>
+  </widget>
+
+  <widget name="RoleEditToolBarWidget" url="/UUM/Widgets/Toobar/ToolbarWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Role/EditToolBarWidget" />
+    </resources>
+  </widget>
+
+  <widget name="GroupListWidget" url="/UUM/Widgets/Group/ListWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Group/ListWidget" />
+    </resources>
+  </widget>
+
+  <widget name="GroupEditWidget" url="/UUM/Widgets/Group/EditWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Group/EditWidget" />
+    </resources>
+  </widget>
+
+  <widget name="GroupListToolBarWidget" url="/UUM/Widgets/Toobar/ToolbarWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Group/ListToolBarWidget" />
+    </resources>
+  </widget>
+
+  <widget name="GroupEditToolBarWidget" url="/UUM/Widgets/Toobar/ToolbarWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Group/EditToolBarWidget" />
+    </resources>
+  </widget>
+  
+  <widget name="HROrganizationalListWidget" url="/UUM/Widgets/HR/HROrganizationalListWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/HR/HROrganizationalListWidget" />
+    </resources>
+  </widget>
+
+  <widget name="HRPrincipalListWidget" url="/UUM/Widgets/HR/HRPrincipalListWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/HR/HRPrincipalListWidget" />
+    </resources>
+  </widget>
+  
+  <widget name="HROrganizationalSyncWidget" url="/UUM/Widgets/HR/HROrganizationalSyncWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/HR/HROrganizationalSyncWidget" />
+    </resources>
+  </widget>
+
+  <widget name="HREmployeeListWidget" url="/UUM/Widgets/HR/HREmployeeListWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/HR/HREmployeeListWidget" />
+    </resources>
+  </widget>
+
+  <widget name="HREmployeeSyncWidget" url="/UUM/Widgets/HR/HREmployeeSyncWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/HR/HREmployeeSyncWidget" />
+    </resources>
+  </widget>
+
+  <widget name="UserSelectionWidget" url="/UUM/Widgets/Selection/UserSelectionWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Selection/UserSelectionWidget" />
+      <resource url="/UUM/Widgets/Selection/TabContainer" />
+      <resource url="/UUM/Widgets/Selection/UserSelection" />
+      <resource url="/UUM/Widgets/Selection/RoleSelection" />
+      <resource url="/UUM/Widgets/Selection/GroupSelection" />
+    </resources>
+  </widget>
+
+  <widget name="UserSelectionToolbarWidget" url="/UUM/Widgets/Toobar/ToolbarWidget.htm">
+    <resources>
+      <resource url="/UUM/Widgets/Selection/UserSelectionToolbarWidget" />
+    </resources>
+  </widget>
+</widgets>

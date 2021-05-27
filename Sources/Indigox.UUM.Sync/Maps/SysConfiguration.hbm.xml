@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Indigox.UUM.Sync.Model" assembly="Indigox.UUM.Sync" default-lazy="false">
+
+  <class name="SysConfiguration" table="SysConfiguration">
+    <id name="ID">
+      <column name="ID" sql-type="int" />
+      <generator class="native" />
+    </id>
+    <property name="SyncType">
+      <column name="SyncType" sql-type="int" />
+    </property>
+    <property name="ClientName" type="string">
+      <column name="ClientName" sql-type="varchar(100)" length="100" />
+    </property>
+    <property name="Email" type="string">
+      <column name="Email" sql-type="varchar(100)" length="100" />
+    </property>
+    <property name="Enabled" type="bool">
+      <column name="Enabled" sql-type="bit" />
+    </property>
+    <property name="UserSyncWebService" type="string">
+      <column name="UserSyncWebService" sql-type="varchar(100)" length="100" />
+    </property>
+    <property name="RoleSyncWebService" type="string">
+      <column name="RoleSyncWebService" sql-type="varchar(100)" length="100" />
+    </property>
+    <property name="OrganizationUnitSyncWebService" type="string">
+      <column name="OrganizationUnitSyncWebService" sql-type="varchar(100)" length="100" />
+    </property>
+    <property name="GroupSyncWebService" type="string">
+      <column name="GroupSyncWebService" sql-type="varchar(100)" length="100" />
+    </property>
+    <property name="OrganizationRoleSyncWebService" type="string">
+      <column name="OrganizationRoleSyncWebService" sql-type="varchar(100)" length="100" />
+    </property>
+
+    <bag name="Dependencies" table="SysDependencies" cascade="none" lazy="false">
+      <key>
+        <column name="ID" sql-type="int" />
+      </key>
+      <many-to-many class="SysConfiguration">
+        <column name="Dependence" sql-type="int" />
+      </many-to-many>
+    </bag>
+  </class>
+</hibernate-mapping>

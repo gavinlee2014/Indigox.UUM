@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<instructions>
+  <!-- Indigox.CMS.Application.Recommand -->
+  <instruction name="DocumentRecommendAllQuery" class="Indigox.CMS.Application.Recommand.RecommendAllQuery" assembly="Indigox.CMS.Application" />
+  <instruction name="DocumentRecommendCommand" class="Indigox.CMS.Application.Recommand.RecommendCommand" assembly="Indigox.CMS.Application" />
+
+  <!-- Indigox.Web.Presentation -->
+  <instruction name="PageListQuery" class="Indigox.Web.Presentation.ApplicationService.PageListQuery" assembly="Indigox.Web.Presentation" />
+  <instruction name="WidgetListQuery" class="Indigox.Web.Presentation.ApplicationService.WidgetListQuery" assembly="Indigox.Web.Presentation" />
+
+  <!-- Indigox.CMS.Application.ObjectModel -->
+  <instruction name="AuditObjectReadedCommand" class="Indigox.CMS.Application.ObjectModel.AuditObjectReadedCommand" assembly="Indigox.CMS.Application" />
+  <instruction name="ContentFieldListQuery" class="Indigox.CMS.Application.ObjectModel.ContentFieldListQuery" assembly="Indigox.CMS.Application" />
+  <instruction name="ContentQuery" class="Indigox.CMS.Application.ObjectModel.ContentQuery" assembly="Indigox.CMS.Application" />
+  <instruction name="ContentTypeQuery" class="Indigox.CMS.Application.ObjectModel.ContentTypeQuery" assembly="Indigox.CMS.Application" />
+  <instruction name="CreateFolderCommand" class="Indigox.CMS.Application.ObjectModel.CreateFolderCommand" assembly="Indigox.CMS.Application" />
+  <instruction name="CreateObjectCommand" class="Indigox.CMS.Application.ObjectModel.CreateObjectCommand" assembly="Indigox.CMS.Application" />
+  <instruction name="DefaultContentQuery" class="Indigox.CMS.Application.ObjectModel.DefaultContentQuery" assembly="Indigox.CMS.Application" />
+  <instruction name="DeleteObjectCommand" class="Indigox.CMS.Application.ObjectModel.DeleteObjectCommand" assembly="Indigox.CMS.Application" />
+  <instruction name="FormViewListQuery" class="Indigox.CMS.Application.ObjectModel.FormViewListQuery" assembly="Indigox.CMS.Application" />
+  <instruction name="FormViewQuery" class="Indigox.CMS.Application.ObjectModel.FormViewQuery" assembly="Indigox.CMS.Application" />
+  <instruction name="MoveObjectCommand" class="Indigox.CMS.Application.ObjectModel.MoveObjectCommand" assembly="Indigox.CMS.Application" />
+  <instruction name="ObjectListQuery" class="Indigox.CMS.Application.ObjectModel.ObjectListQuery" assembly="Indigox.CMS.Application" />
+  <instruction name="ObjectQuery" class="Indigox.CMS.Application.ObjectModel.ObjectQuery" assembly="Indigox.CMS.Application" />
+  <instruction name="ObjectReadHistoryQuery" class="Indigox.CMS.Application.ObjectModel.ObjectReadHistoryQuery" assembly="Indigox.CMS.Application" />
+  <instruction name="SchemaQuery" class="Indigox.CMS.Application.ObjectModel.SchemaQuery" assembly="Indigox.CMS.Application" />
+  <instruction name="SubItemTypeQuery" class="Indigox.CMS.Application.ObjectModel.SubItemTypeQuery" assembly="Indigox.CMS.Application" />
+  <instruction name="UpdateFolderCommand" class="Indigox.CMS.Application.ObjectModel.UpdateFolderCommand" assembly="Indigox.CMS.Application" />
+  <instruction name="UpdateObjectCommand" class="Indigox.CMS.Application.ObjectModel.UpdateObjectCommand" assembly="Indigox.CMS.Application" />
+
+  <!-- Indigox.CMS.Application.Permission -->
+  <instruction name="AddPermissionCommand" class="Indigox.CMS.Application.Permission.AddPermissionCommand" assembly="Indigox.CMS.Application" />
+  <instruction name="AuthorityQuery" class="Indigox.CMS.Application.Permission.AuthorityQuery" assembly="Indigox.CMS.Application" />
+  <instruction name="AuthorizedPermissionsQuery" class="Indigox.CMS.Application.Permission.AuthorizedPermissionsQuery" assembly="Indigox.CMS.Application" />
+  <instruction name="BreakPermissionInheritanceCommand" class="Indigox.CMS.Application.Permission.BreakPermissionInheritanceCommand" assembly="Indigox.CMS.Application" />
+  <instruction name="CreateAuthorityCommand" class="Indigox.CMS.Application.Permission.CreateAuthorityCommand" assembly="Indigox.CMS.Application" />
+  <instruction name="DefaultPermissionQuery" class="Indigox.CMS.Application.Permission.DefaultPermissionQuery" assembly="Indigox.CMS.Application" />
+  <instruction name="DeleteAuthorityCommand" class="Indigox.CMS.Application.Permission.DeleteAuthorityCommand" assembly="Indigox.CMS.Application" />
+  <instruction name="EffectivePermissionQuery" class="Indigox.CMS.Application.Permission.EffectivePermissionQuery" assembly="Indigox.CMS.Application" />
+  <instruction name="ObjectAclQuery" class="Indigox.CMS.Application.Permission.ObjectAclQuery" assembly="Indigox.CMS.Application" />
+  <instruction name="ObjectPermissionsQuery" class="Indigox.CMS.Application.Permission.ObjectPermissionsQuery" assembly="Indigox.CMS.Application" />
+  <instruction name="RemovePermissionCommand" class="Indigox.CMS.Application.Permission.RemovePermissionCommand" assembly="Indigox.CMS.Application" />
+  <instruction name="ResetPermissionInheritanceCommand" class="Indigox.CMS.Application.Permission.ResetPermissionInheritanceCommand" assembly="Indigox.CMS.Application" />
+  <instruction name="SetPermissionCommand" class="Indigox.CMS.Application.Permission.SetPermissionCommand" assembly="Indigox.CMS.Application" />
+  <instruction name="UpdateAuthorityCommand" class="Indigox.CMS.Application.Permission.UpdateAuthorityCommand" assembly="Indigox.CMS.Application" />
+  <instruction name="UserEffectivePermissionQuery" class="Indigox.CMS.Application.Permission.UserEffectivePermissionQuery" assembly="Indigox.CMS.Application" />
+  <instruction name="UserPermissionQuery" class="Indigox.CMS.Application.Permission.UserPermissionQuery" assembly="Indigox.CMS.Application" />
+
+  <!-- Indigox.Task.Application.Task -->
+  <instruction name="CompletedTaskQuery" class="Indigox.Task.Application.CompletedTaskQuery" assembly="Indigox.Task.Application" />
+  <instruction name="DoneTaskQuery" class="Indigox.Task.Application.DoneTaskQuery" assembly="Indigox.Task.Application" />
+  <instruction name="MarkAsReadedCommand" class="Indigox.Task.Application.MarkAsReadedCommand" assembly="Indigox.Task.Application" />
+  <instruction name="ReadedTaskQuery" class="Indigox.Task.Application.ReadedTaskQuery" assembly="Indigox.Task.Application" />
+  <instruction name="ReadTaskQuery" class="Indigox.Task.Application.ReadTaskQuery" assembly="Indigox.Task.Application" />
+  <instruction name="TodoTaskQuery" class="Indigox.Task.Application.TodoTaskQuery" assembly="Indigox.Task.Application" />
+
+  <!-- Indigox.UUM.Application -->
+  <instruction name="UserDetailQuery" class="Indigox.UUM.Application.User.UserDetailQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="UserListQuery" class="Indigox.UUM.Application.User.UserListQuery" assembly="Indigox.UUM.Application" />
+
+  <!-- Indigox.UUM.Application.Principal -->
+  <instruction name="ChangeOrganizationCommand" class="Indigox.UUM.Application.Principal.ChangeOrganizationCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="GeneralListQuery" class="Indigox.UUM.Application.Principal.GeneralListQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="PrincipalListQuery" class="Indigox.UUM.Application.Principal.PrincipalListQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="PrincipalSearchQuery" class="Indigox.UUM.Application.Principal.PrincipalSearchQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="PrincipalSummaryQuery" class="Indigox.UUM.Application.Principal.PrincipalSummaryQuery" assembly="Indigox.UUM.Application" />
+
+  <!-- Indigox.UUM.Application.Permission -->
+  <instruction name="PrincipalPermissionQuery" class="Indigox.UUM.Application.Permission.PrincipalPermissionQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="HRRoleQuery" class="Indigox.UUM.Application.Permission.HRRoleQuery" assembly="Indigox.UUM.Application" />
+  
+
+  <!-- Indigox.UUM.Application.AddressBook -->
+  <instruction name="AddressBookListQuery" class="Indigox.UUM.Application.AddressBook.AddressBookListQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="AddressBookQuery" class="Indigox.UUM.Application.AddressBook.AddressBookQuery" assembly="Indigox.UUM.Application" />
+
+  <!-- Indigox.UUM.Application.OrganizationalUnit -->
+  <instruction name="CreateOrganizationalUnitCommand" class="Indigox.UUM.Application.OrganizationalUnit.CreateOrganizationalUnitCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="DefaultOrganizationalUnitQuery" class="Indigox.UUM.Application.OrganizationalUnit.DefaultOrganizationalUnitQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="DeleteOrganizationalUnitCommand" class="Indigox.UUM.Application.OrganizationalUnit.DeleteOrganizationalUnitCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="OrganizationalUnitListQuery" class="Indigox.UUM.Application.OrganizationalUnit.OrganizationalUnitListQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="OrganizationalUnitQuery" class="Indigox.UUM.Application.OrganizationalUnit.OrganizationalUnitQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="UpdateOrganizationalUnitCommand" class="Indigox.UUM.Application.OrganizationalUnit.UpdateOrganizationalUnitCommand" assembly="Indigox.UUM.Application" />
+
+  <!-- Indigox.UUM.Application.OrganizationalPerson -->
+  <instruction name="CheckUserExistsQuery" class="Indigox.UUM.Application.OrganizationalPerson.CheckUserExistsQuery" assembly="Indigox.UUM.Application" />
+  
+  <instruction name="CreateOrganizationalPersonCommand" class="Indigox.UUM.Application.OrganizationalPerson.CreateOrganizationalPersonCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="CurrentUserQuery" class="Indigox.UUM.Application.OrganizationalPerson.CurrentUserQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="DefaultOrganizationalPersonQuery" class="Indigox.UUM.Application.OrganizationalPerson.DefaultOrganizationalPersonQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="DeletedUserListQuery" class="Indigox.UUM.Application.OrganizationalPerson.DeletedUserListQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="DeleteOrganizationalPersonCommand" class="Indigox.UUM.Application.OrganizationalPerson.DeleteOrganizationalPersonCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="DisabledUserListQuery" class="Indigox.UUM.Application.OrganizationalPerson.DisabledUserListQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="DisableOrganizationalPersonCommand" class="Indigox.UUM.Application.OrganizationalPerson.DisableOrganizationalPersonCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="EnableOrganizationalPersonCommand" class="Indigox.UUM.Application.OrganizationalPerson.EnableOrganizationalPersonCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="OrganizationalPersonListQuery" class="Indigox.UUM.Application.OrganizationalPerson.OrganizationalPersonListQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="OrganizationalPersonQuery" class="Indigox.UUM.Application.OrganizationalPerson.OrganizationalPersonQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="UpdateOrganizationalPersonCommand" class="Indigox.UUM.Application.OrganizationalPerson.UpdateOrganizationalPersonCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="UnlockOrganizationalPersonCommand" class="Indigox.UUM.Application.OrganizationalPerson.UnlockOrganizationalPersonCommand" assembly="Indigox.UUM.Application" />  
+  <instruction name="SetPasswordCommand" class="Indigox.UUM.Application.OrganizationalPerson.SetPasswordCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="SetPasswordCommand" class="Indigox.UUM.Application.OrganizationalPerson.SetPasswordCommand" assembly="Indigox.UUM.Application" />
+
+  <!-- Indigox.UUM.Application.OrganizationalRole -->
+  <instruction name="CreateOrganizationalRoleCommand" class="Indigox.UUM.Application.OrganizationalRole.CreateOrganizationalRoleCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="DefaultOrganizationalRoleQuery" class="Indigox.UUM.Application.OrganizationalRole.DefaultOrganizationalRoleQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="DeleteOrganizationalRoleCommand" class="Indigox.UUM.Application.OrganizationalRole.DeleteOrganizationalRoleCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="OrganizationalRoleQuery" class="Indigox.UUM.Application.OrganizationalRole.OrganizationalRoleQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="UpdateOrganizationalRoleCommand" class="Indigox.UUM.Application.OrganizationalRole.UpdateOrganizationalRoleCommand" assembly="Indigox.UUM.Application" />
+
+  <!-- Indigox.UUM.Application.Role -->
+  <instruction name="CreateRoleCommand" class="Indigox.UUM.Application.Role.CreateRoleCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="DefaultRoleQuery" class="Indigox.UUM.Application.Role.DefaultRoleQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="DeleteRoleCommand" class="Indigox.UUM.Application.Role.DeleteRoleCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="RoleForUnitListQuery" class="Indigox.UUM.Application.Role.RoleForUnitListQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="RoleListQuery" class="Indigox.UUM.Application.Role.RoleListQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="RoleQuery" class="Indigox.UUM.Application.Role.RoleQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="UpdateRoleCommand" class="Indigox.UUM.Application.Role.UpdateRoleCommand" assembly="Indigox.UUM.Application" />
+
+  <!-- Indigox.UUM.Application.Group -->
+  <instruction name="CreateGroupCommand" class="Indigox.UUM.Application.Group.CreateGroupCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="DefaultGroupQuery" class="Indigox.UUM.Application.Group.DefaultGroupQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="DeleteGroupCommand" class="Indigox.UUM.Application.Group.DeleteGroupCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="GroupListQuery" class="Indigox.UUM.Application.Group.GroupListQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="GroupQuery" class="Indigox.UUM.Application.Group.GroupQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="UpdateGroupCommand" class="Indigox.UUM.Application.Group.UpdateGroupCommand" assembly="Indigox.UUM.Application" />
+
+  <!-- Indigox.UUM.Application.Profile -->
+  <instruction name="ProfileQuery" class="Indigox.UUM.Application.Profile.ProfileQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="ChangePasswordCommand" class="Indigox.UUM.Application.Profile.ChangePasswordCommand" assembly="Indigox.UUM.Application" />
+
+  <!-- Indigox.Settings.Application.Navi -->
+  <instruction name="CreateNavigationCommand" class="Indigox.Settings.Application.Navi.CreateNavigationCommand" assembly="Indigox.Settings.Application" />
+  <instruction name="DeleteNavigationCommand" class="Indigox.Settings.Application.Navi.DeleteNavigationCommand" assembly="Indigox.Settings.Application" />
+  <instruction name="AllNavigationNodeListQuery" class="Indigox.Settings.Application.Navi.AllNavigationNodeListQuery" assembly="Indigox.Settings.Application" />
+  <instruction name="CreateNavigationNodeCommand" class="Indigox.Settings.Application.Navi.CreateNavigationNodeCommand" assembly="Indigox.Settings.Application" />
+  <instruction name="DefaultNavigationNodeQuery" class="Indigox.Settings.Application.Navi.DefaultNavigationNodeQuery" assembly="Indigox.Settings.Application" />
+  <instruction name="DeleteNavigationNodeCommand" class="Indigox.Settings.Application.Navi.DeleteNavigationNodeCommand" assembly="Indigox.Settings.Application" />
+  <instruction name="NavigationNodeListQuery" class="Indigox.Settings.Application.Navi.NavigationNodeListQuery" assembly="Indigox.Settings.Application" />
+  <instruction name="NavigationNodeQuery" class="Indigox.Settings.Application.Navi.NavigationNodeQuery" assembly="Indigox.Settings.Application" />
+  <instruction name="UpdateNavigationNodeCommand" class="Indigox.Settings.Application.Navi.UpdateNavigationNodeCommand" assembly="Indigox.Settings.Application" />
+  <instruction name="NavigationListQuery" class="Indigox.Settings.Application.Navi.NavigationListQuery" assembly="Indigox.Settings.Application" />
+
+  <!-- Indigox.Settings.Application.Settings -->
+  <instruction name="SettingCategoryListQuery" class="Indigox.Settings.Application.Settings.SettingCategoryListQuery" assembly="Indigox.Settings.Application" />
+  <instruction name="SettingListQuery" class="Indigox.Settings.Application.Settings.SettingListQuery" assembly="Indigox.Settings.Application" />
+  <instruction name="UpdateSettingCommand" class="Indigox.Settings.Application.Settings.UpdateSettingCommand" assembly="Indigox.Settings.Application" />
+
+  <!-- Indigox.Settings.Application.WebContexts -->
+  <instruction name="ContextQuery" class="Indigox.Settings.Application.WebContexts.ContextQuery" assembly="Indigox.Settings.Application" />
+
+  <!-- Indigox.Settings.Application.Database -->
+  <instruction name="ConnectionStringQuery" class="Indigox.Settings.Application.Database.ConnectionStringQuery" assembly="Indigox.Settings.Application" />
+  <instruction name="SaveConnectionStringCommand" class="Indigox.Settings.Application.Database.SaveConnectionStringCommand" assembly="Indigox.Settings.Application" />
+  
+  <!-- Indigox.UUM.Application.NameStrategy -->
+  <instruction name="NameStrategyDescriptorListQuery" class="Indigox.UUM.Application.NameStrategy.NameStrategyDescriptorListQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="NameStrategyDescriptorSingleQuery" class="Indigox.UUM.Application.NameStrategy.NameStrategyDescriptorSingleQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="UpdateNameStrategyDescriptorCommand" class="Indigox.UUM.Application.NameStrategy.UpdateNameStrategyDescriptorCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="DeleteNameStrategyDescriptorCommand" class="Indigox.UUM.Application.NameStrategy.DeleteNameStrategyDescriptorCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="CreateNameStrategyDescriptorCommand" class="Indigox.UUM.Application.NameStrategy.CreateNameStrategyDescriptorCommand" assembly="Indigox.UUM.Application" />
+
+  <!-- Indigox.UUM.Application.SysConfiguration -->
+  <instruction name="SysConfigurationListQuery" class="Indigox.UUM.Application.SysConfiguration.SysConfigurationListQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="SysConfigurationStateListQuery" class="Indigox.UUM.Application.SysConfiguration.SysConfigurationStateListQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="SysConfigurationSingleQuery" class="Indigox.UUM.Application.SysConfiguration.SysConfigurationSingleQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="UpdateSysConfigurationCommand" class="Indigox.UUM.Application.SysConfiguration.UpdateSysConfigurationCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="DeleteSysConfigurationCommand" class="Indigox.UUM.Application.SysConfiguration.DeleteSysConfigurationCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="CreateSysConfigurationCommand" class="Indigox.UUM.Application.SysConfiguration.CreateSysConfigurationCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="SysListQuery" class="Indigox.UUM.Application.SysConfiguration.SysListQuery" assembly="Indigox.UUM.Application" />
+
+  <!-- Indigox.UUM.Application.Sync -->
+  <instruction name="FullSyncCommand" class="Indigox.UUM.Application.Sync.FullSyncCommand" assembly="Indigox.UUM.Application" />
+
+  <!-- Indigox.UUM.Application.SyncTask -->
+  <instruction name="SyncTaskListQuery" class="Indigox.UUM.Application.SyncTask.SyncTaskListQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="SyncTaskSummaryQuery" class="Indigox.UUM.Application.SyncTask.SyncTaskSummaryQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="RetrySyncTaskCommand" class="Indigox.UUM.Application.SyncTask.RetrySyncTaskCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="IgnoreTaskCommand" class="Indigox.UUM.Application.SyncTask.IgnoreTaskCommand" assembly="Indigox.UUM.Application" />
+
+  <!-- Indigox.UUM.Application.HR -->
+  <instruction name="HREmployeeQuery" class="Indigox.UUM.Application.HR.HREmployeeQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="HREmployeeListQuery" class="Indigox.UUM.Application.HR.HREmployeeListQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="HREmployeeSyncCommand" class="Indigox.UUM.Application.HR.HREmployeeSyncCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="HREmployeeUpdateCommand" class="Indigox.UUM.Application.HR.HREmployeeUpdateCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="HROrganizationalQuery" class="Indigox.UUM.Application.HR.HROrganizationalQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="HROrganizationalListQuery" class="Indigox.UUM.Application.HR.HROrganizationalListQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="HROrganizationalSyncCommand" class="Indigox.UUM.Application.HR.HROrganizationalSyncCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="HRBatchSyncCommand" class="Indigox.UUM.Application.HR.HRBatchSyncCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="HROrganizationalUpdateCommand" class="Indigox.UUM.Application.HR.HROrganizationalUpdateCommand" assembly="Indigox.UUM.Application" />
+  <instruction name="HRPrincipalListQuery" class="Indigox.UUM.Application.HR.HRPrincipalListQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="HREmployeeExistListQuery" class="Indigox.UUM.Application.HR.HREmployeeExistListQuery" assembly="Indigox.UUM.Application" />
+  <instruction name="HROrganizationalExistListQuery" class="Indigox.UUM.Application.HR.HROrganizationalExistListQuery" assembly="Indigox.UUM.Application" />
+
+  <!-- Indigox.UUM.Application.Log-->
+  <instruction name="OperationLogListQuery" class="Indigox.UUM.Application.LogOperation.OperationLogListQuery" assembly="Indigox.UUM.Application" />
+
+  <!-- Indigox.UUM.Sync.OpusOne.PowerHRP -->
+  <instruction name="SyncFromHRCommand" class="Indigox.UUM.Sync.OpusOne.PowerHRP.SyncFromHRCommand" assembly="Indigox.UUM.Sync.OpusOne.PowerHRP" />
+
+</instructions>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ivy-module version="2.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+  <info organisation="indigox" module="uum" />
+  <configurations>
+    <conf name="compile" visibility="private" />
+    <conf name="test" visibility="private" extends="compile" />
+    <conf name="default" visibility="public" extends="compile" />
+  </configurations>
+  <publications>
+    <artifact name="indigox.uum" type="dll" ext="dll" />
+    <artifact name="indigox.uum.sync" type="dll" ext="dll" />
+    <artifact name="indigox.uum.sync.interface" type="dll" ext="dll" />
+    <artifact name="indigox.uum.application" type="dll" ext="dll" />
+    <artifact name="indigox.uum.ad.application" type="dll" ext="dll" />
+    <artifact name="indigox.uum.exchange.application" type="dll" ext="dll" />
+    <artifact name="indigox.uum.hr" type="dll" ext="dll" />
+    <artifact name="indigox.uum.naming" type="dll" ext="dll" />
+    <artifact name="indigox.uum.application" type="zip" ext="zip" />
+    <artifact name="indigox.uum.nhibernateimpl" type="dll" ext="dll" />
+    <artifact name="indigox.uum.web" type="zip" ext="zip" />
+    <artifact name="indigox.uum.config" type="zip" ext="zip" />
+    <artifact name="indigox.uum.sync.opusone.powerhrp" type="dll" ext="dll" />
+  </publications>
+  <dependencies>
+    <dependency org="indigox" name="common" rev="1.0.0.+" />
+    <dependency org="indigox" name="web" rev="1.0.0.+" />
+    <dependency org="indigox" name="cms" rev="1.0.0.+" />
+    <dependency org="microsoft" name="chncharinfo" rev="1.0.0.0" />
+    <dependency org="org.nunit" name="NUnit.Framework" rev="2.6.0.12051" conf="test->*" />
+  </dependencies>
+</ivy-module>

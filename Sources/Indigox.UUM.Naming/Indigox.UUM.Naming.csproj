@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{25D54C8F-C96C-4C23-A53A-C2D684AC5A1E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Indigox.UUM.Naming</RootNamespace>
+    <AssemblyName>Indigox.UUM.Naming</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ChnCharInfo">
+      <HintPath>..\..\References\ChnCharInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.domainmodels">
+      <HintPath>..\..\References\indigox.common.domainmodels.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.logging">
+      <HintPath>..\..\References\indigox.common.logging.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.membership">
+      <HintPath>..\..\References\indigox.common.membership.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.utilities">
+      <HintPath>..\..\References\indigox.common.utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Factory\NameStrategyManager.cs" />
+    <Compile Include="Model\ADNameManager.cs" />
+    <Compile Include="Strategies\AccountNumSeq.cs" />
+    <Compile Include="Strategies\LastNameAndGiventNameInitalsForEqualOneAndNumStrategy.cs" />
+    <Compile Include="Strategies\LastNameAndGiventNameInitalsForEqualOneStrategy.cs" />
+    <Compile Include="Util\SurnameManager.cs" />
+    <Compile Include="Model\INameManager.cs" />
+    <Compile Include="Model\DbNameManager.cs" />
+    <Compile Include="Service\NameService.cs" />
+    <Compile Include="Strategies\BaseNameStrategy.cs" />
+    <Compile Include="Model\INameStrategy.cs" />
+    <Compile Include="Strategies\GivenNameInitalsAndLastNameStrategy.cs" />
+    <Compile Include="Model\NameStrategyDescriptor.cs" />
+    <Compile Include="Strategies\LastNameAndGivenNameStrategy.cs" />
+    <Compile Include="Util\PinYinConverter.cs" />
+    <Compile Include="Strategies\LastNameAndGivenNameInitalsAndNumStrategy.cs" />
+    <Compile Include="Strategies\LastNameAndGivenNameInitalsStrategy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Maps\NameStrategy.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="..\..\Build\configurations.proj" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\Build\webapp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+
+  <source type="Indigox.Common.Membership.Interfaces.IPrincipal, Indigox.Common.Membership">
+    <event type="Indigox.Common.DomainModels.Events.RepositoryAddedEvent, Indigox.Common.DomainModels">
+      <listener method="OnAdded" type="Indigox.UUM.EventHandlers.PrincipalEventHandler, Indigox.UUM" />
+    </event>
+    <event type="Indigox.Common.DomainModels.Events.RepositoryUpdateEvent, Indigox.Common.DomainModels">
+      <listener method="OnUpdate" type="Indigox.UUM.EventHandlers.PrincipalEventHandler, Indigox.UUM" />
+    </event>
+  </source>
+
+  <source type="Indigox.Common.Membership.Interfaces.IOrganizationalUnit, Indigox.Common.Membership">
+    <event type="Indigox.Common.DomainModels.Events.RepositoryDeleteEvent, Indigox.Common.DomainModels">
+      <listener method="OnDelete" type="Indigox.UUM.EventHandlers.OrganizationalUnitEventHandler, Indigox.UUM" />
+    </event>
+  </source>
+
+  <source type="Indigox.Common.Membership.Group, Indigox.Common.Membership">
+    <event type="Indigox.Common.Membership.Events.GroupCreatedEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.UserAddedToGroupEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+      <listener method="ResetNavigation" type="Indigox.UUM.Application.Events.NavigationResetListener, Indigox.UUM.Application" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.UserRemovedFromGroupEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+      <listener method="ResetNavigation" type="Indigox.UUM.Application.Events.NavigationResetListener, Indigox.UUM.Application" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.GroupDeletedEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.GroupPropertyChangedEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+  </source>
+  
+  <source type="Indigox.Common.Membership.OrganizationalRole, Indigox.Common.Membership">
+    <event type="Indigox.Common.Membership.Events.OrganizationalRoleAddedToGroupEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.OrganizationalRoleAddedToOrganizationalUnitEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.OrganizationalRoleAddedToRoleEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.OrganizationalRoleCreatedEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.OrganizationalRoleDeletedEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.OrganizationalRolePropertyChangedEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.OrganizationalRoleRemovedFromGroupEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.OrganizationalRoleRemovedFromOrganizationalUnitEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.OrganizationalRoleRemovedFromRoleEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+  </source>
+
+  <source type="Indigox.Common.Membership.OrganizationalUnit, Indigox.Common.Membership">
+    <event type="Indigox.Common.Membership.Events.OrganizationalUnitAddedToGroupEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.OrganizationalUnitAddedToOrganizationalUnitEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.OrganizationalUnitCreatedEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.OrganizationalUnitDeletedEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.OrganizationalUnitPropertyChangedEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.OrganizationalUnitRemovedFromGroupEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.OrganizationalUnitRemovedFromOrganizationalUnitEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+  </source>
+
+  <source type="Indigox.Common.Membership.Role, Indigox.Common.Membership">
+    <event type="Indigox.Common.Membership.Events.RoleCreatedEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.RoleDeletedEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.RolePropertyChangedEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+  </source>
+
+  <source type="Indigox.Common.Membership.User, Indigox.Common.Membership">
+    <event type="Indigox.Common.Membership.Events.UserAddedToGroupEvent, Indigox.Common.Membership">
+      <listener method="ResetNavigation" type="Indigox.UUM.Application.Events.NavigationResetListener, Indigox.UUM.Application" />
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />      
+    </event>
+    <event type="Indigox.Common.Membership.Events.UserAddedToOrganizationalUnitEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.UserAddedToOrganizationaRoleEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.UserCreatedEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.UserDeletedEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.UserDisabledEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.UserEnabledEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.UserPropertyChangedEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.UserRemovedFromGroupEvent, Indigox.Common.Membership">
+      <listener method="ResetNavigation" type="Indigox.UUM.Application.Events.NavigationResetListener, Indigox.UUM.Application" />
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.UserRemovedFromOrganizationalRoleEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+    <event type="Indigox.Common.Membership.Events.UserRemovedFromOrganizationalUnitEvent, Indigox.Common.Membership">
+      <listener method="ProcessEvent" type="Indigox.UUM.Sync.SyncManager, Indigox.UUM.Sync" />
+    </event>
+  </source>
+  
+  <source type="Indigox.Settings.ObjectModel.Navi.NavigationNode, Indigox.Settings">
+    <event type="Indigox.Common.DomainModels.Events.RepositoryAddedEvent, Indigox.Common.DomainModels">
+      <listener method="OnAdded" type="Indigox.Settings.EventHandler.NavigationNodeEventHandler, Indigox.Settings" />
+    </event>
+  </source>
+
+</config>

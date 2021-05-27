@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Indigox.UUM.Sync.Tasks" assembly="Indigox.UUM.Sync" default-lazy="false">
+
+  <typedef name="AnyType" class="Indigox.Common.NHibernate.Extension.UserTypes.AnyType, Indigox.Common.NHibernate.Extension"></typedef>
+
+  <class name="SyncTask" table="SyncTask">
+    <id name="ID" access="field.lowercase">
+      <column name="ID" sql-type="int" />
+      <generator class="identity" />
+    </id>
+    <property name="Tag" type="string">
+      <column name="Tag" sql-type="varchar(100)" length="100" />
+    </property>
+    <property name="Description" type="string">
+      <column name="Description" sql-type="nvarchar(2000)" length="2000" />
+    </property>
+    <property name="ErrorMessage" type="string">
+      <column name="ErrorMessage" sql-type="nvarchar(max)" length="2147483647" />
+    </property>
+    <property name="State" access="field.camelcase">
+      <column name="State" sql-type="int" />
+    </property>
+    <property name="CreateTime">
+      <column name="CreateTime" sql-type="datetime" />
+    </property>
+    <property name="ExecuteTime">
+      <column name="ExecuteTime" sql-type="datetime" />
+    </property>
+
+    <property name="Executor" type="AnyType">
+      <column name="ExecutorType" sql-type="nvarchar(500)" />
+      <column name="ExecutorText" sql-type="nvarchar(max)" />
+      <column name="ExecutorXml" sql-type="xml" />
+    </property>
+
+    <property name="Context" type="AnyType">
+      <column name="ContextType" sql-type="nvarchar(500)" />
+      <column name="ContextText" sql-type="nvarchar(max)" />
+      <column name="ContextXml" sql-type="xml" />
+    </property>
+
+    <bag name="Dependencies" table="SyncTaskDependencies" cascade="none" lazy="false">
+      <key>
+        <column name="ID" sql-type="int" />
+      </key>
+      <many-to-many class="SyncTask">
+        <column name="Dependence" sql-type="int" />
+      </many-to-many>
+    </bag>
+  </class>
+</hibernate-mapping>

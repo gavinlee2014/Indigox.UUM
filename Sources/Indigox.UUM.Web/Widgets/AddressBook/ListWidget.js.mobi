@@ -1,0 +1,106 @@
+﻿define("/UUM/Widgets/AddressBook/ListWidget",
+    [
+        "Indigox.Web.JsLib.Utils.StringUtil",
+        "Indigox.Web.JsLib.Utils.UrlUtil",
+        "Indigox.Web.JsLib.Models.RecordManager",
+        "Indigox.Web.JsLib.Proxy.InstructionProxy",
+        "Indigox.Web.JsLib.Controllers.ListController",
+        "Indigox.Web.JsLib.Utils.Browser",
+        "Indigox.Web.JsLib.Controls.Selection.ItemMode",
+        "Indigox/UUM/Application/AddressBook"
+    ],
+    function (
+        StringUtil,
+        UrlUtil,
+        RecordManager,
+        InstructionProxy,
+        ListController,
+        Browser,
+        ItemMode
+    ) {
+
+        var exports = function (widget) {
+            var limit = 10;
+
+            var listControl = $(widget).DataList("AddressBookList").first();
+            configurateItemTemplate(listControl);
+
+            var proxy = new InstructionProxy({
+                query: "AddressBookListQuery"
+            });
+
+            var arrayController = new ListController({
+                model: RecordManager.getInstance().createRecordSet('AddressBook', {
+                    addRecords: true,
+                    proxy: proxy
+                }),
+                params: {
+                    "FetchSize": limit
+                }
+            });
+
+            $(widget).Paging("Paging").first().configure({
+                pageSize: limit,
+                arrayController: arrayController
+            });
+
+            listControl.setController(arrayController);
+
+            listControl.setSelMode(new ItemMode({
+                allowDeselect: false,
+                returnValueType: "ARRAY",
+                mode: "SINGLE"
+            }));
+
+            listControl.on("itemSelectedChanged", (function () {
+                var lastSeleted = null;
+
+                return function (source, e) {
+                    var list = source;
+                    var record = source.getValue()[0];
+
+                    var userID = record.get("UserID");
+
+                    if (lastSeleted !== userID) {
+                        lastSeleted = userID;
+
+                        var url = UrlUtil.join("#/AddressBook/View.htm", {
+                            ID: userID
+                        });
+                        UrlUtil.goTo(url);
+                    }
+                };
+            } ()));
+
+            $(widget).Button("searchButton").first().on("clicked", function (source, e) {
+                //debug.log("searchButton clicked...");
+
+                var queryString = $(widget).TextBox("searchKey").first().getValue();
+                var paging = $(widget).Paging("Paging").first();
+                paging.getArrayController().setParam("QueryString", queryString);
+                paging.reset();
+            });
+        };
+
+        function configurateItemTemplate(listControl) {
+            var listTemplate = listControl.getItemTemplate();
+            listTemplate.getChild("UserOrgAndTitle").configure({
+                binding: {
+                    mapping: {
+                        value: function (record) {
+                            var sections = [];
+                            if (!StringUtil.isNullOrEmpty(record.get("OrganizationName"))) {
+                                sections.push(record.get("OrganizationName"));
+                            }
+                            if (!StringUtil.isNullOrEmpty(record.get("Title"))) {
+                                sections.push(record.get("Title"));
+                            }
+                            return sections.join("/");
+                        }
+                    }
+                }
+            });
+        }
+
+        return exports;
+    });

@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservice.dhr/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="ZydcWebServiceImplService" targetNamespace="http://webservice.dhr/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://webservice.dhr/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getBqInfoByJobno" type="tns:getBqInfoByJobno" />
+      <xs:element name="getBqInfoByJobnoResponse" type="tns:getBqInfoByJobnoResponse" />
+      <xs:element name="getCodeInfo" type="tns:getCodeInfo" />
+      <xs:element name="getCodeInfoResponse" type="tns:getCodeInfoResponse" />
+      <xs:element name="getLeaveInfoByJobno" type="tns:getLeaveInfoByJobno" />
+      <xs:element name="getLeaveInfoByJobnoResponse" type="tns:getLeaveInfoByJobnoResponse" />
+      <xs:element name="getOrgInfo" type="tns:getOrgInfo" />
+      <xs:element name="getOrgInfoResponse" type="tns:getOrgInfoResponse" />
+      <xs:element name="getPersonInfo" type="tns:getPersonInfo" />
+      <xs:element name="getPersonInfoResponse" type="tns:getPersonInfoResponse" />
+      <xs:element name="insertInfo" type="tns:insertInfo" />
+      <xs:element name="insertInfoResponse" type="tns:insertInfoResponse" />
+      <xs:element name="pushInfoByJobno" type="tns:pushInfoByJobno" />
+      <xs:element name="pushInfoByJobnoResponse" type="tns:pushInfoByJobnoResponse" />
+      <xs:element name="test" type="tns:test" />
+      <xs:element name="testResponse" type="tns:testResponse" />
+      <xs:element name="updateProcessState" type="tns:updateProcessState" />
+      <xs:element name="updateProcessStateResponse" type="tns:updateProcessStateResponse" />
+      <xs:complexType name="getBqInfoByJobno">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+          <xs:element minOccurs="0" name="arg1" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getBqInfoByJobnoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateProcessState">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+          <xs:element minOccurs="0" name="arg1" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateProcessStateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="pushInfoByJobno">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+          <xs:element minOccurs="0" name="arg1" type="xs:string" />
+          <xs:element minOccurs="0" name="arg2" type="xs:string" />
+          <xs:element minOccurs="0" name="arg3" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="pushInfoByJobnoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getPersonInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getPersonInfoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="test">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="testResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="insertInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+          <xs:element minOccurs="0" name="arg1" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="insertInfoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getLeaveInfoByJobno">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+          <xs:element minOccurs="0" name="arg1" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getLeaveInfoByJobnoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getOrgInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+          <xs:element minOccurs="0" name="arg1" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getOrgInfoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getCodeInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getCodeInfoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getCodeInfoResponse">
+    <wsdl:part name="parameters" element="tns:getCodeInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getOrgInfo">
+    <wsdl:part name="parameters" element="tns:getOrgInfo" />
+  </wsdl:message>
+  <wsdl:message name="getCodeInfo">
+    <wsdl:part name="parameters" element="tns:getCodeInfo" />
+  </wsdl:message>
+  <wsdl:message name="updateProcessStateResponse">
+    <wsdl:part name="parameters" element="tns:updateProcessStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="testResponse">
+    <wsdl:part name="parameters" element="tns:testResponse" />
+  </wsdl:message>
+  <wsdl:message name="getOrgInfoResponse">
+    <wsdl:part name="parameters" element="tns:getOrgInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBqInfoByJobnoResponse">
+    <wsdl:part name="parameters" element="tns:getBqInfoByJobnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="test">
+    <wsdl:part name="parameters" element="tns:test" />
+  </wsdl:message>
+  <wsdl:message name="insertInfo">
+    <wsdl:part name="parameters" element="tns:insertInfo" />
+  </wsdl:message>
+  <wsdl:message name="getPersonInfoResponse">
+    <wsdl:part name="parameters" element="tns:getPersonInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateProcessState">
+    <wsdl:part name="parameters" element="tns:updateProcessState" />
+  </wsdl:message>
+  <wsdl:message name="pushInfoByJobnoResponse">
+    <wsdl:part name="parameters" element="tns:pushInfoByJobnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPersonInfo">
+    <wsdl:part name="parameters" element="tns:getPersonInfo" />
+  </wsdl:message>
+  <wsdl:message name="pushInfoByJobno">
+    <wsdl:part name="parameters" element="tns:pushInfoByJobno" />
+  </wsdl:message>
+  <wsdl:message name="getLeaveInfoByJobnoResponse">
+    <wsdl:part name="parameters" element="tns:getLeaveInfoByJobnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBqInfoByJobno">
+    <wsdl:part name="parameters" element="tns:getBqInfoByJobno" />
+  </wsdl:message>
+  <wsdl:message name="getLeaveInfoByJobno">
+    <wsdl:part name="parameters" element="tns:getLeaveInfoByJobno" />
+  </wsdl:message>
+  <wsdl:message name="insertInfoResponse">
+    <wsdl:part name="parameters" element="tns:insertInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ZydcWebServiceImpl">
+    <wsdl:operation name="getBqInfoByJobno">
+      <wsdl:input name="getBqInfoByJobno" message="tns:getBqInfoByJobno" />
+      <wsdl:output name="getBqInfoByJobnoResponse" message="tns:getBqInfoByJobnoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateProcessState">
+      <wsdl:input name="updateProcessState" message="tns:updateProcessState" />
+      <wsdl:output name="updateProcessStateResponse" message="tns:updateProcessStateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="pushInfoByJobno">
+      <wsdl:input name="pushInfoByJobno" message="tns:pushInfoByJobno" />
+      <wsdl:output name="pushInfoByJobnoResponse" message="tns:pushInfoByJobnoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getPersonInfo">
+      <wsdl:input name="getPersonInfo" message="tns:getPersonInfo" />
+      <wsdl:output name="getPersonInfoResponse" message="tns:getPersonInfoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="test">
+      <wsdl:input name="test" message="tns:test" />
+      <wsdl:output name="testResponse" message="tns:testResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="insertInfo">
+      <wsdl:input name="insertInfo" message="tns:insertInfo" />
+      <wsdl:output name="insertInfoResponse" message="tns:insertInfoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getLeaveInfoByJobno">
+      <wsdl:input name="getLeaveInfoByJobno" message="tns:getLeaveInfoByJobno" />
+      <wsdl:output name="getLeaveInfoByJobnoResponse" message="tns:getLeaveInfoByJobnoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrgInfo">
+      <wsdl:input name="getOrgInfo" message="tns:getOrgInfo" />
+      <wsdl:output name="getOrgInfoResponse" message="tns:getOrgInfoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getCodeInfo">
+      <wsdl:input name="getCodeInfo" message="tns:getCodeInfo" />
+      <wsdl:output name="getCodeInfoResponse" message="tns:getCodeInfoResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZydcWebServiceImplServiceSoapBinding" type="tns:ZydcWebServiceImpl">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getBqInfoByJobno">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getBqInfoByJobno">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getBqInfoByJobnoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateProcessState">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="updateProcessState">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateProcessStateResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pushInfoByJobno">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="pushInfoByJobno">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="pushInfoByJobnoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPersonInfo">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getPersonInfo">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getPersonInfoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="test">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="test">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="testResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertInfo">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="insertInfo">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="insertInfoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLeaveInfoByJobno">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getLeaveInfoByJobno">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getLeaveInfoByJobnoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCodeInfo">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getCodeInfo">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getCodeInfoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrgInfo">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getOrgInfo">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getOrgInfoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZydcWebServiceImplService">
+    <wsdl:port name="ZydcWebServiceImplPort" binding="tns:ZydcWebServiceImplServiceSoapBinding">
+      <soap:address location="http://10.10.0.129:8090/hcm_zydc/ws/bpm/servicess" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

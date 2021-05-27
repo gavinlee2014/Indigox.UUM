@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Indigox.UUM.Application"
+                   namespace="Indigox.UUM.Application.DTO"
+                   default-lazy="false">
+
+  <class name="PrincipalDTO" table="Principal" >
+    <id name="ID" type="string">
+      <column name="ID" sql-type="char(12)" length="12" />
+    </id>
+    <property name="Type" type="string">
+      <column name="Type" sql-type="varchar(50)" length="50" />
+    </property>
+    <property name="Name" type="string">
+      <column name="Name" sql-type="nvarchar(255)" length="255" />
+    </property>
+    <property name="FullName" type="string">
+      <column name="FullName" sql-type="nvarchar(1000)" length="1000" />
+    </property>
+    <property name="DisplayName" type="string">
+      <column name="DisplayName" sql-type="nvarchar(1000)" length="1000" />
+    </property>
+    <property name="Email" type="string">
+      <column name="Email" sql-type="varchar(500)" length="500" />
+    </property>
+    <property name="IsEnabled" type="bool">
+      <column name="IsEnabled" sql-type="bit" />
+    </property>
+    <property name="IsDeleted" type="bool">
+      <column name="IsDeleted" sql-type="bit" />
+    </property>
+    <property name="CreateTime" type="datetime">
+      <column name="CreateTime" sql-type="datetime" />
+    </property>
+    <property name="ModifyTime" type="datetime">
+      <column name="ModifyTime" sql-type="datetime" />
+    </property>
+  </class>
+</hibernate-mapping>

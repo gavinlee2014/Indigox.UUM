@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{443C2A4C-32FF-4174-ACB7-0B6A0C4318E1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Indigox.UUM.Application.Tests</RootNamespace>
+    <AssemblyName>Indigox.UUM.Application.Tests</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\..\References\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Indigox.Common.Configuration">
+      <HintPath>..\..\References\Indigox.Common.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.database, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\indigox.common.database.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\indigox.common.logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Indigox.Common.NHibernateFactories">
+      <HintPath>..\..\References\Indigox.Common.NHibernateFactories.dll</HintPath>
+    </Reference>
+    <Reference Include="Indigox.Web.CQRS">
+      <HintPath>..\..\References\Indigox.Web.CQRS.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\References\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\References\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Principal\PrincipalListQueryTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sync\Client\ADImportOrganizationalUnitServiceTest.cs" />
+    <Compile Include="Sync\Client\ADImportUserServiceTest.cs" />
+    <Compile Include="Sync\Server\ExportDataServiceTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Config\factories.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Config\uumquery.nhb.cfg.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Sources\Indigox.UUM.Application\Indigox.UUM.Application.csproj">
+      <Project>{6C9F466D-D159-4BD8-875D-775D08FD4DCF}</Project>
+      <Name>Indigox.UUM.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sources\Indigox.UUM.Sync.Interface\Indigox.UUM.Sync.Interface.csproj">
+      <Project>{F5927889-D296-4D9A-BAA9-DB1B5CCA1B05}</Project>
+      <Name>Indigox.UUM.Sync.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="..\..\Build\configurations.proj" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6C9F466D-D159-4BD8-875D-775D08FD4DCF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Indigox.UUM.Application</RootNamespace>
+    <AssemblyName>Indigox.UUM.Application</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\..\References\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Indigox.CMS.Security">
+      <HintPath>..\..\References\indigox.cms.security.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.adaccessor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\indigox.common.adaccessor.dll</HintPath>
+    </Reference>
+    <Reference Include="Indigox.Common.Database">
+      <HintPath>..\..\References\indigox.common.database.dll</HintPath>
+    </Reference>
+    <Reference Include="Indigox.Common.DomainModels">
+      <HintPath>..\..\References\indigox.common.domainmodels.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.eventbus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\indigox.common.eventbus.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.exchangemanager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\indigox.common.exchangemanager.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\indigox.common.logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Indigox.Common.Membership, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Indigox.Common.Membership.dll</HintPath>
+    </Reference>
+    <Reference Include="Indigox.Common.Membership.NHibernateImpl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Indigox.Common.Membership.NHibernateImpl.dll</HintPath>
+    </Reference>
+    <Reference Include="Indigox.Common.NHibernateFactories">
+      <HintPath>..\..\References\indigox.common.nhibernatefactories.dll</HintPath>
+    </Reference>
+    <Reference Include="Indigox.Common.StateContainer">
+      <HintPath>..\..\References\indigox.common.statecontainer.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.statistics">
+      <HintPath>..\..\References\indigox.common.statistics.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.common.utilities">
+      <HintPath>..\..\References\indigox.common.utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="indigox.settings, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\indigox.settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Indigox.Web.CQRS">
+      <HintPath>..\..\References\indigox.web.cqrs.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\References\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddressBook\AddressBookListQuery.cs" />
+    <Compile Include="AddressBook\AddressBookQuery.cs" />
+    <Compile Include="Comparers\PrincipalComparer.cs" />
+    <Compile Include="DTO\AddressBookDTO.cs" />
+    <Compile Include="DTO\ContainerDTO.cs" />
+    <Compile Include="DTO\GroupDTO.cs" />
+    <Compile Include="DTO\HRPrincipalDTO.cs" />
+    <Compile Include="DTO\OrganizationalPersonDTO.cs" />
+    <Compile Include="DTO\OrganizationalRoleDTO.cs" />
+    <Compile Include="DTO\OrganizationalUnitDTO.cs" />
+    <Compile Include="DTO\PrincipalDTO.cs" />
+    <Compile Include="DTO\PrincipalSummaryDTO.cs" />
+    <Compile Include="DTO\ProfileDTO.cs" />
+    <Compile Include="DTO\RoleDTO.cs" />
+    <Compile Include="DTO\SimplePrincipalDTO.cs" />
+    <Compile Include="DTO\SyncTaskDTO.cs" />
+    <Compile Include="DTO\SyncTaskSummaryDTO.cs" />
+    <Compile Include="DTO\SysConfigurationDTO.cs" />
+    <Compile Include="DTO\SysListDTO.cs" />
+    <Compile Include="Events\NavigationResetListener.cs" />
+    <Compile Include="Group\CreateGroupCommand.cs" />
+    <Compile Include="Group\DefaultGroupQuery.cs" />
+    <Compile Include="Group\DeleteGroupCommand.cs" />
+    <Compile Include="Group\GroupCommand.cs" />
+    <Compile Include="Group\GroupListQuery.cs" />
+    <Compile Include="Group\GroupQuery.cs" />
+    <Compile Include="Group\UpdateGroupCommand.cs" />
+    <Compile Include="Comparers\ContainerComparer.cs" />
+    <Compile Include="Handlers\ExportAddressBookHandler.cs" />
+    <Compile Include="HR\HRBatchSyncCommand.cs" />
+    <Compile Include="HR\HREmployeeExistListQuery.cs" />
+    <Compile Include="HR\HREmployeeListQuery.cs" />
+    <Compile Include="HR\HREmployeeQuery.cs" />
+    <Compile Include="HR\HREmployeeSyncCommand.cs" />
+    <Compile Include="HR\HREmployeeUpdateCommand.cs" />
+    <Compile Include="HR\HROrganizationalExistListQuery.cs" />
+    <Compile Include="HR\HROrganizationalListQuery.cs" />
+    <Compile Include="HR\HROrganizationalQuery.cs" />
+    <Compile Include="HR\HROrganizationalSyncCommand.cs" />
+    <Compile Include="HR\HROrganizationalUpdateCommand.cs" />
+    <Compile Include="HR\HRPrincipalListQuery.cs" />
+    <Compile Include="LogOperation\OperationLogDTO.cs" />
+    <Compile Include="LogOperation\OperationLogListQuery.cs" />
+    <Compile Include="Module\Module.cs" />
+    <Compile Include="NameStrategy\CreateNameStrategyDescriptorCommand.cs" />
+    <Compile Include="NameStrategy\DeleteNameStrategyDescriptorCommand.cs" />
+    <Compile Include="NameStrategy\NameStrategyDescriptorListQuery.cs" />
+    <Compile Include="NameStrategy\NameStrategyDescriptorSingleQuery.cs" />
+    <Compile Include="NameStrategy\UpdateNameStrategyDescriptorCommand.cs" />
+    <Compile Include="OrganizationalPerson\CheckUserExistsInADQuery.cs" />
+    <Compile Include="OrganizationalPerson\CheckUserExistsQuery.cs" />
+    <Compile Include="OrganizationalPerson\UnlockOrganizationalPersonCommand.cs" />
+    <Compile Include="Permission\HRRoleQuery.cs" />
+    <Compile Include="Principal\PrincipalSearchQuery.cs" />
+    <Compile Include="Profile\ChangeDBPassword.cs" />
+    <Compile Include="Profile\ChangePasswordCommand.cs" />
+    <Compile Include="OrganizationalPerson\SetPasswordCommand.cs" />
+    <Compile Include="OrganizationalPerson\CurrentUserQuery.cs" />
+    <Compile Include="OrganizationalPerson\DeletedUserListQuery.cs" />
+    <Compile Include="OrganizationalPerson\CreateOrganizationalPersonCommand.cs" />
+    <Compile Include="OrganizationalPerson\DefaultOrganizationalPersonQuery.cs" />
+    <Compile Include="OrganizationalPerson\DeleteOrganizationalPersonCommand.cs" />
+    <Compile Include="OrganizationalPerson\DisabledUserListQuery.cs" />
+    <Compile Include="OrganizationalPerson\DisableOrganizationalPersonCommand.cs" />
+    <Compile Include="OrganizationalPerson\EnableOrganizationalPersonCommand.cs" />
+    <Compile Include="OrganizationalPerson\FilterUserQuery.cs" />
+    <Compile Include="OrganizationalPerson\OrganizationalPersonCommand.cs" />
+    <Compile Include="OrganizationalPerson\OrganizationalPersonListQuery.cs" />
+    <Compile Include="OrganizationalPerson\OrganizationalPersonQuery.cs" />
+    <Compile Include="OrganizationalPerson\UpdateOrganizationalPersonCommand.cs" />
+    <Compile Include="OrganizationalRole\CreateOrganizationalRoleCommand.cs" />
+    <Compile Include="OrganizationalRole\DefaultOrganizationalRoleQuery.cs" />
+    <Compile Include="OrganizationalRole\DeleteOrganizationalRoleCommand.cs" />
+    <Compile Include="OrganizationalRole\OrganizationalRoleCommand.cs" />
+    <Compile Include="OrganizationalRole\OrganizationalRoleQuery.cs" />
+    <Compile Include="OrganizationalRole\UpdateOrganizationalRoleCommand.cs" />
+    <Compile Include="OrganizationalUnit\CreateOrganizationalUnitCommand.cs" />
+    <Compile Include="OrganizationalUnit\DefaultOrganizationalUnitQuery.cs" />
+    <Compile Include="OrganizationalUnit\DeleteOrganizationalUnitCommand.cs" />
+    <Compile Include="OrganizationalUnit\OrganizationalUnitCommand.cs" />
+    <Compile Include="OrganizationalUnit\OrganizationalUnitListQuery.cs" />
+    <Compile Include="OrganizationalUnit\OrganizationalUnitQuery.cs" />
+    <Compile Include="OrganizationalUnit\UpdateOrganizationalUnitCommand.cs" />
+    <Compile Include="Permission\PrincipalPermissionQuery.cs" />
+    <Compile Include="Permission\UUMObjectIdentityStrategy.cs" />
+    <Compile Include="Principal\ChangeOrganizationCommand.cs" />
+    <Compile Include="Principal\GeneralListQuery.cs" />
+    <Compile Include="Principal\PrincipalListQuery.cs" />
+    <Compile Include="Principal\PrincipalSummaryQuery.cs" />
+    <Compile Include="Principal\PrincipalTypes.cs" />
+    <Compile Include="Profile\ProfileQuery.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Role\CreateRoleCommand.cs" />
+    <Compile Include="Role\DefaultRoleQuery.cs" />
+    <Compile Include="Role\DeleteRoleCommand.cs" />
+    <Compile Include="Role\RoleCommand.cs" />
+    <Compile Include="Role\RoleForUnitListQuery.cs" />
+    <Compile Include="Role\RoleListQuery.cs" />
+    <Compile Include="Role\RoleQuery.cs" />
+    <Compile Include="Role\UpdateRoleCommand.cs" />
+    <Compile Include="SyncTask\IgnoreTaskCommand.cs" />
+    <Compile Include="SyncTask\RetrySyncTaskCommand.cs" />
+    <Compile Include="SyncTask\SyncTaskListQuery.cs" />
+    <Compile Include="SyncTask\SyncTaskSummaryQuery.cs" />
+    <Compile Include="Sync\WebServices\AD\ADAccessorUtil.cs" />
+    <Compile Include="Sync\WebServices\AD\ADImportGroupService.cs" />
+    <Compile Include="Sync\WebServices\AD\ADImportOrganizationalRoleService.cs" />
+    <Compile Include="Sync\WebServices\AD\ADImportOrganizationalUnitService.cs" />
+    <Compile Include="Sync\WebServices\AD\ADImportRoleService.cs" />
+    <Compile Include="Sync\WebServices\AD\ADImportUserService.cs" />
+    <Compile Include="Sync\WebServices\EHR\ImportHREmployeeService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sync\WebServices\Exchange\ExchangeImportGroupService.cs" />
+    <Compile Include="Sync\WebServices\Exchange\ExchangeImportOrganizationalRoleService.cs" />
+    <Compile Include="Sync\WebServices\Exchange\ExchangeImportOrganizationalUnitService.cs" />
+    <Compile Include="Sync\WebServices\Exchange\ExchangeImportRoleService.cs" />
+    <Compile Include="Sync\WebServices\Exchange\ExchangeImportUserService.cs" />
+    <Compile Include="Sync\Consts.cs" />
+    <Compile Include="Sync\DTOConvertor.cs" />
+    <Compile Include="Sync\FullSyncCommand.cs" />
+    <Compile Include="Sync\WebServices\HR\ImportHRGroupService.cs" />
+    <Compile Include="Sync\WebServices\HR\ImportHROrganizationalRoleService.cs" />
+    <Compile Include="Sync\WebServices\HR\ImportHRRoleService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sync\WebServices\HR\ImportWYHROrganizationalService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sync\WebServices\HR\ImportWYHREmployeeService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sync\WebServices\HR\ImportHRUserService.cs" />
+    <Compile Include="Sync\WebServices\HR\ImportHROrganizationalUnitService.cs" />
+    <Compile Include="Sync\WebServices\Export\ExportGroupService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sync\WebServices\Export\ExportOrganizationalRoleService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sync\WebServices\Export\ExportOrganizationalUnitService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sync\WebServices\Export\ExportRoleService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sync\WebServices\Export\ExportUserService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SysConfiguration\CreateSysConfigurationCommand.cs" />
+    <Compile Include="SysConfiguration\DeleteSysConfigurationCommand.cs" />
+    <Compile Include="SysConfiguration\SysConfigurationStateListQuery.cs" />
+    <Compile Include="Utils\NameService.cs" />
+    <Compile Include="Utils\NHibernateFactoryInvoker.cs" />
+    <Compile Include="SysConfiguration\SysConfigurationListQuery.cs" />
+    <Compile Include="SysConfiguration\SysConfigurationSingleQuery.cs" />
+    <Compile Include="SysConfiguration\SysListQuery.cs" />
+    <Compile Include="SysConfiguration\UpdateSysConfigurationCommand.cs" />
+    <Compile Include="Web References\WebReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web\DingTalkCallbackHandler.cs" />
+    <Compile Include="Web\FullSyncHandler.cs" />
+    <Compile Include="Web\WindowsAuthenticationHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="js\Indigox\UUM\Application\AddressBook.js" />
+    <Content Include="js\Indigox\UUM\Application\Group.js" />
+    <Content Include="js\Indigox\UUM\Application\HREmployee.js" />
+    <Content Include="js\Indigox\UUM\Application\HROrganizational.js" />
+    <Content Include="js\Indigox\UUM\Application\HRPrincipal.js" />
+    <Content Include="js\Indigox\UUM\Application\NameStrategyDescriptor.js" />
+    <Content Include="js\Indigox\UUM\Application\OperationLog.js" />
+    <Content Include="js\Indigox\UUM\Application\OrganizationalPerson.js" />
+    <Content Include="js\Indigox\UUM\Application\OrganizationalRole.js" />
+    <Content Include="js\Indigox\UUM\Application\OrganizationalUnit.js" />
+    <Content Include="js\Indigox\UUM\Application\Principal.js" />
+    <Content Include="js\Indigox\UUM\Application\PrincipalSummary.js" />
+    <Content Include="js\Indigox\UUM\Application\Role.js" />
+    <Content Include="js\Indigox\UUM\Application\SyncTask.js" />
+    <Content Include="js\Indigox\UUM\Application\SyncTaskSummary.js" />
+    <Content Include="js\Indigox\UUM\Application\SysConfiguration.js" />
+    <Content Include="js\Indigox\UUM\Application\SysList.js" />
+    <EmbeddedResource Include="Maps\HRPrincipalDTO.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maps\OrganizationalPersonDTO.hbm.xml" />
+    <EmbeddedResource Include="Maps\AddressBookDTO.hbm.xml" />
+    <EmbeddedResource Include="Maps\PrincipalDTO.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Indigox.UUM.HR\Indigox.UUM.HR.csproj">
+      <Project>{1371F264-5B02-4B92-858D-69668E4D6C5E}</Project>
+      <Name>Indigox.UUM.HR</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Indigox.UUM.Naming\Indigox.UUM.Naming.csproj">
+      <Project>{25D54C8F-C96C-4C23-A53A-C2D684AC5A1E}</Project>
+      <Name>Indigox.UUM.Naming</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Indigox.UUM.NHibernateImpl\Indigox.UUM.NHibernateImpl.csproj">
+      <Project>{77D27774-24A7-4DE0-8571-6A22D04A7D14}</Project>
+      <Name>Indigox.UUM.NHibernateImpl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Indigox.UUM.Sync.Interface\Indigox.UUM.Sync.Interface.csproj">
+      <Project>{F5927889-D296-4D9A-BAA9-DB1B5CCA1B05}</Project>
+      <Name>Indigox.UUM.Sync.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Indigox.UUM.Sync\Indigox.UUM.Sync.csproj">
+      <Project>{47A80E9F-7D73-4D2F-8A20-73747BA625FC}</Project>
+      <Name>Indigox.UUM.Sync</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Indigox.UUM\Indigox.UUM.csproj">
+      <Project>{9E50DD30-C727-4760-BA00-4E5788080D5E}</Project>
+      <Name>Indigox.UUM</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\WebReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebReference\ZydcWebServiceImplService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://10.10.253.50:8090/hcm_zydc/ws/bpm/services%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebReference\</RelPath>
+      <UpdateFromURL>http://10.10.253.50:8090/hcm_zydc/ws/bpm/services%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Indigox_UUM_Application_WebReference_ZydcWebServiceImplService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="..\..\Build\configurations.proj" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\Build\webapp.targets" />
+  <PropertyGroup>
+    <WebApp>res</WebApp>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

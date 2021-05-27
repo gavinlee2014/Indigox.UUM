@@ -1,0 +1,36 @@
+﻿<div class="biz-contact-info">
+  <div>
+    <div class="portrait">
+      <img alt="" src="/res/img/addr-portrait.png" />
+    </div>
+    <label id="UserName" class="control-label">
+    </label>
+    <!-- link buttons -->
+    <ul>
+      <li class="phone">
+        <a id="CallTel" class="control-hyperlink invisible"></a>
+      </li>
+      <li class="mobile">
+        <a id="CallMobile" class="control-hyperlink invisible"></a>
+      </li>
+      <li class="sms">
+        <a id="SendSMS" class="control-hyperlink invisible"></a>
+      </li>
+      <li class="mail">
+        <a id="SendEmail" class="control-hyperlink invisible"></a>
+      </li>
+    </ul>
+  </div>
+  <div class="action_area">
+    <div class="action_area_toolbar">
+      <div id="toolbar" class="control-menu">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <!-- form -->
+  <div id="info" class="control-content"> 
+  </div>
+</div>

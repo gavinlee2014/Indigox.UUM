@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <stateContainer>
+    <listeners>
+      <listener type="Indigox.Common.NHibernateFactories.NHibernateStateContextListener, Indigox.Common.NHibernateFactories" />
+    </listeners>
+  </stateContainer>
+</config>

@@ -1,0 +1,64 @@
+﻿<div class="control-panel panel-collapsed searchpanel">
+    <h1>
+        <span>查询</span>
+        <input type="button" />
+    </h1>
+    <div class="body">
+        <div id="SearchPanel" class="control-content contentform">
+        </div>
+        <div class="control-content funcpanel">
+            <input id="btnSearch" type="button" class="control-button long searchbutton" value="查询" />
+            <input id="btnSyncAll" type="button" class="control-button long " value="批量同步" />
+        </div>
+    </div>
+</div>
+<div class="biz-common-list">
+    <dl>
+        <dt>
+            <label style="width: 5%;">
+                    <div id="selectAll" class="control-checkbox">
+                          <input type="checkbox" />
+                     </div>
+                </label>
+            <label style="width: 10%;">
+                类型</label>
+            <label style="width: 30%;">
+                名称</label>
+            <label style="width: 30%;">
+                邮件</label>
+            <label style="width: 10%;">
+                状态</label>
+            <label style="width: 13%;">
+                &nbsp;</label>
+        </dt>
+        <dd>
+            <ul id="HRPrincipalList" class="control-datalist">
+                <li id="HRPrincipalItem" class="control-template">
+                    <div style="width: 5%;" class="selectedsign">
+                    </div>
+                    <div style="width: 10%;">
+                        <label id="PrincipalType" class="control-label">
+                        </label>
+                    </div>
+                    <div style="width: 30%;">
+                        <label id="Name" class="control-label">
+                        </label>
+                    </div>
+                    <div style="width: 30%;">
+                        <label id="Email" class="control-label">
+                        </label>
+                    </div>
+                    <div style="width: 10%;">
+                        <label id="State" class="control-label">
+                        </label>
+                    </div>
+                    <div style="width: 13%;">
+                        <input id="btnSync" type="button" class="control-button" value="同步" />
+                    </div>
+                </li>
+            </ul>
+        </dd>
+    </dl>
+    <div id="Paging" class="control-paging">
+    </div>
+</div>

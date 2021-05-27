@@ -1,0 +1,7 @@
+C:\Projects\Indigox\Indigox.UUM\Tests\Indigox.UUM.Sync.TestClient\bin\Indigox.UUM.Sync.TestClient.dll
+C:\Projects\Indigox\Indigox.UUM\Tests\Indigox.UUM.Sync.TestClient\bin\Indigox.UUM.Sync.TestClient.pdb
+C:\Projects\Indigox\Indigox.UUM\Tests\Indigox.UUM.Sync.TestClient\bin\Indigox.UUM.Sync.Interface.dll
+C:\Projects\Indigox\Indigox.UUM\Tests\Indigox.UUM.Sync.TestClient\bin\Indigox.UUM.Sync.Interface.pdb
+C:\Projects\Indigox\Indigox.UUM\Tests\Indigox.UUM.Sync.TestClient\obj\Debug\Indigox.UUM.Sync.TestClient.dll
+C:\Projects\Indigox\Indigox.UUM\Tests\Indigox.UUM.Sync.TestClient\obj\Debug\Indigox.UUM.Sync.TestClient.pdb
+C:\Projects\Indigox\Indigox.UUM\Tests\Indigox.UUM.Sync.TestClient\obj\Debug\Indigox.UUM.Sync.TestClient.csprojResolveAssemblyReference.cache

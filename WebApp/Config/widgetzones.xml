@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<zones>
+  <xi:include href="widgets/cms.widgetzones.xml"         parse="xml" xpointer="xpath1(/zones/node())" xmlns:xi="http://www.w3.org/2003/XInclude" />
+  <xi:include href="widgets/uum.widgetzones.xml"         parse="xml" xpointer="xpath1(/zones/node())" xmlns:xi="http://www.w3.org/2003/XInclude" />
+  <xi:include href="widgets/settings.widgetzones.xml"    parse="xml" xpointer="xpath1(/zones/node())" xmlns:xi="http://www.w3.org/2003/XInclude" />
+</zones>

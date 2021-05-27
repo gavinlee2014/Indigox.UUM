@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="TestImportUserService.asmx.cs" Class="Indigox.UUM.Sync.TestClient.TestSyncDataService" %>

@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4BF65B0F-ECAC-4361-9230-20A58EA6D787}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Indigox.UUM.Web</RootNamespace>
+    <AssemblyName>Indigox.UUM.Web</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="indigox.common.exchangemanager">
+      <HintPath>..\..\References\indigox.common.exchangemanager.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dialog.htm" />
+    <Content Include="Index.htm" />
+    <Content Include="WebServices\ADImportGroupService.asmx" />
+    <Content Include="WebServices\ADImportOrganizationalRoleService.asmx" />
+    <Content Include="WebServices\ADImportOrganizationalUnitService.asmx" />
+    <Content Include="WebServices\ADImportRoleService.asmx" />
+    <Content Include="WebServices\ADImportUserService.asmx" />
+    <Content Include="WebServices\ExchangeImportGroupService.asmx" />
+    <Content Include="WebServices\ExchangeImportOrganizationalRoleService.asmx" />
+    <Content Include="WebServices\ExchangeImportOrganizationalUnitService.asmx" />
+    <Content Include="WebServices\ExchangeImportRoleService.asmx" />
+    <Content Include="WebServices\ExchangeImportUserService.asmx" />
+    <Content Include="WebServices\ExportDataService.asmx" />
+    <Content Include="WebServices\ExportGroupService.asmx" />
+    <Content Include="WebServices\ExportOrganizationalRoleService.asmx" />
+    <Content Include="WebServices\ExportOrganizationalUnitService.asmx" />
+    <Content Include="WebServices\ExportRoleService.asmx" />
+    <Content Include="WebServices\ExportUserService.asmx" />
+    <Content Include="WebServices\ImportHRGroupService.asmx" />
+    <Content Include="WebServices\ImportHROrganizationalRoleService.asmx" />
+    <Content Include="WebServices\ImportWYHREmployeeService.asmx" />
+    <Content Include="WebServices\ImportHRUserService.asmx" />
+    <Content Include="WebServices\ImportHROrganizationalUnitService.asmx" />
+    <Content Include="WebServices\ImportHRRoleService.asmx" />
+    <Content Include="Widgets\AddressBook\ListWidget.htm" />
+    <Content Include="Widgets\AddressBook\ListWidget.js" />
+    <Content Include="Widgets\Common\MailDatabaseData.js" />
+    <Content Include="Widgets\HR\SearchHRPrincipalContentType.js" />
+    <Content Include="Widgets\OperationLog\LogOperationQueryWidget.htm" />
+    <Content Include="Widgets\OperationLog\LogOperationQueryWidget.js" />
+    <Content Include="Widgets\OperationLog\LogSearchSpecification.js" />
+    <Content Include="Widgets\OperationLog\LogSearchSpecificationSchema.js" />
+    <Content Include="Widgets\OperationLog\OperationLogWidget.htm" />
+    <Content Include="Widgets\OperationLog\OperationLogWidget.js" />
+    <Content Include="Widgets\OrganizationalPerson\HREditWidget.htm" />
+    <Content Include="Widgets\OrganizationalPerson\HREditWidget.js" />
+    <Content Include="Widgets\Principal\UserSearchListWidget.htm" />
+    <Content Include="Widgets\AddressBook\TitleWidget.htm" />
+    <Content Include="Widgets\AddressBook\TitleWidget.js" />
+    <Content Include="Widgets\Principal\UserSearchListWidget.js" />
+    <Content Include="Widgets\AddressBook\ViewWidget.htm" />
+    <Content Include="Widgets\AddressBook\ViewWidget.js" />
+    <Content Include="Widgets\Common\TreeUtil.js" />
+    <Content Include="Widgets\Common\UserWidget.htm" />
+    <Content Include="Widgets\Common\UserWidget.js" />
+    <Content Include="Widgets\Company\EditToolBarWidget.js" />
+    <Content Include="Widgets\Company\EditWidget.htm" />
+    <Content Include="Widgets\Company\EditWidget.js" />
+    <Content Include="Widgets\Corporation\EditToolBarWidget.js" />
+    <Content Include="Widgets\Corporation\EditWidget.htm" />
+    <Content Include="Widgets\Corporation\EditWidget.js" />
+    <Content Include="Widgets\Department\EditToolBarWidget.js" />
+    <Content Include="Widgets\Department\EditWidget.htm" />
+    <Content Include="Widgets\Department\EditWidget.js" />
+    <Content Include="Widgets\Group\EditToolBarWidget.js" />
+    <Content Include="Widgets\Group\EditWidget.htm" />
+    <Content Include="Widgets\Group\EditWidget.js" />
+    <Content Include="Widgets\Group\ListToolBarWidget.js" />
+    <Content Include="Widgets\Group\ListWidget.htm" />
+    <Content Include="Widgets\Group\ListWidget.js" />
+    <Content Include="Widgets\HR\HRPrincipalListWidget.htm" />
+    <Content Include="Widgets\HR\HRPrincipalListWidget.js" />
+    <Content Include="Widgets\HR\HREmployeeListWidget.htm" />
+    <Content Include="Widgets\HR\HREmployeeListWidget.js" />
+    <Content Include="Widgets\HR\HREmployeeSyncWidget.htm" />
+    <Content Include="Widgets\HR\HREmployeeSyncWidget.js" />
+    <Content Include="Widgets\HR\HROrganizationalListWidget.htm" />
+    <Content Include="Widgets\HR\HROrganizationalListWidget.js" />
+    <Content Include="Widgets\HR\HROrganizationalSyncWidget.htm" />
+    <Content Include="Widgets\HR\HROrganizationalSyncWidget.js" />
+    <Content Include="Widgets\NameStrategyDescriptor\CreateWidget.htm" />
+    <Content Include="Widgets\NameStrategyDescriptor\CreateWidget.js" />
+    <Content Include="Widgets\NameStrategyDescriptor\EditWidget.htm" />
+    <Content Include="Widgets\NameStrategyDescriptor\EditWidget.js" />
+    <Content Include="Widgets\NameStrategyDescriptor\ListToolBarWidget.js" />
+    <Content Include="Widgets\NameStrategyDescriptor\ListWidget.htm" />
+    <Content Include="Widgets\NameStrategyDescriptor\ListWidget.js" />
+    <Content Include="Widgets\OrganizationalPerson\DeletedUserListWidget.htm" />
+    <Content Include="Widgets\OrganizationalPerson\DeletedUserListWidget.js" />
+    <Content Include="Widgets\OrganizationalPerson\DisabledUserListWidget.htm" />
+    <Content Include="Widgets\OrganizationalPerson\DisabledUserListWidget.js" />
+    <Content Include="Widgets\OrganizationalPerson\EditToolBarWidget.js" />
+    <Content Include="Widgets\OrganizationalPerson\EditWidget.htm" />
+    <Content Include="Widgets\OrganizationalPerson\EditWidget.js" />
+    <Content Include="Widgets\OrganizationalPerson\ListWidget.htm" />
+    <Content Include="Widgets\OrganizationalPerson\ListWidget.js" />
+    <Content Include="Widgets\OrganizationalPerson\EnableToDialogWidget.htm" />
+    <Content Include="Widgets\OrganizationalPerson\EnableToDialogWidget.js" />
+    <Content Include="Widgets\OrganizationalPerson\SetPasswordWidget.htm" />
+    <Content Include="Widgets\OrganizationalPerson\SetPasswordWidget.js" />
+    <Content Include="Widgets\Profile\ChangePasswordToolbarWidget.js" />
+    <Content Include="Widgets\Profile\ChangePasswordWidget.htm" />
+    <Content Include="Widgets\Profile\ChangePasswordWidget.js" />
+    <Content Include="Widgets\Profile\EditToolbarWidget.js" />
+    <Content Include="Widgets\Profile\EditWidget.htm" />
+    <Content Include="Widgets\Profile\EditWidget.js" />
+    <Content Include="Widgets\OrganizationalRole\EditToolBarWidget.js" />
+    <Content Include="Widgets\OrganizationalRole\EditWidget.htm" />
+    <Content Include="Widgets\OrganizationalRole\EditWidget.js" />
+    <Content Include="Widgets\OrganizationalRole\ListWidget.htm" />
+    <Content Include="Widgets\OrganizationalRole\ListWidget.js" />
+    <Content Include="Widgets\OrganizationalUnit\EditToolBarWidget.js" />
+    <Content Include="Widgets\OrganizationalUnit\EditWidget.htm" />
+    <Content Include="Widgets\OrganizationalUnit\EditWidget.js" />
+    <Content Include="Widgets\OrganizationalUnit\ListWidget.htm" />
+    <Content Include="Widgets\OrganizationalUnit\ListWidget.js" />
+    <Content Include="Widgets\Section\EditToolBarWidget.js" />
+    <Content Include="Widgets\Section\EditWidget.htm" />
+    <Content Include="Widgets\Section\EditWidget.js" />
+    <Content Include="Widgets\Principal\ChangeOrganizationWidget.htm" />
+    <Content Include="Widgets\Principal\ChangeOrganizationWidget.js" />
+    <Content Include="Widgets\Selection\DisplaySelectedPlugin.js" />
+    <Content Include="Widgets\Selection\UserSelection.js" />
+    <Content Include="Widgets\Selection\GroupSelection.js" />
+    <Content Include="Widgets\Selection\RoleSelection.js" />
+    <Content Include="Widgets\Selection\TabContainer.js" />
+    <Content Include="Widgets\Selection\UserSelectionToolbarWidget.js" />
+    <Content Include="Widgets\Selection\UserSelectionWidget.htm" />
+    <Content Include="Widgets\Selection\UserSelectionWidget.js" />
+    <Content Include="Widgets\Principal\ListToolBarWidget.js" />
+    <Content Include="Widgets\Principal\ListWidget.htm" />
+    <Content Include="Widgets\Principal\ListWidget.js" />
+    <Content Include="Widgets\Role\EditToolBarWidget.js" />
+    <Content Include="Widgets\Role\EditWidget.htm" />
+    <Content Include="Widgets\Role\EditWidget.js" />
+    <Content Include="Widgets\Role\ListToolBarWidget.js" />
+    <Content Include="Widgets\Role\ListWidget.htm" />
+    <Content Include="Widgets\Role\ListWidget.js" />
+    <Content Include="Widgets\SyncTask\ListWidget.htm" />
+    <Content Include="Widgets\SyncTask\ListWidget.js" />
+    <Content Include="Widgets\SyncTask\SearchSyncTaskContentType.js" />
+    <Content Include="Widgets\SyncTask\SearchSyncTaskSchema.js" />
+    <Content Include="Widgets\SysConfiguration\CreateWidget.htm" />
+    <Content Include="Widgets\SysConfiguration\CreateWidget.js" />
+    <Content Include="Widgets\SysConfiguration\EditWidget.htm" />
+    <Content Include="Widgets\SysConfiguration\EditWidget.js" />
+    <Content Include="Widgets\SysConfiguration\ListToolBarWidget.js" />
+    <Content Include="Widgets\SysConfiguration\ListWidget.htm" />
+    <Content Include="Widgets\SysConfiguration\ListWidget.js" />
+    <Content Include="Widgets\SysConfiguration\StateListWidget.htm" />
+    <Content Include="Widgets\SysConfiguration\StateListWidget.js" />
+    <Content Include="Widgets\Toobar\ToolbarWidget.htm" />
+    <Content Include="Widgets\UserSelect.htm" />
+    <Content Include="Widgets\UserSelect.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Index.htm.mobi" />
+    <Content Include="Index.htm.pad" />
+    <Content Include="Widgets\AddressBook\ListWidget.htm.mobi">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Widgets\AddressBook\ListWidget.htm.pad" />
+    <Content Include="Widgets\AddressBook\ListWidget.js.mobi" />
+    <Content Include="Widgets\AddressBook\ListWidget.js.pad" />
+    <Content Include="Widgets\AddressBook\ViewWidget.htm.mobi" />
+    <Content Include="Widgets\AddressBook\ViewWidget.htm.pad">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Widgets\AddressBook\ViewWidget.js.mobi" />
+    <Content Include="Widgets\AddressBook\ViewWidget.js.pad" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddressBook\Export.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Widgets\AddressBook\IndexListWidget.htm.pad">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="..\..\Build\configurations.proj" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Import Project="..\..\Build\webapp.targets" />
+  <PropertyGroup>
+    <WebApp>UUM</WebApp>
+    <BuildDependsOn>
+      BeforeBuild;
+      AfterBuild
+    </BuildDependsOn>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

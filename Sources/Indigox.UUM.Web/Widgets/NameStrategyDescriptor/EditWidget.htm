@@ -1,0 +1,79 @@
+﻿<div class="control-panel panel-expanded">
+    <h1>
+        <span>编辑命名规则</span>
+        <input type="button" />
+    </h1>
+    <div class="body">
+        <div id="EditArea" class="control-content">
+            <ul class="form_list">
+                <li>
+                    <dl>
+                        <dt>
+                            <label>
+                                优先级</label>
+                        </dt>
+                        <dd>
+                            <input type="text" id="Priority" class="control-textbox text" />
+                        </dd>
+                    </dl>
+                </li>
+                <li class="required">
+                    <dl>
+                        <dt>
+                            <label>
+                                类名</label>
+                        </dt>
+                        <dd>
+                            <input type="text" id="ClassName" class="control-textbox text" />
+                        </dd>
+                    </dl>
+                </li>
+                <li class="required">
+                    <dl>
+                        <dt>
+                            <label>
+                                程序集</label>
+                        </dt>
+                        <dd>
+                            <input type="text" id="Assembly" class="control-textbox text" />
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <label>
+                                描述</label>
+                        </dt>
+                        <dd>
+                            <textarea rows="5" cols="10" id="Description" class="control-richtextbox"></textarea>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <label>
+                                是否启用</label>
+                        </dt>
+                        <dd>
+                            <div id="Enabled" class="control-checkbox">
+                                <input type="checkbox" />
+                            </div>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+            <div class="control-validator invisible" id="Validator">
+                <input type="button" />
+                <div class="message">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="toolbar">
+    <input type="button" id="btnSave" class="control-button" value="保存" />
+    <input type="button" id="btnDelete" class="control-button" value="删除" /> 
+    <input type="button" id="btnReturn" class="control-button" value="返回" />
+</div>

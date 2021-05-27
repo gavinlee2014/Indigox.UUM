@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Indigox.UUM.HR.Model" assembly="Indigox.UUM.HR" default-lazy="false">
+
+  <class name="HREmployee" table="HREmployee">
+    <id name="ID">
+      <column name="ID" sql-type="varchar(50)" length="50" />
+    </id>
+    <property name="ParentID" type="string">
+      <column name="ParentID" sql-type="varchar(50)" length="50" />
+    </property>
+    <property name="Name" type="string">
+      <column name="Name" sql-type="varchar(100)" length="100" />
+    </property>
+    <property name="IdCard" type="string">
+      <column name="IdCard" sql-type="varchar(50)" length="100" />
+    </property>
+    <property name="AccountName" type="string">
+      <column name="AccountName" sql-type="varchar(50)" length="50" />
+    </property>
+    <property name="DisplayName" type="string">
+      <column name="DisplayName" sql-type="nvarchar(1000)" length="100" />
+    </property>
+    <property name="Tel" type="string">
+      <column name="Tel" sql-type="varchar(30)" length="30" />
+    </property>
+    <property name="Mobile" type="string">
+      <column name="Mobile" sql-type="varchar(30)" length="30" />
+    </property>
+    <property name="Fax" type="string">
+      <column name="Fax" sql-type="varchar(30)" length="30" />
+    </property>
+    <property name="Email" type="string">
+      <column name="Email" sql-type="varchar(50)" length="50" />
+    </property>
+    <property name="Title" type="string">
+      <column name="Title" sql-type="varchar(100)" length="100" />
+    </property>
+    <property name="Portrait" type="string">
+      <column name="portrait" sql-type="nvarchar(100)" length="100" />
+    </property>
+    <property name="Enabled" type="bool">
+      <column name="Enabled" sql-type="bit" length="1" />
+    </property>
+    <property name="EmployeeFlag" type="bool">
+      <column name="EmployeeFlag" sql-type="bit" length="1" />
+    </property>
+    <property name="State">
+      <column name="State" sql-type="int"/>
+    </property>
+    <property name="Synchronized" type="bool">
+      <column name="Synchronized" sql-type="bit" length="1" />
+    </property>
+    <property name="ModifyTime" type="DateTime">
+      <column name="ModifyTime" sql-type="DateTime"/>
+    </property>
+    <property name="MailDatabase" type="string">
+      <column name="MailDatabase" sql-type="varchar(500)" length="500" />
+    </property>
+    <property name="Description" type="string">
+      <column name="Description" sql-type="nvarchar(500)" length="500" />
+    </property>
+    <property name="HasPolyphone" type="bool">
+      <column name="HasPolyphone" sql-type="bit" length="1" />
+    </property>
+    <property name="QuitDate" type="datetime">
+      <column name="QuitDate" sql-type="datetime" />
+    </property>
+	<property name="OrderNum" type="double">
+		<column name="OrderNum" sql-type="float" />
+	</property>
+	<map name="ExtendProperties" table="HRExtendProperties">
+		<key column="ID"></key>
+		<index column="PropertyName" type="string" />
+		<element column="PropertyValue" type="string" />
+	</map>
+	<bag name="OrganizationalRoles" table="HRMembership" cascade="none" lazy="false">
+		<!-- enable collection cache -->
+		<cache usage="read-write" />
+		<key>
+			<column name="Child" sql-type="varchar(50)" length="50" />
+		</key>
+		<many-to-many class="HROrganizationalRole">
+			<column name="Parent" sql-type="varchar(50)" length="50" />
+		</many-to-many>
+	</bag>
+  </class>
+</hibernate-mapping>

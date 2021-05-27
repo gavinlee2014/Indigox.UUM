@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="Indigox.UUM.Sync.Model" assembly="Indigox.UUM.Sync" default-lazy="false">
+
+  <class name="SysKeyMapping" table="SysKeyMapping">
+    <id name="ID" type="long">
+      <column name="ID" sql-type="bigint" />
+      <generator class="native" />
+    </id>
+    <property name="InternalID" type="string">
+      <column name="InternalID" sql-type="varchar(500)" />
+    </property>
+    <property name="ExternalID" type="string">
+      <column name="ExternalID" sql-type="varchar(500)" />
+    </property>
+    <many-to-one name="ExternalSystem" class="SysConfiguration" cascade="none">
+      <column name="ExternalSystem" sql-type="int" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

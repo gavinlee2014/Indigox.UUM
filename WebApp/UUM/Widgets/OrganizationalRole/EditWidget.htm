@@ -1,0 +1,98 @@
+﻿<div class="control-panel panel-expanded">
+    <h1>
+        <span>基本信息</span>
+        <input type="button" />
+    </h1>
+    <div class="body">
+        <div id="EditArea" class="control-content">
+            <ul class="form_list">
+                <li class="required">
+                    <dl>
+                        <dt>
+                            <label>
+                                组织角色名称</label>
+                        </dt>
+                        <dd>
+                            <input type="text" id="Name" class="control-textbox text" />
+                        </dd>
+                    </dl>
+                </li>
+                <li class="required">
+                    <dl>
+                        <dt>
+                            <label>显示名称</label>
+                        </dt>
+                        <dd>
+                            <input type="text" id="DisplayName" class="control-textbox text" />
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <label>
+                                Email</label>
+                        </dt>
+                        <dd>
+                            <input type="text" id="Email" class="control-textbox text" />
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <label>组织角色说明</label>
+                        </dt>
+                        <dd>
+                            <textarea rows="5" cols="10" id="Description" class="control-richtextbox"></textarea>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <label>排序值</label>
+                        </dt>
+                        <dd>
+                            <input type="text" id="OrderNum" class="control-textbox" />
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <label>
+                                所属角色</label>
+                        </dt>
+                        <dd>
+                            <select id="Role" class="control-dropdownlist">
+                            </select>                            
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <label>
+                                成员</label>
+                        </dt>
+                        <dd>
+                            <div id="Members" class="control-userselect">
+                                <ul>
+                                </ul>
+                                <div>
+                                    <input type="button" value="..." class="userselect-selectbutton" />
+                                </div>
+                            </div>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+            <div class="control-validator invisible" id="Validator">
+                <input type="button" />
+                <div class="message">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

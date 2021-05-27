@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="apple-touch-icon" href="/res/icon.png"/> 
+    <link rel="apple-touch-startup-image" href="splash.png" /> 
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+    <meta http-equiv="expires" content="0" />
+    <link href="/res/css/control-common.css" rel="stylesheet" type="text/css" />
+    <link href="/res/css/themes/themename/control.css" rel="stylesheet" type="text/css" />
+    <link href="/res/css/themes/themename/theme.css" rel="stylesheet" type="text/css" />
+    <script src="/res/js/Indigox/Web/JsLib/require.js" type="text/javascript"></script>
+    <script src="/res/js/Indigox/Web/JsLib/require_config.js" type="text/javascript"></script>
+    <script src="/res/js/Indigox/Web/JsLib/initialize.js" type="text/javascript"></script>
+    <script src="/res/js/initScroll.js" type="text/javascript"></script>
+    <script src="/res/js/goUplevel.js" type="text/javascript"></script>
+</head>
+<body class="masked-opacity">
+    <div id="viewport">
+        <div class="hd">
+            <div id="HeadZone" class="control-widgetzone">
+            </div>
+        </div>
+        <div class="main">
+            <div class="nav">
+                <div id="NavZone" class="control-widgetzone">
+                </div>
+            </div>
+            <div class="content">
+                <div class="box">
+                    <div id="ListZone" class="control-widgetzone">
+                    </div>
+                </div>
+            </div>
+            <div class="actionbar">
+                <div id="ActionbarZone" class="control-widgetzone">
+                </div>
+            </div>
+        </div>
+        <div class="work">
+            <div class="work_nav">
+                <div id="WorkNavZone" class="control-widgetzone">
+                </div>
+            </div>
+            <div class="content">
+                <div id="DetailZone" class="control-widgetzone">
+                </div>
+            </div>
+            <div id="FloatZone" class="control-widgetzone">
+            </div>
+        </div>
+    </div>
+    <div class="control-loadmask">
+        <div class="overlay">
+        </div>
+        <span>
+            <img alt="loading" src="/res/css/img/loading.gif" />
+            <label>
+            </label>
+        </span>
+    </div>
+</body>
+</html>

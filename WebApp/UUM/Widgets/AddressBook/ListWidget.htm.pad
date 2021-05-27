@@ -1,0 +1,62 @@
+﻿<div class="biz-form-search">
+  <input type="text" id="searchKey" class="control-textbox" placeholder="输入名字查询联系人信息" />
+  <input type="button" id="searchButton" class="control-button" value="搜索" />
+</div>
+<div class="biz-contact-list yellow">
+  <dl>
+    <dt>
+    </dt>
+    <dd>
+      <ul id="AddressBookList" class="control-datalist">
+        <li id="AddressBookListItem" class="control-template">
+          <div class="portrait">
+            <input type="button" id="ContactProfile" class="control-button" />
+          </div>
+          <h4>
+            <label id="UserName" class="control-label">
+            </label>
+          </h4>
+          <span>
+            <label id="Title" class="control-label">
+            </label>
+          </span>
+          <div class="Literal active">
+            <div class="mobilephone">
+              <label id="Mobile" class="control-label">
+              </label>
+            </div>
+            <div class="phone">
+              <label id="Telephone" class="control-label">
+              </label>
+            </div>
+            <div class="mail">
+              <label id="Email" class="control-label">
+              </label>
+            </div>
+          </div>
+          <div class="Icons">
+            <span>
+              <label id="OrganizationName" class="control-label">
+              </label>
+            </span>
+            <ul>
+              <li class="mobile">
+                <a id="CallMobile" class="control-hyperlink"></a>
+              </li>
+              <li class="sms">
+                <a id="SendSMS" class="control-hyperlink"></a>
+              </li>
+              <li class="mail">
+                <a id="SendEmail" class="control-hyperlink"></a>
+              </li>
+              <li class="phone">
+                <a id="CallTel" class="control-hyperlink"></a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </dd>
+  </dl>
+  <div id="Paging" class="control-paging"></div>
+</div>

@@ -1,0 +1,139 @@
+﻿<div class="control-panel panel-expanded">
+  <h1>
+    <span>联系人</span>
+    <input type="button" />
+  </h1>
+  <div class="body">
+    <div id="AddressBookViewForm" class="control-content biz-addressbook">
+      <div class="portrait">
+        <img alt="" src="/res/img/addr-portrait.png" />
+        <input type="button" class="control-button" id="CreateContact" value="添加到通讯录" />
+      </div>
+      <ul class="forms info">
+        <li>
+          <dl>
+            <dt>
+              <label>
+                姓名
+              </label>
+            </dt>
+            <dd>
+              <label id="UserName" class="control-label">
+              </label>
+            </dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>
+              <label>
+                帐号
+              </label>
+            </dt>
+            <dd>
+              <label id="AccountName" class="control-label">
+              </label>
+            </dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>
+              <label>
+                职位
+              </label>
+            </dt>
+            <dd>
+              <label id="Title" class="control-label">
+              </label>
+            </dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>
+              <label>
+                部门
+              </label>
+            </dt>
+            <dd>
+              <label id="OrganizationName" class="control-label">
+              </label>
+            </dd>
+          </dl>
+        </li>
+      </ul>
+      <ul class="forms">
+        <li>
+          <dl>
+            <dt>
+              <label>
+                电话
+              </label>
+            </dt>
+            <dd>
+              <label id="Telephone" class="control-label">
+              </label>
+              <a id="CallTel" class="control-hyperlink phone invisible"></a>
+            </dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>
+              <label>
+                手机
+              </label>
+            </dt>
+            <dd>
+              <label id="Mobile" class="control-label">
+              </label>
+              <a id="CallMobile" class="control-hyperlink mobile invisible"></a>
+              <a id="SendSMS"  class="control-hyperlink sms invisible"></a>
+            </dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>
+              <label>
+                邮件
+              </label>
+            </dt>
+            <dd>
+              <label id="Email" class="control-label">
+              </label>
+              <a id="SendEmail" class="control-hyperlink mail invisible"></a>
+            </dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>
+              <label>
+                传真
+              </label>
+            </dt>
+            <dd>
+              <label id="Fax" class="control-label">
+              </label>
+            </dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>
+              <label>
+                其他
+              </label>
+            </dt>
+            <dd>
+              <label id="OtherContact" class="control-label">
+              </label>
+            </dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
