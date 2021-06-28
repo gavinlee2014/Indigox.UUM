@@ -52,6 +52,14 @@ namespace Indigox.UUM.Naming.Util
         public static string GetPinYin(string chinese)
         {
             StringBuilder builder = new StringBuilder();
+            if (chinese.Equals("叶"))
+            {
+                return "ye";
+            }
+            if (chinese.Equals("曾"))
+            {
+                return "zeng";
+            }
             foreach (var v in chinese)
             {
                 if (ChineseChar.IsValidChar(v))

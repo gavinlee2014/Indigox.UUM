@@ -30,6 +30,8 @@ namespace Indigox.UUM.Application.DTO
         public string ContractCompanyTexNo { get; set; }
         public string ContractCompanyName { get; set; }
         public string LastJoinDate { get; set; }
+        public string ContractStartDate { get; set; }
+        public string ContractEndDate { get; set; }
         public string NeedClockOn { get; set; }
 
         public IList<SimplePrincipalDTO> MemberOfOrganizationalRoles { get; set; }
@@ -57,6 +59,8 @@ namespace Indigox.UUM.Application.DTO
             dto.Gender = item.ExtendProperties.ContainsKey("Gender") ? item.ExtendProperties["Gender"] : String.Empty;
             dto.NeedClockOn = item.ExtendProperties.ContainsKey("NeedClockOn") ? item.ExtendProperties["NeedClockOn"] : String.Empty;
             dto.LastJoinDate = item.ExtendProperties.ContainsKey("LastJoinDate") ? item.ExtendProperties["LastJoinDate"] : String.Empty;
+            dto.ContractStartDate = item.ExtendProperties.ContainsKey("ContractStartDate") ? item.ExtendProperties["ContractStartDate"] : String.Empty;
+            dto.ContractEndDate = item.ExtendProperties.ContainsKey("ContractEndDate") ? item.ExtendProperties["ContractEndDate"] : String.Empty;
             dto.ContractCompanyTexNo = item.ExtendProperties.ContainsKey("ContractCompanyTexNo") ? item.ExtendProperties["ContractCompanyTexNo"] : String.Empty;
             dto.ContractCompanyName = item.ExtendProperties.ContainsKey("ContractCompanyName") ? item.ExtendProperties["ContractCompanyName"] : String.Empty;
 

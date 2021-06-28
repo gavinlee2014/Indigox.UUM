@@ -33,6 +33,8 @@ namespace Indigox.UUM.Application.OrganizationalPerson
             extendProperties.Add("Gender", this.Gender);
             extendProperties.Add("NeedClockOn", this.NeedClockOn);
             extendProperties.Add("LastJoinDate", this.LastJoinDate);
+            extendProperties.Add("ContractStartDate", this.ContractStartDate);
+            extendProperties.Add("ContractEndDate", this.ContractEndDate);
             extendProperties.Add("ContractCompanyTexNo", this.ContractCompanyTexNo);
             extendProperties.Add("ContractCompanyName", this.ContractCompanyName);
             IMutableOrganizationalPerson item = new OrganizationalPersonFactory()

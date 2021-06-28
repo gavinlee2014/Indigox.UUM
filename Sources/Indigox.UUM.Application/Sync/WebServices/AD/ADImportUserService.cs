@@ -17,28 +17,34 @@ namespace Indigox.UUM.Application.Sync.WebServices.AD
         public string Create(string nativeID, string organizationalUnitID, string accountName, string name, string fullName, string displayName, string email, string title, string mobile, string telephone, string fax, double orderNum, string description, string otherContact, string portrait, string mailDatabase, PropertyChangeCollection extendProperties)
         {
             ADGroup parentOrgGroup = null;
-            if ( String.IsNullOrEmpty( organizationalUnitID ) )
+            if (String.IsNullOrEmpty(organizationalUnitID))
             {
                 parentOrgGroup = Indigox.Common.ADAccessor.Accessor.GetDefaultGroup();
             }
             else
             {
-                parentOrgGroup = Indigox.Common.ADAccessor.Accessor.GetGroupByID( organizationalUnitID );
+                parentOrgGroup = Indigox.Common.ADAccessor.Accessor.GetGroupByID(organizationalUnitID);
             }
 
-            ADOrganizationalUnit parentOrgOU = Indigox.Common.ADAccessor.Accessor.GetOrganizationByByID( parentOrgGroup.Parent.ToString() );
+            ADOrganizationalUnit parentOrgOU = Indigox.Common.ADAccessor.Accessor.GetOrganizationByByID(parentOrgGroup.Parent.ToString());
 
             string containerID = null;
-            if ( parentOrgOU != null )
+            if (parentOrgOU != null)
             {
                 containerID = parentOrgOU.ID.ToString();
             }
 
             string groupID = null;
-            if ( parentOrgGroup != null )
+            if (parentOrgGroup != null)
             {
                 groupID = parentOrgGroup.ID.ToString();
             }
+            string idCard = "";
+            if ((extendProperties != null) && (extendProperties.Contains("IdCard")))
+            {
+                idCard = (String)extendProperties.Get("IdCard");
+            }
+            Log.Debug(String.Format("Create user with ID card:{0}", idCard));
             //NameService nameService = new NameService(name);
             ADUser user = new ADUser()
             {
@@ -46,17 +52,18 @@ namespace Indigox.UUM.Application.Sync.WebServices.AD
                 Name = name,
                 DisplayName = displayName.Trim(),
                 Mail = email,
+                IdCard = idCard,
                 Phone = telephone,
                 Mobile = mobile,
                 Fax = fax,
                 Title = title,
-                Portrait=portrait,
-                GivenName="",
-                FamilyName=name
+                Portrait = portrait,
+                GivenName = "",
+                FamilyName = name
             };
-            ADUser createdUser = Indigox.Common.ADAccessor.Accessor.CreateUser( containerID, user );
-            Indigox.Common.ADAccessor.Accessor.EnableUser( createdUser.ID.ToString() );
-            Indigox.Common.ADAccessor.Accessor.AddToGroup( createdUser.ID.ToString(), groupID );
+            ADUser createdUser = Indigox.Common.ADAccessor.Accessor.CreateUser(containerID, user);
+            Indigox.Common.ADAccessor.Accessor.EnableUser(createdUser.ID.ToString());
+            Indigox.Common.ADAccessor.Accessor.AddToGroup(createdUser.ID.ToString(), groupID);
 
             return createdUser.ID.ToString();
         }

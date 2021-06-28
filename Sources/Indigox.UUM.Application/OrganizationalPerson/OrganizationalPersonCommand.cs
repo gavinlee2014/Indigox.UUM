@@ -31,6 +31,8 @@ namespace Indigox.UUM.Application.OrganizationalPerson
         public string ContractCompanyTexNo { get; set; }
         public string ContractCompanyName { get; set; }
         public string LastJoinDate { get; set; }
+        public string ContractStartDate { get; set; }
+        public string ContractEndDate { get; set; }
         public string NeedClockOn { get; set; }
         public IList<SimplePrincipalDTO> MemberOfOrganizationalRoles { get; set; }
         public IList<SimplePrincipalDTO> MemberOfGroups { get; set; }
@@ -89,6 +91,8 @@ namespace Indigox.UUM.Application.OrganizationalPerson
             mutableItem.ExtendProperties.Add("Gender", this.Gender);
             mutableItem.ExtendProperties.Add("NeedClockOn", this.NeedClockOn);
             mutableItem.ExtendProperties.Add("LastJoinDate", this.LastJoinDate);
+            mutableItem.ExtendProperties.Add("ContractStartDate", this.ContractStartDate);
+            mutableItem.ExtendProperties.Add("ContractEndDate", this.ContractEndDate);
             mutableItem.ExtendProperties.Add("ContractCompanyTexNo", this.ContractCompanyTexNo);
             mutableItem.ExtendProperties.Add("ContractCompanyName", this.ContractCompanyName);
             mutableItem.ExtendProperties.Add("Portrait", mutableItem.Profile);
