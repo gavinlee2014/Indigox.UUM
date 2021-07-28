@@ -57,7 +57,11 @@ namespace Indigox.UUM.Application.Sync.WebServices.HR
             employee.Synchronized = false;
             employee.ModifyTime = DateTime.Now;
             employee.HasPolyphone = PinYinConverter.HasPolyphone(name);
-            employee.OrderNum = orderNum;
+            if ((employee.QuitDate == null) || (employee.QuitDate.Ticks < DateTime.Parse("1753-01-01").Ticks) || (employee.QuitDate.Ticks > DateTime.Parse("9999-12-31").Ticks))
+            {
+                employee.QuitDate = DateTime.Parse("9999-12-31");
+            }
+            //employee.OrderNum = orderNum;
             employee.ExtendProperties = extendProperties == null ? new Dictionary<string, string>() : extendProperties.ToDictionary();
 
             if (!string.IsNullOrEmpty(portrait))
@@ -109,6 +113,10 @@ namespace Indigox.UUM.Application.Sync.WebServices.HR
             employee.Synchronized = false;
             employee.ModifyTime = DateTime.Now;
             employee.HasPolyphone = PinYinConverter.HasPolyphone(name);
+            if ((employee.QuitDate == null) || (employee.QuitDate.Ticks < DateTime.Parse("1753-01-01").Ticks) || (employee.QuitDate.Ticks > DateTime.Parse("9999-12-31").Ticks))
+            {
+                employee.QuitDate = DateTime.Parse("9999-12-31");
+            }
             employee.OrderNum = orderNum;
             employee.ExtendProperties = extendProperties == null ? new Dictionary<string, string>() : extendProperties.ToDictionary();
 
@@ -129,7 +137,19 @@ namespace Indigox.UUM.Application.Sync.WebServices.HR
 
         public string Create(string nativeID, string organizationalUnitID, string accountName, string name, string fullName, string displayName, string idCard, string email, string title, string mobile, string telephone, string fax, double orderNum, string description, string otherContact, string portrait, string mailDatabase, HRPropertyChangeCollection extendProperties)
         {
-            Log.Debug("Message: HR Create Employee with ID:" + nativeID + ", name :" + name);
+            Log.Debug(String.Format("Message: HR Create Employee with ID:{0}-{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13},{14},{15}", nativeID, organizationalUnitID, accountName, name, fullName, displayName, idCard, email, title, mobile, telephone, fax, orderNum, description, otherContact, mailDatabase));
+            String extendString = "";
+            if (extendProperties != null)
+            {
+                IDictionary<String, String> extend = extendProperties.ToDictionary();
+                foreach (var key in extend.Keys)
+                {
+                    extendString += key + ":" + extend[key] + " ";
+                }
+
+            }
+            Log.Debug(String.Format("Message: HR Create Employee with ID:{0} extend:{1}", nativeID, extendString));
+
             IRepository<HREmployee> repository = RepositoryFactory.Instance.CreateRepository<HREmployee>();
             if (!EmployeeExists(nativeID))
             {
@@ -154,6 +174,19 @@ namespace Indigox.UUM.Application.Sync.WebServices.HR
                 {
                     HREmployee employee = repository.Get(nativeID);
                     UpdateEmployee(employee, organizationalUnitID, accountName, name, fullName, displayName, idCard, email, title, mobile, telephone, fax, orderNum, description, otherContact, portrait, mailDatabase, extendProperties);
+
+                    Log.Debug(String.Format("Message: after Update Employee with ID:{0}-{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13}", employee.ID, employee.ParentID, employee.AccountName, employee.Name, employee.DisplayName, employee.IdCard, employee.Email, employee.Title, employee.Mobile, employee.Tel, employee.Fax, employee.OrderNum, employee.MailDatabase, employee.QuitDate));
+                    String extendString2 = "";
+                    if (employee.ExtendProperties != null)
+                    {
+                        foreach (var key in employee.ExtendProperties.Keys)
+                        {
+                            extendString2 += key + ":" + employee.ExtendProperties[key] + " ";
+                        }
+
+                    }
+                    Log.Debug(String.Format("Message: after Update Employee with ID:{0} extend:{1}", employee.ID, extendString2));
+
                     repository.Update(employee);
                     accountName = employee.AccountName;
                     email = employee.Email;
@@ -281,7 +314,19 @@ namespace Indigox.UUM.Application.Sync.WebServices.HR
 
         public void ChangeProperty(string userID, HRPropertyChangeCollection propertyChanges)
         {
-            Log.Error("Message: HR Update Employee with ID:" + userID );
+            Log.Debug("Message: HR Update Employee with ID:" + userID );
+            String extendString = "";
+            if (propertyChanges != null)
+            {
+                IDictionary<String, String> extend = propertyChanges.ToDictionary();
+                foreach (var key in extend.Keys)
+                {
+                    extendString += key + ":" + extend[key] + " ";
+                }
+
+            }
+            Log.Debug(String.Format("Message: HR ChangeProperty Employee with ID:{0} extend:{1}", userID, extendString));
+
             IRepository repository = RepositoryFactory.Instance.CreateRepository<HREmployee>();
             Query query = new Query();
             query.Specifications = Specification.Equal("ID", userID);

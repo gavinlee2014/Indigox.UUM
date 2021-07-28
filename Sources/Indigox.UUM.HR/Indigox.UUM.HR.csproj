@@ -24,6 +24,10 @@
     <Reference Include="indigox.common.domainmodels.repository.nhibernateimpl">
       <HintPath>..\..\References\indigox.common.domainmodels.repository.nhibernateimpl.dll</HintPath>
     </Reference>
+    <Reference Include="indigox.common.logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\indigox.common.logging.dll</HintPath>
+    </Reference>
     <Reference Include="indigox.common.membership">
       <HintPath>..\..\References\indigox.common.membership.dll</HintPath>
     </Reference>

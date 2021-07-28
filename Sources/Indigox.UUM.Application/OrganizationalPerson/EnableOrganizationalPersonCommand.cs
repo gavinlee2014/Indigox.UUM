@@ -26,7 +26,7 @@ namespace Indigox.UUM.Application.OrganizationalPerson
 
             PrincipalService service = new PrincipalService();
             service.Enable( item, target );
-            OperationLogService.LogOperation("禁用用户： " + item.Name, item.GetDescription());
+            OperationLogService.LogOperation("启用用户： " + item.Name, item.GetDescription());
         }
 
         private IOrganizationalUnit GetOrganizationalUnit( string id )

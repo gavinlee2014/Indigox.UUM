@@ -102,6 +102,7 @@ namespace Indigox.UUM.Application.Sync.WebServices.AD
 
         public void Disable( string userID )
         {
+            Log.Debug(String.Format("Disable User {0}", userID));
             Indigox.Common.ADAccessor.Accessor.DisableUser( userID );
             string leaveOU = Indigox.Common.ADAccessor.Accessor.GetLeaveOU();
             Log.Error("leaveOU is :" + leaveOU);            
@@ -110,6 +111,7 @@ namespace Indigox.UUM.Application.Sync.WebServices.AD
 
         public void Enable(string userID, string organizationalUnitID, string accountName, string name, string fullName, string displayName, string email, string title, string mobile, string telephone, string fax, double orderNum, string description, string otherContact, string portrait, string mailDatabase)
         {
+            Log.Debug(String.Format("Enable User {0}", userID));
             Indigox.Common.ADAccessor.Accessor.EnableUser( userID );
         }
 

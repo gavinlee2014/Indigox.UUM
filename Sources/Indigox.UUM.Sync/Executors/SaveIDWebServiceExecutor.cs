@@ -26,6 +26,11 @@ namespace Indigox.UUM.Sync.Executors
             //var mapping = new SysKeyMapping( internalID, externalID, externalSystem );
             //repos.Add( mapping );
 
+            if (String.IsNullOrEmpty(externalID))
+            {
+                return;
+            }
+
             IDatabase db = new DatabaseFactory().CreateDatabase("UUM");
 
             string sql = @"insert into SysKeyMapping 

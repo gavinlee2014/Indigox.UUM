@@ -16,7 +16,7 @@ using Indigox.Common.DomainModels.Queries;
 using System.DirectoryServices.ActiveDirectory;
 using System.DirectoryServices;
 using Indigox.UUM.Naming.Service;
-using Indigox.Common.Membership;
+using Indigox.Common.Logging;
 
 namespace Indigox.UUM.HR.Service
 {
@@ -199,7 +199,7 @@ namespace Indigox.UUM.HR.Service
             item.Title = employee.Title;
             item.Profile = employee.Portrait;
             item.MailDatabase = employee.MailDatabase;
-            item.OrderNum = employee.OrderNum;
+            //item.OrderNum = employee.OrderNum;
             item.ExtendProperties = extendProperties;
 
             repository.Update(item);
@@ -235,6 +235,18 @@ namespace Indigox.UUM.HR.Service
 
         public void Create(HREmployee employee, IOrganizationalPerson principal)
         {
+            Log.Debug(String.Format("HREmployeeService: Create Employee with ID:{0}-{1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11} {12} {13}", employee.ID, employee.ParentID, employee.AccountName, employee.Name, employee.DisplayName, employee.IdCard, employee.Email, employee.Title, employee.Mobile, employee.Tel, employee.Fax, employee.OrderNum,  employee.Portrait, employee.MailDatabase));
+            String extendString = "";
+            if (employee.ExtendProperties != null)
+            {
+                foreach (var key in employee.ExtendProperties.Keys)
+                {
+                    extendString += key + ":" + employee.ExtendProperties[key] + " ";
+                }
+
+            }
+            Log.Debug(String.Format("HREmployeeService: Create Employee with ID:{0} extend:{1}", employee.ID, extendString));
+
             if (!string.IsNullOrEmpty(MappingUtil.GetPrincipalIDByHRObjectID(employee.ID)))
             {
                 Update(employee);
@@ -350,6 +362,18 @@ namespace Indigox.UUM.HR.Service
 
         public void Update(HREmployee employee)
         {
+            Log.Debug(String.Format("HREmployeeService: Update Employee with ID:{0}-{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12}", employee.ID, employee.ParentID, employee.AccountName, employee.Name, employee.DisplayName, employee.IdCard, employee.Email, employee.Title, employee.Mobile, employee.Tel, employee.Fax, employee.OrderNum, employee.MailDatabase));
+            String extendString = "";
+            if (employee.ExtendProperties != null)
+            {
+                foreach (var key in employee.ExtendProperties.Keys)
+                {
+                    extendString += key + ":" + employee.ExtendProperties[key] + " ";
+                }
+
+            }
+            Log.Debug(String.Format("HREmployeeService: Update Employee with ID:{0} extend:{1}", employee.ID, extendString));
+
             string organizationalPersonID = MappingUtil.GetPrincipalIDByHRObjectID(employee.ID);
             IRepository<IMutableOrganizationalPerson> repository = RepositoryFactory.Instance.CreateRepository<IMutableOrganizationalPerson>();
             IMutableOrganizationalPerson item = null;

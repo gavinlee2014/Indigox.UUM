@@ -60,6 +60,10 @@ namespace Indigox.UUM.Naming.Util
             {
                 return "zeng";
             }
+            if (chinese.Equals("单"))
+            {
+                return "shan";
+            }
             foreach (var v in chinese)
             {
                 if (ChineseChar.IsValidChar(v))
