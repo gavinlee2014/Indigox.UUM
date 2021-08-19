@@ -64,6 +64,10 @@ namespace Indigox.UUM.Naming.Util
             {
                 return "shan";
             }
+            if (chinese.Equals("许"))
+            {
+                return "xu";
+            }
             foreach (var v in chinese)
             {
                 if (ChineseChar.IsValidChar(v))
