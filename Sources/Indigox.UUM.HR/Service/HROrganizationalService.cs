@@ -185,7 +185,6 @@ namespace Indigox.UUM.HR.Service
                         organizationalObject.Organization = null;
                     }
                 }
-                item.Members.Clear();
             }
             if (item.MemberOf != null)
             {

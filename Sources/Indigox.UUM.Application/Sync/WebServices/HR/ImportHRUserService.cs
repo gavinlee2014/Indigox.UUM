@@ -87,6 +87,32 @@ namespace Indigox.UUM.Application.Sync.WebServices.HR
 
             }
         }
+        private void SyncEnableToUUM(HREmployee employee)
+        {
+            var syncMode = new HRSyncMode();
+            if (syncMode.IsAutomaticSync)
+            {
+                var employeeService = new HREmployeeService();
+                employeeService.Enable(employee);
+                IRepository<HREmployee> repository = RepositoryFactory.Instance.CreateRepository<HREmployee>();
+                employee.Synchronized = true;
+                repository.Update(employee);
+
+            }
+        }
+        private void SyncDisableToUUM(HREmployee employee)
+        {
+            var syncMode = new HRSyncMode();
+            if (syncMode.IsAutomaticSync)
+            {
+                var employeeService = new HREmployeeService();
+                employeeService.Disable(employee);
+                IRepository<HREmployee> repository = RepositoryFactory.Instance.CreateRepository<HREmployee>();
+                employee.Synchronized = true;
+                repository.Update(employee);
+
+            }
+        }
 
         private HREmployee CreateEmployee(string nativeID, string organizationalUnitID, string accountName, string name, string fullName, string displayName, string idCard, string email, string title, string mobile, string telephone, string fax, double orderNum, string description, string otherContact, string portrait, string mailDatabase, HRPropertyChangeCollection extendProperties)
         {
@@ -280,7 +306,7 @@ namespace Indigox.UUM.Application.Sync.WebServices.HR
                 repository.Update(employee);
 
                 Log.Error("HR同步禁用用户:" + userID + " | 禁用成功");
-                SyncToUUM(employee);
+                SyncDisableToUUM(employee);
             }
         }
 
@@ -308,7 +334,7 @@ namespace Indigox.UUM.Application.Sync.WebServices.HR
                 }
                 repository.Update(employee);
                 
-                SyncToUUM(employee);
+                SyncEnableToUUM(employee);
             }
         }
 

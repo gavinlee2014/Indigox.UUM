@@ -128,6 +128,53 @@ namespace Indigox.UUM.HR.Service
 
         private IMutableOrganizationalPerson UpdateEntity(HREmployee employee, IMutableOrganizationalPerson item)
         {
+            IOrganizationalUnit parentOrg = UpdateEntityProperties(employee, item);
+
+            if (item.Enabled)
+            {
+                if (item.Organization.ID != parentOrg.ID)
+                {
+                    PrincipalService principalService = new PrincipalService();
+                    principalService.MoveTo(item, parentOrg);
+                }
+            }
+
+
+            OrganizationalPersonService service = new OrganizationalPersonService();
+            service.Update(item);
+            OperationLogService.LogOperation("从HR同步，更新用户： " + item.Name, item.GetDescription());
+
+            //if (item.Enabled == employee.Enabled)
+            //{
+            //    if (item.Organization.ID != parentOrg.ID)
+            //    {
+            //        PrincipalService principalService = new PrincipalService();
+            //        principalService.MoveTo(item, parentOrg);
+            //    }
+
+            //    OrganizationalPersonService service = new OrganizationalPersonService();
+            //    service.Update(item);
+            //    OperationLogService.LogOperation("从HR同步，更新用户： " + item.Name, item.GetDescription());
+            //}
+            //else
+            //{
+            //    PrincipalService service = new PrincipalService();
+            //    if (employee.Enabled == true)
+            //    {
+            //        service.Enable(item, parentOrg);
+            //        OperationLogService.LogOperation("从HR同步，启用用户： " + item.Name, item.GetDescription());
+            //    }
+            //    else
+            //    {
+            //        service.Disable(item);
+            //        OperationLogService.LogOperation("从HR同步，禁用用户： " + item.Name, item.GetDescription());
+            //    }
+            //}
+            return item;
+        }
+
+        private IOrganizationalUnit UpdateEntityProperties(HREmployee employee, IMutableOrganizationalPerson item)
+        {
             IRepository<IMutableOrganizationalPerson> repository = RepositoryFactory.Instance.CreateRepository<IMutableOrganizationalPerson>();
             if (!string.IsNullOrEmpty(employee.Mobile))
             {
@@ -203,34 +250,7 @@ namespace Indigox.UUM.HR.Service
             item.ExtendProperties = extendProperties;
 
             repository.Update(item);
-
-            if (item.Enabled == employee.Enabled)
-            {
-                if (item.Organization.ID != parentOrg.ID)
-                {
-                    PrincipalService principalService = new PrincipalService();
-                    principalService.MoveTo(item, parentOrg);
-                }
-
-                OrganizationalPersonService service = new OrganizationalPersonService();
-                service.Update(item);
-                OperationLogService.LogOperation("从HR同步，更新用户： " + item.Name, item.GetDescription());
-            }
-            else
-            {
-                PrincipalService service = new PrincipalService();
-                if (employee.Enabled == true)
-                {
-                    service.Enable(item, parentOrg);
-                    OperationLogService.LogOperation("从HR同步，启用用户： " + item.Name, item.GetDescription());
-                }
-                else
-                {
-                    service.Disable(item);
-                    OperationLogService.LogOperation("从HR同步，禁用用户： " + item.Name, item.GetDescription());
-                }
-            }
-            return item;
+            return parentOrg;
         }
 
         public void Create(HREmployee employee, IOrganizationalPerson principal)
@@ -396,6 +416,76 @@ namespace Indigox.UUM.HR.Service
             }
         }
 
+        public void Enable(HREmployee employee)
+        {
+            Log.Debug(String.Format("HREmployeeService: Enable Employee with ID:{0}-{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12}", employee.ID, employee.ParentID, employee.AccountName, employee.Name, employee.DisplayName, employee.IdCard, employee.Email, employee.Title, employee.Mobile, employee.Tel, employee.Fax, employee.OrderNum, employee.MailDatabase));
+            String extendString = "";
+            if (employee.ExtendProperties != null)
+            {
+                foreach (var key in employee.ExtendProperties.Keys)
+                {
+                    extendString += key + ":" + employee.ExtendProperties[key] + " ";
+                }
+
+            }
+            Log.Debug(String.Format("HREmployeeService: Enable Employee with ID:{0} extend:{1}", employee.ID, extendString));
+
+            string organizationalPersonID = MappingUtil.GetPrincipalIDByHRObjectID(employee.ID);
+            IRepository<IMutableOrganizationalPerson> repository = RepositoryFactory.Instance.CreateRepository<IMutableOrganizationalPerson>();
+            IMutableOrganizationalPerson item = null;
+            if (!String.IsNullOrEmpty(organizationalPersonID))
+            {
+                item = repository.Get(organizationalPersonID);
+            }
+
+            if (item == null)
+            {
+                throw new ArgumentNullException("启用用户失败，用户" + employee.ID + "不存在");
+            }
+
+
+            IOrganizationalUnit parentOrg = UpdateEntityProperties(employee, item);
+            PrincipalService service = new PrincipalService();
+            service.Enable(item, parentOrg);
+            SyncEmployeeRoleRelation(employee, item);
+            OperationLogService.LogOperation("从HR同步，启用用户： " + item.Name, item.GetDescription());
+        }
+
+        public void Disable(HREmployee employee)
+        {
+            Log.Debug(String.Format("HREmployeeService: Disable Employee with ID:{0}-{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12}", employee.ID, employee.ParentID, employee.AccountName, employee.Name, employee.DisplayName, employee.IdCard, employee.Email, employee.Title, employee.Mobile, employee.Tel, employee.Fax, employee.OrderNum, employee.MailDatabase));
+            String extendString = "";
+            if (employee.ExtendProperties != null)
+            {
+                foreach (var key in employee.ExtendProperties.Keys)
+                {
+                    extendString += key + ":" + employee.ExtendProperties[key] + " ";
+                }
+
+            }
+            Log.Debug(String.Format("HREmployeeService: Disable Employee with ID:{0} extend:{1}", employee.ID, extendString));
+
+            string organizationalPersonID = MappingUtil.GetPrincipalIDByHRObjectID(employee.ID);
+            IRepository<IMutableOrganizationalPerson> repository = RepositoryFactory.Instance.CreateRepository<IMutableOrganizationalPerson>();
+            IMutableOrganizationalPerson item = null;
+            if (!String.IsNullOrEmpty(organizationalPersonID))
+            {
+                item = repository.Get(organizationalPersonID);
+            }
+
+            if (item == null)
+            {
+                return;
+            }
+
+
+            UpdateEntityProperties(employee, item);
+            PrincipalService service = new PrincipalService();
+            service.Disable(item);
+            SyncEmployeeRoleRelation(employee, item);
+
+            OperationLogService.LogOperation("从HR同步，禁用用户： " + item.Name, item.GetDescription());
+        }
 
         public void Delete(string employeeID)
         {
@@ -439,11 +529,9 @@ namespace Indigox.UUM.HR.Service
             switch (item.State)
             {
                 case HRState.Created: this.Create(item, bindingPerson); break;
-                case HRState.Changed: 
-                case HRState.Disabled:
-                case HRState.Enabled:
-                    this.Update(item); 
-                    break;
+                case HRState.Changed: this.Update(item); break;
+                //case HRState.Disabled: this.Disable(item); break;
+                //case HRState.Enabled: this.Enable(item); break;
                 case HRState.Deleted: this.Delete(item.ID); break;
             }
             item.Synchronized = true;

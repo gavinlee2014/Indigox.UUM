@@ -68,6 +68,14 @@ namespace Indigox.UUM.Naming.Util
             {
                 return "xu";
             }
+            if (chinese.Equals("陆"))
+            {
+                return "lu";
+            }
+            if (chinese.Equals("贾"))
+            {
+                return "jia";
+            }
             foreach (var v in chinese)
             {
                 if (ChineseChar.IsValidChar(v))
@@ -88,9 +96,17 @@ namespace Indigox.UUM.Naming.Util
             {
                 if (ChineseChar.IsValidChar(v))
                 {
-                    ChineseChar c = new ChineseChar(v);
-                    string py = c.Pinyins[0].Substring(0,1);
-                    builder.Append(py);
+                    if(v.Equals('红'))
+                    {
+                        builder.Append("h");
+                    }
+                    else
+                    {
+                        ChineseChar c = new ChineseChar(v);
+                        string py = c.Pinyins[0].Substring(0, 1);
+                        builder.Append(py);
+                    }
+                    
                 }
             }
             return builder.ToString();

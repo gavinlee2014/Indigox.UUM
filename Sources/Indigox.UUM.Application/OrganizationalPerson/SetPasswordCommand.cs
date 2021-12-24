@@ -23,6 +23,7 @@ namespace Indigox.UUM.Application.OrganizationalPerson
                 encoded = Convert.ToBase64String(Encoding.UTF8.GetBytes(this.Password));
             }
             servcie.UpdateUserPasswordByAccount(this.AccountName, encoded);
+            OperationLogService.LogOperation("修改密码：" + this.AccountName, AccountName + "修改密码");
         }
     }
 }
